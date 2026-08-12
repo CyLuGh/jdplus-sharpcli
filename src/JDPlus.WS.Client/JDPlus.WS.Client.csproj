@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\JDPlus.WS.Mapper\JDPlus.WS.Mapper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="../../../jdplus-ws/src/main/proto/jdplus/main/ws/v1/toolkit_basic.proto"
+                  AdditionalImportDirs="../../../jdplus-ws/src/main/proto"
+                  Link="proto/toolkit_basic.proto"
+                  GrpcService="Client"
+                  OutputDir="proto"
+                  CompileOutputs="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" />
+        <PackageReference Include="Grpc.Net.Client" />
+        <PackageReference Include="Grpc.Tools">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

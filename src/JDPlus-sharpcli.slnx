@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ConsoleApp/ConsoleApp.csproj" />
+  <Project Path="JDPlus.WS.Client/JDPlus.WS.Client.csproj" />
+  <Project Path="JDPlus.WS.Dtos/JDPlus.WS.Dtos.csproj" />
+  <Project Path="JDPlus.WS.Mapper/JDPlus.WS.Mapper.csproj" />
+  <Project Path="JDPlus.WS.Models/JDPlus.WS.Models.csproj" />
+</Solution>

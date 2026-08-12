@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\JDPlus.WS.Dtos\JDPlus.WS.Dtos.csproj" />
+      <ProjectReference Include="..\JDPlus.WS.Models\JDPlus.WS.Models.csproj" />
+    </ItemGroup>
+
+</Project>
