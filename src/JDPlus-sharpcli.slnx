@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Tests/">
+    <Project Path="TestMappers/TestMappers.csproj" Id="b9d6c6d1-794a-40b3-b03f-3c3b408ccb4d" />
+  </Folder>
   <Project Path="ConsoleApp/ConsoleApp.csproj" />
   <Project Path="JDPlus.WS.Client/JDPlus.WS.Client.csproj" />
   <Project Path="JDPlus.WS.Dtos/JDPlus.WS.Dtos.csproj" />
