@@ -4,40 +4,43 @@ using JDPlus.WS.Mapper;
 using JDPlus.WS.Models;
 using Xunit;
 
-namespace TestMappers
+namespace TestMappers;
+
+public class TsPeriodTests
 {
-    public class TsPeriodTests
+    [Theory]
+    [InlineData(1999, 1, JDPlus.WS.Models.Frequency.HalfYearly)]
+    [InlineData(2005, 2, JDPlus.WS.Models.Frequency.Monthly)]
+    public void ToDtoAndBack(int year, int position, JDPlus.WS.Models.Frequency frequency)
     {
-        [Fact]
-        public void ToDtoAndBack()
+        var tsPeriod = new TsPeriod()
         {
-            var tsPeriod = new TsPeriod()
-            {
-                Frequency = JDPlus.WS.Models.Frequency.HalfYearly,
-                Year = 1999,
-                Position = 1
-            };
+            Frequency = frequency,
+            Year = year,
+            Position = position
+        };
 
-            var dto = tsPeriod.ToDto();
-            var toolkit = dto.ToModel();
+        var dto = tsPeriod.ToDto();
+        var model = dto.ToModel();
 
-            tsPeriod.Should().BeEquivalentTo(toolkit);
-        }
+        tsPeriod.Should().BeEquivalentTo(model);
+    }
 
-        [Fact]
-        public void ToToolkitAndBack()
+    [Theory]
+    [InlineData(1999, 1, JDPlus.Main.WS.V1.Frequency.FreqHalfYearly)]
+    [InlineData(2015, 3, JDPlus.Main.WS.V1.Frequency.FreqMonthly)]
+    public void ToModelAndBack(int year, int position, JDPlus.Main.WS.V1.Frequency frequency)
+    {
+        var tsPeriod = new TsPeriodDto()
         {
-            var tsPeriod = new TsPeriodDto()
-            {
-                Frequency = JDPlus.Main.WS.V1.Frequency.FreqHalfYearly,
-                Year = 1999,
-                Pos = 1
-            };
+            Frequency = frequency,
+            Year = year,
+            Pos = position
+        };
 
-            var toolkit = tsPeriod.ToModel();
-            var dto = toolkit.ToDto();
+        var model = tsPeriod.ToModel();
+        var dto = model.ToDto();
 
-            tsPeriod.Should().BeEquivalentTo(dto);
-        }
+        tsPeriod.Should().BeEquivalentTo(dto);
     }
 }
