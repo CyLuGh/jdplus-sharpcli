@@ -4,6 +4,9 @@ using JDPlus.Main.WS.V1;
 using JDPlus.WS.Mapper;
 using JDPlus.WS.Models;
 using LanguageExt;
+using AggregationType = JDPlus.WS.Models.AggregationType;
+using Frequency = JDPlus.WS.Models.Frequency;
+using ResultStatusType = JDPlus.Main.WS.V1.ResultStatusType;
 
 namespace JDPlus.WS.Client;
 
@@ -26,9 +29,56 @@ public class CommunicationManager
         return new TsFunctions.TsFunctionsClient(channel);
     }
 
-    public async Task<VersionInfo> GetVersion()
+    public async Task<VersionInfo> GetVersion(CancellationToken token = default)
     {
-        var dto = await GetClient().GetVersionAsync(new()).ConfigureAwait(false);
+        var dto = await GetClient()
+            .GetVersionAsync(new(), cancellationToken: token)
+            .ConfigureAwait(false);
         return dto.ToModel();
+    }
+
+    public async Task<DescriptiveStatistics> GetDescriptiveStatistics(
+        TsData data,
+        CancellationToken token = default
+    )
+    {
+        var input = new TsFunctionInputDto { Id = string.Empty, Series = data.ToDto() };
+        var dto = await GetClient()
+            .StatisticsAsync(input, cancellationToken: token)
+            .ConfigureAwait(false);
+        return dto.ToModel();
+    }
+
+    public async Task<TsData> BuildTsData(
+        Seq<(DateOnly Date, double Value)> data,
+        AggregationType aggregationType = AggregationType.None,
+        Frequency frequency = Frequency.Yearly,
+        bool allowPartialAggregation = true,
+        bool includeMissingValues = true,
+        CancellationToken token = default
+    )
+    {
+        var input = new BuildTsDataInputDto()
+        {
+            Gathering = new ObsGatheringDto()
+            {
+                AggregationType = (Main.WS.V1.AggregationType)aggregationType,
+                AllowPartialAggregation = allowPartialAggregation,
+                Frequency = (Main.WS.V1.Frequency)frequency,
+                IncludeMissingValues = includeMissingValues,
+            },
+            Id = string.Empty,
+        };
+        input.Observations.AddRange(
+            data.Map(t => new BuildTsDataObsDto() { Date = t.Date.ToDto(), Value = t.Value })
+        );
+
+        var dto = await GetClient()
+            .BuildTsDataAsync(input, cancellationToken: token)
+            .ConfigureAwait(false);
+
+        return dto.Status.Type == ResultStatusType.StatusOk
+            ? dto.Series.ToModel()
+            : throw new InvalidOperationException("Error building time series data");
     }
 }
