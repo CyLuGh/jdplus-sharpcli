@@ -122,71 +122,71 @@ namespace JDPlus.Main.WS.V1 {
             "cmlhYmxlRHRvLk1ldGFkYXRhRW50cnkaLwoNTWV0YWRhdGFFbnRyeRILCgNr",
             "ZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBImIKDFBhcmFtZXRlckR0bxIN",
             "CgV2YWx1ZRgBIAEoARIuCgR0eXBlGAIgASgOMiAuamRwbHVzLm1haW4ud3Mu",
-            "djEuUGFyYW1ldGVyVHlwZRITCgtkZXNjcmlwdGlvbhgDIAEoCSKOAgoeRGlm",
+            "djEuUGFyYW1ldGVyVHlwZRITCgtkZXNjcmlwdGlvbhgDIAEoCSKMAgoeRGlm",
             "ZnVzZUxpa2VsaWhvb2RTdGF0aXN0aWNzRHRvEgwKBG5vYnMYASABKAUSEAoI",
             "bmRpZmZ1c2UYAiABKAUSDwoHbnBhcmFtcxgDIAEoBRIaChJkZWdyZWVzX29m",
             "X2ZyZWVkb20YBCABKAUSFgoObG9nX2xpa2VsaWhvb2QYBSABKAESHwoXYWRq",
             "dXN0ZWRfbG9nX2xpa2VsaWhvb2QYBiABKAESCwoDYWljGAcgASgBEgwKBGFp",
-            "Y2MYCCABKAESCwoDYmljGAkgASgBEgsKA3NzcRgNIAEoARIOCgZzc3FlcnIY",
-            "DiABKAESDAoEbGRldBgPIAEoARITCgtkY29ycmVjdGlvbhgQIAEoASJSCgtU",
-            "c0RvbWFpbkR0bxIzCgtzdGFydFBlcmlvZBgBIAEoCzIeLmpkcGx1cy5tYWlu",
-            "LndzLnYxLlRzUGVyaW9kRHRvEg4KBmxlbmd0aBgCIAEoBSJ/ChlPYmplY3Rp",
-            "dmVGdW5jdGlvblBvaW50RHRvEg0KBXZhbHVlGAEgASgBEhIKCnBhcmFtZXRl",
-            "cnMYAiADKAESEAoIZ3JhZGllbnQYAyADKAESLQoHaGVzc2lhbhgEIAEoCzIc",
-            "LmpkcGx1cy5tYWluLndzLnYxLk1hdHJpeER0byJ9ChdSZXNpZHVhbHNEaWFn",
-            "bm9zdGljc0R0bxIzCg1mdWxsUmVzaWR1YWxzGAEgASgLMhwuamRwbHVzLm1h",
-            "aW4ud3MudjEuVHNEYXRhRHRvEi0KBG5paWQYAiABKAsyHy5qZHBsdXMubWFp",
-            "bi53cy52MS5OaWlkVGVzdHNEdG8i+wYKDE5paWRUZXN0c0R0bxIzCgRtZWFu",
-            "GAEgASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlzdGljYWxUZXN0RHRv",
-            "EjcKCHNrZXduZXNzGAIgASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlz",
-            "dGljYWxUZXN0RHRvEjcKCGt1cnRvc2lzGAMgASgLMiUuamRwbHVzLm1haW4u",
-            "d3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEj0KDmRvb3JuaWtfaGFuc2VuGAQg",
-            "ASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEjgK",
-            "CWxqdW5nX2JveBgFIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3Rp",
-            "Y2FsVGVzdER0bxI5Cgpib3hfcGllcmNlGAYgASgLMiUuamRwbHVzLm1haW4u",
-            "d3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEkEKEnNlYXNvbmFsX2xqdW5nX2Jv",
-            "eBgHIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVzdER0",
-            "bxJCChNzZWFzb25hbF9ib3hfcGllcmNlGAggASgLMiUuamRwbHVzLm1haW4u",
-            "d3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEjoKC3J1bnNfbnVtYmVyGAkgASgL",
-            "MiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEjoKC3J1",
-            "bnNfbGVuZ3RoGAogASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlzdGlj",
-            "YWxUZXN0RHRvEkIKE3VwX2Rvd25fcnVuc19udW1iZXIYCyABKAsyJS5qZHBs",
-            "dXMubWFpbi53cy52MS5TdGF0aXN0aWNhbFRlc3REdG8SQgoTdXBfZG93bl9y",
-            "dW5zX2xlbmd0aBgMIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3Rp",
-            "Y2FsVGVzdER0bxJDChRsanVuZ19ib3hfb25fc3F1YXJlcxgNIAEoCzIlLmpk",
-            "cGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVzdER0bxJEChVib3hfcGll",
-            "cmNlX29uX3NxdWFyZXMYDiABKAsyJS5qZHBsdXMubWFpbi53cy52MS5TdGF0",
-            "aXN0aWNhbFRlc3REdG8iSAoSU3RhdGlzdGljYWxUZXN0RHRvEg0KBXZhbHVl",
-            "GAEgASgBEg4KBnBWYWx1ZRgCIAEoARITCgtkZXNjcmlwdGlvbhgDIAEoCSKt",
-            "AgogVGVtcG9yYWxEaXNhZ2dyZWdhdGlvblJlcXVlc3REdG8SJwoBeRgBIAEo",
-            "CzIcLmpkcGx1cy5tYWluLndzLnYxLlRzRGF0YUR0bxIQCghjb25zdGFudBgC",
-            "IAEoCBINCgV0cmVuZBgDIAEoCBIwCgppbmRpY2F0b3JzGAQgAygLMhwuamRw",
-            "bHVzLm1haW4ud3MudjEuVHNEYXRhRHRvEg0KBW1vZGVsGAUgASgJEg8KB2F2",
-            "ZXJhZ2UYBiABKAgSCwoDcmhvGAcgASgBEhAKCGZpeGVkUmhvGAggASgIEhQK",
-            "DHRydW5jYXRlZFJobxgJIAEoARIQCgh6ZXJvSW5pdBgKIAEoCBIRCglhbGdv",
-            "cml0aG0YCyABKAkSEwoLZGlmZnVzZXJFZ3MYDCABKAgiQAoOVmVyc2lvbklu",
-            "Zm9EdG8SDQoFbWFqb3IYASABKAUSDQoFbWlub3IYAiABKAUSEAoIcmV2aXNp",
-            "b24YAyABKAUqqwEKCUZyZXF1ZW5jeRISCg5GUkVRX1VOREVGSU5FRBAAEg8K",
-            "C0ZSRVFfWUVBUkxZEAESFAoQRlJFUV9IQUxGX1lFQVJMWRACEhcKE0ZSRVFf",
-            "UVVBRFJJX01PTlRITFkQAxISCg5GUkVRX1FVQVJURVJMWRAEEhMKD0ZSRVFf",
-            "QklfTU9OVEhMWRAGEhAKDEZSRVFfTU9OVEhMWRAMEg8KCkZSRVFfREFJTFkQ",
-            "7QIqjQEKDVNlbGVjdGlvblR5cGUSDAoIU1BBTl9BTEwQABINCglTUEFOX0ZS",
-            "T00QARILCgdTUEFOX1RPEAISEAoMU1BBTl9CRVRXRUVOEAMSDQoJU1BBTl9M",
-            "QVNUEAQSDgoKU1BBTl9GSVJTVBAFEhIKDlNQQU5fRVhDTFVESU5HEAYSDQoJ",
-            "U1BBTl9OT05FEAcqRwoQUmVzdWx0U3RhdHVzVHlwZRINCglTVEFUVVNfT0sQ",
-            "ABIQCgxTVEFUVVNfRVJST1IQARISCg5TVEFUVVNfV0FSTklORxACKqwBCg9B",
-            "Z2dyZWdhdGlvblR5cGUSFAoQQUdHUkVHQVRJT05fTk9ORRAAEhMKD0FHR1JF",
-            "R0FUSU9OX1NVTRABEhcKE0FHR1JFR0FUSU9OX0FWRVJBR0UQAhIVChFBR0dS",
-            "RUdBVElPTl9GSVJTVBADEhQKEEFHR1JFR0FUSU9OX0xBU1QQBBITCg9BR0dS",
-            "RUdBVElPTl9NQVgQBRITCg9BR0dSRUdBVElPTl9NSU4QBipCChBEaXN0cmli",
-            "dXRpb25UeXBlEg4KCkRJU1RfRklSU1QQABINCglESVNUX0xBU1QQARIPCgtE",
-            "SVNUX01JRERMRRACKlcKC1ZhbHVlU3RhdHVzEg4KClZTX1BSRVNFTlQQABIN",
-            "CglWU19VTlVTRUQQARINCglWU19CRUZPUkUQAhIMCghWU19BRlRFUhADEgwK",
-            "CFZTX0VNUFRZEAQqgwEKDVBhcmFtZXRlclR5cGUSFAoQUEFSQU1FVEVSX1VO",
-            "VVNFRBAAEhcKE1BBUkFNRVRFUl9VTkRFRklORUQQARITCg9QQVJBTUVURVJf",
-            "RklYRUQQAhIVChFQQVJBTUVURVJfSU5JVElBTBADEhcKE1BBUkFNRVRFUl9F",
-            "U1RJTUFURUQQBEInChFqZHBsdXMubWFpbi53cy52MaoCEUpEUGx1cy5NYWlu",
-            "LldTLlYxYgZwcm90bzM="));
+            "Y2MYCCABKAESCwoDYmljGAkgASgBEgsKA3NzcRgNIAEoARIMCgRsZGV0GA8g",
+            "ASgBEhMKC2Rjb3JyZWN0aW9uGBAgASgBSgQIDhAPUgZzc3FlcnIiUgoLVHNE",
+            "b21haW5EdG8SMwoLc3RhcnRQZXJpb2QYASABKAsyHi5qZHBsdXMubWFpbi53",
+            "cy52MS5Uc1BlcmlvZER0bxIOCgZsZW5ndGgYAiABKAUifwoZT2JqZWN0aXZl",
+            "RnVuY3Rpb25Qb2ludER0bxINCgV2YWx1ZRgBIAEoARISCgpwYXJhbWV0ZXJz",
+            "GAIgAygBEhAKCGdyYWRpZW50GAMgAygBEi0KB2hlc3NpYW4YBCABKAsyHC5q",
+            "ZHBsdXMubWFpbi53cy52MS5NYXRyaXhEdG8ifQoXUmVzaWR1YWxzRGlhZ25v",
+            "c3RpY3NEdG8SMwoNZnVsbFJlc2lkdWFscxgBIAEoCzIcLmpkcGx1cy5tYWlu",
+            "LndzLnYxLlRzRGF0YUR0bxItCgRuaWlkGAIgASgLMh8uamRwbHVzLm1haW4u",
+            "d3MudjEuTmlpZFRlc3RzRHRvIvsGCgxOaWlkVGVzdHNEdG8SMwoEbWVhbhgB",
+            "IAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVzdER0bxI3",
+            "Cghza2V3bmVzcxgCIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3Rp",
+            "Y2FsVGVzdER0bxI3CghrdXJ0b3NpcxgDIAEoCzIlLmpkcGx1cy5tYWluLndz",
+            "LnYxLlN0YXRpc3RpY2FsVGVzdER0bxI9Cg5kb29ybmlrX2hhbnNlbhgEIAEo",
+            "CzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVzdER0bxI4Cgls",
+            "anVuZ19ib3gYBSABKAsyJS5qZHBsdXMubWFpbi53cy52MS5TdGF0aXN0aWNh",
+            "bFRlc3REdG8SOQoKYm94X3BpZXJjZRgGIAEoCzIlLmpkcGx1cy5tYWluLndz",
+            "LnYxLlN0YXRpc3RpY2FsVGVzdER0bxJBChJzZWFzb25hbF9sanVuZ19ib3gY",
+            "ByABKAsyJS5qZHBsdXMubWFpbi53cy52MS5TdGF0aXN0aWNhbFRlc3REdG8S",
+            "QgoTc2Vhc29uYWxfYm94X3BpZXJjZRgIIAEoCzIlLmpkcGx1cy5tYWluLndz",
+            "LnYxLlN0YXRpc3RpY2FsVGVzdER0bxI6CgtydW5zX251bWJlchgJIAEoCzIl",
+            "LmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVzdER0bxI6CgtydW5z",
+            "X2xlbmd0aBgKIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2Fs",
+            "VGVzdER0bxJCChN1cF9kb3duX3J1bnNfbnVtYmVyGAsgASgLMiUuamRwbHVz",
+            "Lm1haW4ud3MudjEuU3RhdGlzdGljYWxUZXN0RHRvEkIKE3VwX2Rvd25fcnVu",
+            "c19sZW5ndGgYDCABKAsyJS5qZHBsdXMubWFpbi53cy52MS5TdGF0aXN0aWNh",
+            "bFRlc3REdG8SQwoUbGp1bmdfYm94X29uX3NxdWFyZXMYDSABKAsyJS5qZHBs",
+            "dXMubWFpbi53cy52MS5TdGF0aXN0aWNhbFRlc3REdG8SRAoVYm94X3BpZXJj",
+            "ZV9vbl9zcXVhcmVzGA4gASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlz",
+            "dGljYWxUZXN0RHRvIkgKElN0YXRpc3RpY2FsVGVzdER0bxINCgV2YWx1ZRgB",
+            "IAEoARIOCgZwVmFsdWUYAiABKAESEwoLZGVzY3JpcHRpb24YAyABKAkirQIK",
+            "IFRlbXBvcmFsRGlzYWdncmVnYXRpb25SZXF1ZXN0RHRvEicKAXkYASABKAsy",
+            "HC5qZHBsdXMubWFpbi53cy52MS5Uc0RhdGFEdG8SEAoIY29uc3RhbnQYAiAB",
+            "KAgSDQoFdHJlbmQYAyABKAgSMAoKaW5kaWNhdG9ycxgEIAMoCzIcLmpkcGx1",
+            "cy5tYWluLndzLnYxLlRzRGF0YUR0bxINCgVtb2RlbBgFIAEoCRIPCgdhdmVy",
+            "YWdlGAYgASgIEgsKA3JobxgHIAEoARIQCghmaXhlZFJobxgIIAEoCBIUCgx0",
+            "cnVuY2F0ZWRSaG8YCSABKAESEAoIemVyb0luaXQYCiABKAgSEQoJYWxnb3Jp",
+            "dGhtGAsgASgJEhMKC2RpZmZ1c2VyRWdzGAwgASgIIkAKDlZlcnNpb25JbmZv",
+            "RHRvEg0KBW1ham9yGAEgASgFEg0KBW1pbm9yGAIgASgFEhAKCHJldmlzaW9u",
+            "GAMgASgFKqsBCglGcmVxdWVuY3kSEgoORlJFUV9VTkRFRklORUQQABIPCgtG",
+            "UkVRX1lFQVJMWRABEhQKEEZSRVFfSEFMRl9ZRUFSTFkQAhIXChNGUkVRX1FV",
+            "QURSSV9NT05USExZEAMSEgoORlJFUV9RVUFSVEVSTFkQBBITCg9GUkVRX0JJ",
+            "X01PTlRITFkQBhIQCgxGUkVRX01PTlRITFkQDBIPCgpGUkVRX0RBSUxZEO0C",
+            "Ko0BCg1TZWxlY3Rpb25UeXBlEgwKCFNQQU5fQUxMEAASDQoJU1BBTl9GUk9N",
+            "EAESCwoHU1BBTl9UTxACEhAKDFNQQU5fQkVUV0VFThADEg0KCVNQQU5fTEFT",
+            "VBAEEg4KClNQQU5fRklSU1QQBRISCg5TUEFOX0VYQ0xVRElORxAGEg0KCVNQ",
+            "QU5fTk9ORRAHKkcKEFJlc3VsdFN0YXR1c1R5cGUSDQoJU1RBVFVTX09LEAAS",
+            "EAoMU1RBVFVTX0VSUk9SEAESEgoOU1RBVFVTX1dBUk5JTkcQAiqsAQoPQWdn",
+            "cmVnYXRpb25UeXBlEhQKEEFHR1JFR0FUSU9OX05PTkUQABITCg9BR0dSRUdB",
+            "VElPTl9TVU0QARIXChNBR0dSRUdBVElPTl9BVkVSQUdFEAISFQoRQUdHUkVH",
+            "QVRJT05fRklSU1QQAxIUChBBR0dSRUdBVElPTl9MQVNUEAQSEwoPQUdHUkVH",
+            "QVRJT05fTUFYEAUSEwoPQUdHUkVHQVRJT05fTUlOEAYqQgoQRGlzdHJpYnV0",
+            "aW9uVHlwZRIOCgpESVNUX0ZJUlNUEAASDQoJRElTVF9MQVNUEAESDwoLRElT",
+            "VF9NSURETEUQAipXCgtWYWx1ZVN0YXR1cxIOCgpWU19QUkVTRU5UEAASDQoJ",
+            "VlNfVU5VU0VEEAESDQoJVlNfQkVGT1JFEAISDAoIVlNfQUZURVIQAxIMCghW",
+            "U19FTVBUWRAEKoMBCg1QYXJhbWV0ZXJUeXBlEhQKEFBBUkFNRVRFUl9VTlVT",
+            "RUQQABIXChNQQVJBTUVURVJfVU5ERUZJTkVEEAESEwoPUEFSQU1FVEVSX0ZJ",
+            "WEVEEAISFQoRUEFSQU1FVEVSX0lOSVRJQUwQAxIXChNQQVJBTUVURVJfRVNU",
+            "SU1BVEVEEARCJwoRamRwbHVzLm1haW4ud3MudjGqAhFKRFBsdXMuTWFpbi5X",
+            "Uy5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::JDPlus.Main.WS.V1.Frequency), typeof(global::JDPlus.Main.WS.V1.SelectionType), typeof(global::JDPlus.Main.WS.V1.ResultStatusType), typeof(global::JDPlus.Main.WS.V1.AggregationType), typeof(global::JDPlus.Main.WS.V1.DistributionType), typeof(global::JDPlus.Main.WS.V1.ValueStatus), typeof(global::JDPlus.Main.WS.V1.ParameterType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -219,7 +219,7 @@ namespace JDPlus.Main.WS.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DiffuseConcentratedLikelihoodDto), global::JDPlus.Main.WS.V1.DiffuseConcentratedLikelihoodDto.Parser, new[]{ "Ll", "Ssqerr", "Ldet", "Lddet", "Nobs", "Nd", "Nxd", "Res", "B", "Bvar", "Legacy", "ScalingFactor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsVariableDto), global::JDPlus.Main.WS.V1.TsVariableDto.Parser, new[]{ "Name", "Id", "Lag", "Coefficient", "Metadata" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ParameterDto), global::JDPlus.Main.WS.V1.ParameterDto.Parser, new[]{ "Value", "Type", "Description" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DiffuseLikelihoodStatisticsDto), global::JDPlus.Main.WS.V1.DiffuseLikelihoodStatisticsDto.Parser, new[]{ "Nobs", "Ndiffuse", "Nparams", "DegreesOfFreedom", "LogLikelihood", "AdjustedLogLikelihood", "Aic", "Aicc", "Bic", "Ssq", "Ssqerr", "Ldet", "Dcorrection" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DiffuseLikelihoodStatisticsDto), global::JDPlus.Main.WS.V1.DiffuseLikelihoodStatisticsDto.Parser, new[]{ "Nobs", "Ndiffuse", "Nparams", "DegreesOfFreedom", "LogLikelihood", "AdjustedLogLikelihood", "Aic", "Aicc", "Bic", "Ssq", "Ldet", "Dcorrection" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsDomainDto), global::JDPlus.Main.WS.V1.TsDomainDto.Parser, new[]{ "StartPeriod", "Length" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ObjectiveFunctionPointDto), global::JDPlus.Main.WS.V1.ObjectiveFunctionPointDto.Parser, new[]{ "Value", "Parameters", "Gradient", "Hessian" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ResidualsDiagnosticsDto), global::JDPlus.Main.WS.V1.ResidualsDiagnosticsDto.Parser, new[]{ "FullResiduals", "Niid" }, null, null, null, null),
@@ -9503,7 +9503,6 @@ namespace JDPlus.Main.WS.V1 {
       aicc_ = other.aicc_;
       bic_ = other.bic_;
       ssq_ = other.ssq_;
-      ssqerr_ = other.ssqerr_;
       ldet_ = other.ldet_;
       dcorrection_ = other.dcorrection_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -9635,21 +9634,12 @@ namespace JDPlus.Main.WS.V1 {
       }
     }
 
-    /// <summary>Field number for the "ssqerr" field.</summary>
-    public const int SsqerrFieldNumber = 14;
-    private double ssqerr_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public double Ssqerr {
-      get { return ssqerr_; }
-      set {
-        ssqerr_ = value;
-      }
-    }
-
     /// <summary>Field number for the "ldet" field.</summary>
     public const int LdetFieldNumber = 15;
     private double ldet_;
+    /// <summary>
+    /// double ssqerr = 14;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Ldet {
@@ -9696,7 +9686,6 @@ namespace JDPlus.Main.WS.V1 {
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Aicc, other.Aicc)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Bic, other.Bic)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Ssq, other.Ssq)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Ssqerr, other.Ssqerr)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Ldet, other.Ldet)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Dcorrection, other.Dcorrection)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -9716,7 +9705,6 @@ namespace JDPlus.Main.WS.V1 {
       if (Aicc != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Aicc);
       if (Bic != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Bic);
       if (Ssq != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Ssq);
-      if (Ssqerr != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Ssqerr);
       if (Ldet != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Ldet);
       if (Dcorrection != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Dcorrection);
       if (_unknownFields != null) {
@@ -9777,10 +9765,6 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteRawTag(105);
         output.WriteDouble(Ssq);
       }
-      if (Ssqerr != 0D) {
-        output.WriteRawTag(113);
-        output.WriteDouble(Ssqerr);
-      }
       if (Ldet != 0D) {
         output.WriteRawTag(121);
         output.WriteDouble(Ldet);
@@ -9839,10 +9823,6 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteRawTag(105);
         output.WriteDouble(Ssq);
       }
-      if (Ssqerr != 0D) {
-        output.WriteRawTag(113);
-        output.WriteDouble(Ssqerr);
-      }
       if (Ldet != 0D) {
         output.WriteRawTag(121);
         output.WriteDouble(Ldet);
@@ -9889,9 +9869,6 @@ namespace JDPlus.Main.WS.V1 {
         size += 1 + 8;
       }
       if (Ssq != 0D) {
-        size += 1 + 8;
-      }
-      if (Ssqerr != 0D) {
         size += 1 + 8;
       }
       if (Ldet != 0D) {
@@ -9941,9 +9918,6 @@ namespace JDPlus.Main.WS.V1 {
       }
       if (other.Ssq != 0D) {
         Ssq = other.Ssq;
-      }
-      if (other.Ssqerr != 0D) {
-        Ssqerr = other.Ssqerr;
       }
       if (other.Ldet != 0D) {
         Ldet = other.Ldet;
@@ -10008,10 +9982,6 @@ namespace JDPlus.Main.WS.V1 {
           }
           case 105: {
             Ssq = input.ReadDouble();
-            break;
-          }
-          case 113: {
-            Ssqerr = input.ReadDouble();
             break;
           }
           case 121: {
@@ -10079,10 +10049,6 @@ namespace JDPlus.Main.WS.V1 {
           }
           case 105: {
             Ssq = input.ReadDouble();
-            break;
-          }
-          case 113: {
-            Ssqerr = input.ReadDouble();
             break;
           }
           case 121: {
