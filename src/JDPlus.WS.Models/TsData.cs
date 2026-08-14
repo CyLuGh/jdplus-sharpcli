@@ -12,9 +12,9 @@ public readonly record struct TsData
     public HashMap<DateOnly, double> GetDateValues()
     {
         var start = Start.ToDate();
-        var occurences = Start.MonthlyOccurencesPerYear;
+        var occurrencesPerYear = Start.MonthlyOccurrencesPerYear;
 
-        return Values.Map((idx, v) => (start.AddMonths(idx * occurences), v)).ToHashMap();
+        return Values.Map((idx, v) => (start.AddMonths(idx * occurrencesPerYear), v)).ToHashMap();
     }
 
     public TsData MapData<T>(Func<double, T, double> mapper, T t) =>

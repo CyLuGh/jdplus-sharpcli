@@ -19,8 +19,8 @@ public readonly record struct TsPeriod
     public int Position { get; init; }
 
     public DateOnly ToDate() =>
-        new DateOnly(Year, 1, 1).AddMonths(Position * MonthlyOccurencesPerYear);
+        new DateOnly(Year, 1, 1).AddMonths(Position * MonthlyOccurrencesPerYear);
 
-    public int MonthlyOccurencesPerYear =>
+    public int MonthlyOccurrencesPerYear =>
         Frequency != Frequency.Undefined ? 12 / (int)Frequency : 0;
 }
