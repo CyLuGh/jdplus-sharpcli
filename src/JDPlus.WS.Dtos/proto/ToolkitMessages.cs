@@ -157,36 +157,38 @@ namespace JDPlus.Main.WS.V1 {
             "dXMubWFpbi53cy52MS5TdGF0aXN0aWNhbFRlc3REdG8SRAoVYm94X3BpZXJj",
             "ZV9vbl9zcXVhcmVzGA4gASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlz",
             "dGljYWxUZXN0RHRvIkgKElN0YXRpc3RpY2FsVGVzdER0bxINCgV2YWx1ZRgB",
-            "IAEoARIOCgZwVmFsdWUYAiABKAESEwoLZGVzY3JpcHRpb24YAyABKAkirQIK",
+            "IAEoARIOCgZwVmFsdWUYAiABKAESEwoLZGVzY3JpcHRpb24YAyABKAkipwMK",
             "IFRlbXBvcmFsRGlzYWdncmVnYXRpb25SZXF1ZXN0RHRvEicKAXkYASABKAsy",
             "HC5qZHBsdXMubWFpbi53cy52MS5Uc0RhdGFEdG8SEAoIY29uc3RhbnQYAiAB",
             "KAgSDQoFdHJlbmQYAyABKAgSMAoKaW5kaWNhdG9ycxgEIAMoCzIcLmpkcGx1",
             "cy5tYWluLndzLnYxLlRzRGF0YUR0bxINCgVtb2RlbBgFIAEoCRIPCgdhdmVy",
             "YWdlGAYgASgIEgsKA3JobxgHIAEoARIQCghmaXhlZFJobxgIIAEoCBIUCgx0",
             "cnVuY2F0ZWRSaG8YCSABKAESEAoIemVyb0luaXQYCiABKAgSEQoJYWxnb3Jp",
-            "dGhtGAsgASgJEhMKC2RpZmZ1c2VyRWdzGAwgASgIIkAKDlZlcnNpb25JbmZv",
-            "RHRvEg0KBW1ham9yGAEgASgFEg0KBW1pbm9yGAIgASgFEhAKCHJldmlzaW9u",
-            "GAMgASgFKqsBCglGcmVxdWVuY3kSEgoORlJFUV9VTkRFRklORUQQABIPCgtG",
-            "UkVRX1lFQVJMWRABEhQKEEZSRVFfSEFMRl9ZRUFSTFkQAhIXChNGUkVRX1FV",
-            "QURSSV9NT05USExZEAMSEgoORlJFUV9RVUFSVEVSTFkQBBITCg9GUkVRX0JJ",
-            "X01PTlRITFkQBhIQCgxGUkVRX01PTlRITFkQDBIPCgpGUkVRX0RBSUxZEO0C",
-            "Ko0BCg1TZWxlY3Rpb25UeXBlEgwKCFNQQU5fQUxMEAASDQoJU1BBTl9GUk9N",
-            "EAESCwoHU1BBTl9UTxACEhAKDFNQQU5fQkVUV0VFThADEg0KCVNQQU5fTEFT",
-            "VBAEEg4KClNQQU5fRklSU1QQBRISCg5TUEFOX0VYQ0xVRElORxAGEg0KCVNQ",
-            "QU5fTk9ORRAHKkcKEFJlc3VsdFN0YXR1c1R5cGUSDQoJU1RBVFVTX09LEAAS",
-            "EAoMU1RBVFVTX0VSUk9SEAESEgoOU1RBVFVTX1dBUk5JTkcQAiqsAQoPQWdn",
-            "cmVnYXRpb25UeXBlEhQKEEFHR1JFR0FUSU9OX05PTkUQABITCg9BR0dSRUdB",
-            "VElPTl9TVU0QARIXChNBR0dSRUdBVElPTl9BVkVSQUdFEAISFQoRQUdHUkVH",
-            "QVRJT05fRklSU1QQAxIUChBBR0dSRUdBVElPTl9MQVNUEAQSEwoPQUdHUkVH",
-            "QVRJT05fTUFYEAUSEwoPQUdHUkVHQVRJT05fTUlOEAYqQgoQRGlzdHJpYnV0",
-            "aW9uVHlwZRIOCgpESVNUX0ZJUlNUEAASDQoJRElTVF9MQVNUEAESDwoLRElT",
-            "VF9NSURETEUQAipXCgtWYWx1ZVN0YXR1cxIOCgpWU19QUkVTRU5UEAASDQoJ",
-            "VlNfVU5VU0VEEAESDQoJVlNfQkVGT1JFEAISDAoIVlNfQUZURVIQAxIMCghW",
-            "U19FTVBUWRAEKoMBCg1QYXJhbWV0ZXJUeXBlEhQKEFBBUkFNRVRFUl9VTlVT",
-            "RUQQABIXChNQQVJBTUVURVJfVU5ERUZJTkVEEAESEwoPUEFSQU1FVEVSX0ZJ",
-            "WEVEEAISFQoRUEFSQU1FVEVSX0lOSVRJQUwQAxIXChNQQVJBTUVURVJfRVNU",
-            "SU1BVEVEEARCJwoRamRwbHVzLm1haW4ud3MudjGqAhFKRFBsdXMuTWFpbi5X",
-            "Uy5WMWIGcHJvdG8z"));
+            "dGhtGAsgASgJEhMKC2RpZmZ1c2VyRWdzGAwgASgIEhgKC25fYmFja2Nhc3Rz",
+            "GA0gASgFSACIAQESGAoLbl9mb3JlY2FzdHMYDiABKAVIAYgBARIWCglmcmVx",
+            "dWVuY3kYDyABKAVIAogBAUIOCgxfbl9iYWNrY2FzdHNCDgoMX25fZm9yZWNh",
+            "c3RzQgwKCl9mcmVxdWVuY3kiQAoOVmVyc2lvbkluZm9EdG8SDQoFbWFqb3IY",
+            "ASABKAUSDQoFbWlub3IYAiABKAUSEAoIcmV2aXNpb24YAyABKAUqqwEKCUZy",
+            "ZXF1ZW5jeRISCg5GUkVRX1VOREVGSU5FRBAAEg8KC0ZSRVFfWUVBUkxZEAES",
+            "FAoQRlJFUV9IQUxGX1lFQVJMWRACEhcKE0ZSRVFfUVVBRFJJX01PTlRITFkQ",
+            "AxISCg5GUkVRX1FVQVJURVJMWRAEEhMKD0ZSRVFfQklfTU9OVEhMWRAGEhAK",
+            "DEZSRVFfTU9OVEhMWRAMEg8KCkZSRVFfREFJTFkQ7QIqjQEKDVNlbGVjdGlv",
+            "blR5cGUSDAoIU1BBTl9BTEwQABINCglTUEFOX0ZST00QARILCgdTUEFOX1RP",
+            "EAISEAoMU1BBTl9CRVRXRUVOEAMSDQoJU1BBTl9MQVNUEAQSDgoKU1BBTl9G",
+            "SVJTVBAFEhIKDlNQQU5fRVhDTFVESU5HEAYSDQoJU1BBTl9OT05FEAcqRwoQ",
+            "UmVzdWx0U3RhdHVzVHlwZRINCglTVEFUVVNfT0sQABIQCgxTVEFUVVNfRVJS",
+            "T1IQARISCg5TVEFUVVNfV0FSTklORxACKqwBCg9BZ2dyZWdhdGlvblR5cGUS",
+            "FAoQQUdHUkVHQVRJT05fTk9ORRAAEhMKD0FHR1JFR0FUSU9OX1NVTRABEhcK",
+            "E0FHR1JFR0FUSU9OX0FWRVJBR0UQAhIVChFBR0dSRUdBVElPTl9GSVJTVBAD",
+            "EhQKEEFHR1JFR0FUSU9OX0xBU1QQBBITCg9BR0dSRUdBVElPTl9NQVgQBRIT",
+            "Cg9BR0dSRUdBVElPTl9NSU4QBipCChBEaXN0cmlidXRpb25UeXBlEg4KCkRJ",
+            "U1RfRklSU1QQABINCglESVNUX0xBU1QQARIPCgtESVNUX01JRERMRRACKlcK",
+            "C1ZhbHVlU3RhdHVzEg4KClZTX1BSRVNFTlQQABINCglWU19VTlVTRUQQARIN",
+            "CglWU19CRUZPUkUQAhIMCghWU19BRlRFUhADEgwKCFZTX0VNUFRZEAQqgwEK",
+            "DVBhcmFtZXRlclR5cGUSFAoQUEFSQU1FVEVSX1VOVVNFRBAAEhcKE1BBUkFN",
+            "RVRFUl9VTkRFRklORUQQARITCg9QQVJBTUVURVJfRklYRUQQAhIVChFQQVJB",
+            "TUVURVJfSU5JVElBTBADEhcKE1BBUkFNRVRFUl9FU1RJTUFURUQQBEInChFq",
+            "ZHBsdXMubWFpbi53cy52MaoCEUpEUGx1cy5NYWluLldTLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::JDPlus.Main.WS.V1.Frequency), typeof(global::JDPlus.Main.WS.V1.SelectionType), typeof(global::JDPlus.Main.WS.V1.ResultStatusType), typeof(global::JDPlus.Main.WS.V1.AggregationType), typeof(global::JDPlus.Main.WS.V1.DistributionType), typeof(global::JDPlus.Main.WS.V1.ValueStatus), typeof(global::JDPlus.Main.WS.V1.ParameterType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -225,7 +227,7 @@ namespace JDPlus.Main.WS.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ResidualsDiagnosticsDto), global::JDPlus.Main.WS.V1.ResidualsDiagnosticsDto.Parser, new[]{ "FullResiduals", "Niid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.NiidTestsDto), global::JDPlus.Main.WS.V1.NiidTestsDto.Parser, new[]{ "Mean", "Skewness", "Kurtosis", "DoornikHansen", "LjungBox", "BoxPierce", "SeasonalLjungBox", "SeasonalBoxPierce", "RunsNumber", "RunsLength", "UpDownRunsNumber", "UpDownRunsLength", "LjungBoxOnSquares", "BoxPierceOnSquares" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.StatisticalTestDto), global::JDPlus.Main.WS.V1.StatisticalTestDto.Parser, new[]{ "Value", "PValue", "Description" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto), global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto.Parser, new[]{ "Y", "Constant", "Trend", "Indicators", "Model", "Average", "Rho", "FixedRho", "TruncatedRho", "ZeroInit", "Algorithm", "DiffuserEgs" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto), global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto.Parser, new[]{ "Y", "Constant", "Trend", "Indicators", "Model", "Average", "Rho", "FixedRho", "TruncatedRho", "ZeroInit", "Algorithm", "DiffuserEgs", "NBackcasts", "NForecasts", "Frequency" }, new[]{ "NBackcasts", "NForecasts", "Frequency" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.VersionInfoDto), global::JDPlus.Main.WS.V1.VersionInfoDto.Parser, new[]{ "Major", "Minor", "Revision" }, null, null, null, null)
           }));
     }
@@ -11960,6 +11962,7 @@ namespace JDPlus.Main.WS.V1 {
   {
     private static readonly pb::MessageParser<TemporalDisaggregationRequestDto> _parser = new pb::MessageParser<TemporalDisaggregationRequestDto>(() => new TemporalDisaggregationRequestDto());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TemporalDisaggregationRequestDto> Parser { get { return _parser; } }
@@ -11987,6 +11990,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TemporalDisaggregationRequestDto(TemporalDisaggregationRequestDto other) : this() {
+      _hasBits0 = other._hasBits0;
       y_ = other.y_ != null ? other.y_.Clone() : null;
       constant_ = other.constant_;
       trend_ = other.trend_;
@@ -11999,6 +12003,9 @@ namespace JDPlus.Main.WS.V1 {
       zeroInit_ = other.zeroInit_;
       algorithm_ = other.algorithm_;
       diffuserEgs_ = other.diffuserEgs_;
+      nBackcasts_ = other.nBackcasts_;
+      nForecasts_ = other.nForecasts_;
+      frequency_ = other.frequency_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -12151,6 +12158,87 @@ namespace JDPlus.Main.WS.V1 {
       }
     }
 
+    /// <summary>Field number for the "n_backcasts" field.</summary>
+    public const int NBackcastsFieldNumber = 13;
+    private readonly static int NBackcastsDefaultValue = 0;
+
+    private int nBackcasts_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int NBackcasts {
+      get { if ((_hasBits0 & 1) != 0) { return nBackcasts_; } else { return NBackcastsDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        nBackcasts_ = value;
+      }
+    }
+    /// <summary>Gets whether the "n_backcasts" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNBackcasts {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "n_backcasts" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNBackcasts() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "n_forecasts" field.</summary>
+    public const int NForecastsFieldNumber = 14;
+    private readonly static int NForecastsDefaultValue = 0;
+
+    private int nForecasts_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int NForecasts {
+      get { if ((_hasBits0 & 2) != 0) { return nForecasts_; } else { return NForecastsDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        nForecasts_ = value;
+      }
+    }
+    /// <summary>Gets whether the "n_forecasts" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNForecasts {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "n_forecasts" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNForecasts() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "frequency" field.</summary>
+    public const int FrequencyFieldNumber = 15;
+    private readonly static int FrequencyDefaultValue = 0;
+
+    private int frequency_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Frequency {
+      get { if ((_hasBits0 & 4) != 0) { return frequency_; } else { return FrequencyDefaultValue; } }
+      set {
+        _hasBits0 |= 4;
+        frequency_ = value;
+      }
+    }
+    /// <summary>Gets whether the "frequency" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFrequency {
+      get { return (_hasBits0 & 4) != 0; }
+    }
+    /// <summary>Clears the value of the "frequency" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFrequency() {
+      _hasBits0 &= ~4;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -12178,6 +12266,9 @@ namespace JDPlus.Main.WS.V1 {
       if (ZeroInit != other.ZeroInit) return false;
       if (Algorithm != other.Algorithm) return false;
       if (DiffuserEgs != other.DiffuserEgs) return false;
+      if (NBackcasts != other.NBackcasts) return false;
+      if (NForecasts != other.NForecasts) return false;
+      if (Frequency != other.Frequency) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -12197,6 +12288,9 @@ namespace JDPlus.Main.WS.V1 {
       if (ZeroInit != false) hash ^= ZeroInit.GetHashCode();
       if (Algorithm.Length != 0) hash ^= Algorithm.GetHashCode();
       if (DiffuserEgs != false) hash ^= DiffuserEgs.GetHashCode();
+      if (HasNBackcasts) hash ^= NBackcasts.GetHashCode();
+      if (HasNForecasts) hash ^= NForecasts.GetHashCode();
+      if (HasFrequency) hash ^= Frequency.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -12260,6 +12354,18 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteRawTag(96);
         output.WriteBool(DiffuserEgs);
       }
+      if (HasNBackcasts) {
+        output.WriteRawTag(104);
+        output.WriteInt32(NBackcasts);
+      }
+      if (HasNForecasts) {
+        output.WriteRawTag(112);
+        output.WriteInt32(NForecasts);
+      }
+      if (HasFrequency) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Frequency);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -12315,6 +12421,18 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteRawTag(96);
         output.WriteBool(DiffuserEgs);
       }
+      if (HasNBackcasts) {
+        output.WriteRawTag(104);
+        output.WriteInt32(NBackcasts);
+      }
+      if (HasNForecasts) {
+        output.WriteRawTag(112);
+        output.WriteInt32(NForecasts);
+      }
+      if (HasFrequency) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Frequency);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -12358,6 +12476,15 @@ namespace JDPlus.Main.WS.V1 {
       }
       if (DiffuserEgs != false) {
         size += 1 + 1;
+      }
+      if (HasNBackcasts) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NBackcasts);
+      }
+      if (HasNForecasts) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NForecasts);
+      }
+      if (HasFrequency) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Frequency);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -12407,6 +12534,15 @@ namespace JDPlus.Main.WS.V1 {
       }
       if (other.DiffuserEgs != false) {
         DiffuserEgs = other.DiffuserEgs;
+      }
+      if (other.HasNBackcasts) {
+        NBackcasts = other.NBackcasts;
+      }
+      if (other.HasNForecasts) {
+        NForecasts = other.NForecasts;
+      }
+      if (other.HasFrequency) {
+        Frequency = other.Frequency;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -12478,6 +12614,18 @@ namespace JDPlus.Main.WS.V1 {
             DiffuserEgs = input.ReadBool();
             break;
           }
+          case 104: {
+            NBackcasts = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            NForecasts = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Frequency = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -12546,6 +12694,18 @@ namespace JDPlus.Main.WS.V1 {
           }
           case 96: {
             DiffuserEgs = input.ReadBool();
+            break;
+          }
+          case 104: {
+            NBackcasts = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            NForecasts = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Frequency = input.ReadInt32();
             break;
           }
         }

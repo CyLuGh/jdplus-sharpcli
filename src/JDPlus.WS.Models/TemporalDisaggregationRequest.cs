@@ -16,4 +16,7 @@ public readonly record struct TemporalDisaggregationRequest
     public bool ZeroInit { get; init; }
     public string Algorithm { get; init; }
     public bool DiffuserEgs { get; init; }
+    public Option<int> NBackcasts { get; init; }
+    public Option<int> NForecasts { get; init; }
+    public Option<int> Frequency { get; init; }
 }

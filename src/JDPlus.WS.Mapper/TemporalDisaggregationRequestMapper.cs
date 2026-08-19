@@ -23,7 +23,14 @@ public static class TemporalDisaggregationRequestMapper
                 Algorithm = model.Algorithm,
                 DiffuserEgs = model.DiffuserEgs
             };
-            dto.Indicators.AddRange(model.Indicators.Map(o=>o.ToDto()));
+
+            if (!model.Indicators.IsEmpty)
+                dto.Indicators.AddRange(model.Indicators.Map(o => o.ToDto()));
+
+            model.NBackcasts.IfSome(nb => dto.NBackcasts = nb);
+            model.NForecasts.IfSome(nf => dto.NForecasts = nf);
+            model.Frequency.IfSome(f => dto.Frequency = f);
+
             return dto;
         }
     }

@@ -81,4 +81,16 @@ public class CommunicationManager
             ? dto.Series.ToModel()
             : throw new InvalidOperationException("Error building time series data");
     }
+
+    public async Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
+        TemporalDisaggregationRequest request,
+        CancellationToken token = default
+    )
+    {
+        var req = request.ToDto();
+        var res = await GetClient()
+            .ProcessTemporalDisaggregationAsync(req, cancellationToken: token)
+            .ConfigureAwait(false);
+        return res.ToModel();
+    }
 }

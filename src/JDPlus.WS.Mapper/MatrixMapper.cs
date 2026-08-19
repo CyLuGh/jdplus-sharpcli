@@ -25,6 +25,7 @@ public static class MatrixMapper
                 Nrows = model.NRows
             };
             dto.Values.AddRange(model.Values);
+            return dto;
         }
     }
 }

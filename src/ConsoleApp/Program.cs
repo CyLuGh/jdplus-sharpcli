@@ -27,4 +27,38 @@ var data = Seq.create(
 var built = await communicationManager.BuildTsData(data, AggregationType.Sum, Frequency.Yearly);
 Console.WriteLine(built.Values.Length);
 
+var ySeq = Seq.create(500d, 510d, 525d, 520d);
+var y = new TsData()
+{
+    Start = new()
+    {
+        Frequency = Frequency.Yearly,
+        Position = 0,
+        Year = 1977
+    },
+    Values = ySeq
+};
+
+var disagg = await communicationManager
+    .ProcessTemporalDisaggregation(
+        new()
+        {
+            Y = y,
+            Constant = false,
+            Trend = false,
+            Model = "Rw",
+            Frequency = 12,
+            Average = false,
+            Rho = 0,
+            FixedRho = false,
+            TruncatedRho = 0,
+            ZeroInit = false,
+            Algorithm = "SqrtDiffuse",
+            DiffuserEgs = false,
+            NBackcasts = 0,
+            NForecasts = 6
+        }
+    )
+    .ConfigureAwait(false);
+
 Console.ReadLine();
