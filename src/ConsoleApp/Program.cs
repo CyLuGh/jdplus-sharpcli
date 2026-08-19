@@ -34,9 +34,9 @@ var y = new TsData()
     {
         Frequency = Frequency.Yearly,
         Position = 0,
-        Year = 1977
+        Year = 1977,
     },
-    Values = ySeq
+    Values = ySeq,
 };
 
 var disagg = await communicationManager
@@ -56,9 +56,12 @@ var disagg = await communicationManager
             Algorithm = "SqrtDiffuse",
             DiffuserEgs = false,
             NBackcasts = 0,
-            NForecasts = 6
+            NForecasts = 6,
         }
     )
     .ConfigureAwait(false);
+
+foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
+    Console.WriteLine(t);
 
 Console.ReadLine();
