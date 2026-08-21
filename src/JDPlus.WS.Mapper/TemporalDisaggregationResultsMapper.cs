@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using JDPlus.Main.WS.V1;
+﻿using JDPlus.Main.WS.V1;
 using JDPlus.WS.Models;
+using LanguageExt;
 
 namespace JDPlus.WS.Mapper;
 
@@ -16,10 +14,12 @@ public static class TemporalDisaggregationResultsMapper
                 OriginalSeries = dto.OriginalSeries.ToModel(),
                 DisaggregatedSeries = dto.DisaggregatedSeries.ToModel(),
                 StDevDisaggregatedSeries = dto.StDevDisaggregatedSeries.ToModel(),
-                RegressionEffects = dto.RegressionEffects.ToModel(),
+                RegressionEffects = dto.RegressionEffects?.ToModel() ?? Option<TsData>.None,
                 HyperParametersCount = dto.HyperParametersCount,
                 Likelihood = dto.Likelihood.ToModel(),
                 Statistics = dto.Stats.ToModel(),
+                // TODO ResidualsDiagnostics = dto.ResidualsDiagnostics.ToModel(),
+                Maximum = dto.Maximum?.ToModel() ?? Option<ObjectiveFunctionPoint>.None
             };
     }
 }

@@ -24,7 +24,7 @@ var data = Seq.create(
     (new DateOnly(2023, 3, 1), 1d),
     (new DateOnly(2023, 4, 1), 1d)
 );
-var built = await communicationManager.BuildTsData(data, AggregationType.Sum, Frequency.Yearly);
+var built = await communicationManager.BuildTsData(data, AggregationType.Sum);
 Console.WriteLine(built.Values.Length);
 
 var ySeq = Seq.create(500d, 510d, 525d, 520d);

@@ -10,9 +10,9 @@ public readonly record struct TemporalDisaggregationResults
     public int HyperParametersCount { get; init; }
     public DiffuseConcentratedLikelihood Likelihood { get; init; }
     public DiffuseLikelihoodStatistics Statistics { get; init; }
-    public ObjectiveFunctionPoint Maximum { get; init; }
+    public Option<ObjectiveFunctionPoint> Maximum { get; init; }
     public ResidualsDiagnostics ResidualsDiagnostics { get; init; }
     public TsData DisaggregatedSeries { get; init; }
     public TsData StDevDisaggregatedSeries { get; init; }
-    public TsData RegressionEffects { get; init; }
+    public Option<TsData> RegressionEffects { get; init; }
 }
