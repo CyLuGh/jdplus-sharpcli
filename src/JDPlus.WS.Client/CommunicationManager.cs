@@ -12,11 +12,36 @@ namespace JDPlus.WS.Client;
 
 public class CommunicationManager
 {
-    private Option<X509Certificate2> _certificate;
+    private readonly Option<X509Certificate2> _certificate;
+    private readonly Option<string> _url;
+
+    public CommunicationManager() { }
+
+    public CommunicationManager(string url)
+    {
+        _url = url;
+    }
+
+    public CommunicationManager(string url, string certificatePath)
+        : this(url)
+    {
+        try
+        {
+            _certificate = X509CertificateLoader.LoadCertificate(
+                File.ReadAllBytes(certificatePath)
+            );
+        }
+        catch (Exception)
+        {
+            _certificate = Option<X509Certificate2>.None;
+        }
+    }
 
     private TsFunctions.TsFunctionsClient GetClient()
     {
         var handler = new HttpClientHandler();
+        _certificate.IfSome(cert => handler.ClientCertificates.Add(cert));
+
         var httpClient = new HttpClient(handler) { Timeout = TimeSpan.FromMinutes(10) };
         var channelOptions = new GrpcChannelOptions
         {
@@ -24,7 +49,8 @@ public class CommunicationManager
             MaxReceiveMessageSize = 1024 * 1024 * 200,
             MaxSendMessageSize = 1024 * 1024 * 200,
         };
-        var url = "http://localhost:4566";
+
+        var url = _url.Match(u => u, () => "http://localhost:4566");
         var channel = GrpcChannel.ForAddress(url, channelOptions);
         return new TsFunctions.TsFunctionsClient(channel);
     }
