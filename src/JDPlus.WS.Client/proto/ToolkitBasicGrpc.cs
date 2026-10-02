@@ -75,6 +75,10 @@ namespace JDPlus.Main.WS.V1 {
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto> __Marshaller_jdplus_main_ws_v1_TemporalDisaggregationRequestDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TemporalDisaggregationResultsDto> __Marshaller_jdplus_main_ws_v1_TemporalDisaggregationResultsDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TemporalDisaggregationResultsDto.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TramoForecastRequestDto> __Marshaller_jdplus_main_ws_v1_TramoForecastRequestDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TramoForecastRequestDto.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.MatrixDto> __Marshaller_jdplus_main_ws_v1_MatrixDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.MatrixDto.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::JDPlus.Main.WS.V1.EmptyDto, global::JDPlus.Main.WS.V1.VersionInfoDto> __Method_GetVersion = new grpc::Method<global::JDPlus.Main.WS.V1.EmptyDto, global::JDPlus.Main.WS.V1.VersionInfoDto>(
@@ -212,6 +216,14 @@ namespace JDPlus.Main.WS.V1 {
         __Marshaller_jdplus_main_ws_v1_TemporalDisaggregationRequestDto,
         __Marshaller_jdplus_main_ws_v1_TemporalDisaggregationResultsDto);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::JDPlus.Main.WS.V1.TramoForecastRequestDto, global::JDPlus.Main.WS.V1.MatrixDto> __Method_TramoForecast = new grpc::Method<global::JDPlus.Main.WS.V1.TramoForecastRequestDto, global::JDPlus.Main.WS.V1.MatrixDto>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "TramoForecast",
+        __Marshaller_jdplus_main_ws_v1_TramoForecastRequestDto,
+        __Marshaller_jdplus_main_ws_v1_MatrixDto);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -332,6 +344,12 @@ namespace JDPlus.Main.WS.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.TemporalDisaggregationResultsDto> ProcessTemporalDisaggregation(global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.MatrixDto> TramoForecast(global::JDPlus.Main.WS.V1.TramoForecastRequestDto request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -691,6 +709,26 @@ namespace JDPlus.Main.WS.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ProcessTemporalDisaggregation, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::JDPlus.Main.WS.V1.MatrixDto TramoForecast(global::JDPlus.Main.WS.V1.TramoForecastRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return TramoForecast(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::JDPlus.Main.WS.V1.MatrixDto TramoForecast(global::JDPlus.Main.WS.V1.TramoForecastRequestDto request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_TramoForecast, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.MatrixDto> TramoForecastAsync(global::JDPlus.Main.WS.V1.TramoForecastRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return TramoForecastAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.MatrixDto> TramoForecastAsync(global::JDPlus.Main.WS.V1.TramoForecastRequestDto request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_TramoForecast, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override TsFunctionsClient NewInstance(ClientBaseConfiguration configuration)
@@ -721,7 +759,8 @@ namespace JDPlus.Main.WS.V1 {
           .AddMethod(__Method_BuildTsData, serviceImpl.BuildTsData)
           .AddMethod(__Method_BuildTsDataStream, serviceImpl.BuildTsDataStream)
           .AddMethod(__Method_BuildTsDataTable, serviceImpl.BuildTsDataTable)
-          .AddMethod(__Method_ProcessTemporalDisaggregation, serviceImpl.ProcessTemporalDisaggregation).Build();
+          .AddMethod(__Method_ProcessTemporalDisaggregation, serviceImpl.ProcessTemporalDisaggregation)
+          .AddMethod(__Method_TramoForecast, serviceImpl.TramoForecast).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -748,6 +787,7 @@ namespace JDPlus.Main.WS.V1 {
       serviceBinder.AddMethod(__Method_BuildTsDataStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(serviceImpl.BuildTsDataStream));
       serviceBinder.AddMethod(__Method_BuildTsDataTable, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto, global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto>(serviceImpl.BuildTsDataTable));
       serviceBinder.AddMethod(__Method_ProcessTemporalDisaggregation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto, global::JDPlus.Main.WS.V1.TemporalDisaggregationResultsDto>(serviceImpl.ProcessTemporalDisaggregation));
+      serviceBinder.AddMethod(__Method_TramoForecast, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TramoForecastRequestDto, global::JDPlus.Main.WS.V1.MatrixDto>(serviceImpl.TramoForecast));
     }
 
   }

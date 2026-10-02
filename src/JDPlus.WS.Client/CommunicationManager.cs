@@ -105,8 +105,48 @@ public class CommunicationManager
 
         return dto.Status.Type == ResultStatusType.StatusOk
             ? dto.Series.ToModel()
-            : throw new InvalidOperationException("Error building time series data");
+            : throw new InvalidOperationException(
+                $"Error building time series data: {dto.Status.Message}"
+            );
     }
+
+    public Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
+        TsData y,
+        bool constant = false,
+        bool trend = false,
+        string model = "",
+        bool average = false,
+        double rho = 0d,
+        bool fixedRho = false,
+        double truncatedRho = 0d,
+        bool zeroInit = false,
+        string algorithm = "",
+        bool diffuserEgs = false,
+        int? freq = null,
+        int? nBackcasts = null,
+        int? nForecasts = null,
+        CancellationToken token = default
+    ) =>
+        ProcessTemporalDisaggregation(
+            new TemporalDisaggregationRequest()
+            {
+                Y = y,
+                Constant = constant,
+                Trend = trend,
+                Model = model,
+                Average = average,
+                Rho = rho,
+                FixedRho = fixedRho,
+                TruncatedRho = truncatedRho,
+                ZeroInit = zeroInit,
+                Algorithm = algorithm,
+                DiffuserEgs = diffuserEgs,
+                Frequency = freq ?? Option<int>.None,
+                NBackcasts = nBackcasts ?? Option<int>.None,
+                NForecasts = nForecasts ?? Option<int>.None
+            },
+            token
+        );
 
     public async Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
         TemporalDisaggregationRequest request,
@@ -118,5 +158,42 @@ public class CommunicationManager
             .ProcessTemporalDisaggregationAsync(req, cancellationToken: token)
             .ConfigureAwait(false);
         return res.ToModel();
+    }
+
+    public async Task<TramoForecasts> GetTramoForecasts(
+        TsData series,
+        string defSpec,
+        int nForecasts,
+        CancellationToken token = default
+    )
+    {
+        var results = await GetClient()
+            .TramoForecastAsync(
+                new TramoForecastRequestDto()
+                {
+                    Series = series.ToDto(),
+                    DefSpec = defSpec,
+                    NForecasts = nForecasts
+                },
+                cancellationToken: token
+            )
+            .ConfigureAwait(false);
+
+        var matrix = results.ToModel();
+
+        List<TramoForecast> tfs = [];
+        for (int i = 0; i < matrix.Values.Length; i += 4)
+        {
+            tfs.Add(
+                new TramoForecast(
+                    matrix.Values[i],
+                    matrix.Values[i + 1],
+                    matrix.Values[i + 2],
+                    matrix.Values[i + 3]
+                )
+            );
+        }
+
+        return new TramoForecasts(series.End, series.MonthlyOccurrencesPerYear, tfs);
     }
 }

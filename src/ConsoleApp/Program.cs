@@ -41,7 +41,7 @@ var y = new TsData()
 
 var disagg = await communicationManager
     .ProcessTemporalDisaggregation(
-        new()
+        new TemporalDisaggregationRequest()
         {
             Y = y,
             Constant = false,
@@ -63,5 +63,12 @@ var disagg = await communicationManager
 
 foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
     Console.WriteLine(t);
+
+var forecasts = await communicationManager.GetTramoForecasts(
+    generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+    "TRfull",
+    3
+);
+Console.WriteLine(forecasts);
 
 Console.ReadLine();

@@ -17,6 +17,10 @@ public readonly record struct TsData
         return Values.Map((idx, v) => (start.AddMonths(idx * occurrencesPerYear), v)).ToHashMap();
     }
 
+    public DateOnly End => Start.ToDate().AddMonths(Values.Count * Start.MonthlyOccurrencesPerYear);
+
+    public int MonthlyOccurrencesPerYear => Start.MonthlyOccurrencesPerYear;
+
     public TsData MapData<T>(Func<double, T, double> mapper, T t) =>
         this with
         {
