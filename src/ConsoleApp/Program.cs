@@ -67,7 +67,8 @@ foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key)
 var forecasts = await communicationManager.GetTramoForecasts(
     generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
     "TRfull",
-    3
+    3,
+    Option<ModellingContext>.None
 );
 Console.WriteLine(forecasts);
 

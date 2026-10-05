@@ -162,38 +162,34 @@ public class CommunicationManager
 
     public async Task<TramoForecasts> GetTramoForecasts(
         TsData series,
-        string defSpec,
+        Either<string, TramoSpec> spec,
         int nForecasts,
+        Option<ModellingContext> context,
         CancellationToken token = default
     )
     {
+        var request = spec.Match(
+            fullSpec => new TramoForecastRequestDto
+            {
+                Series = series.ToDto(),
+                FullSpec = fullSpec.ToDto(),
+                NForecasts = nForecasts
+            },
+            defSpec => new TramoForecastRequestDto
+            {
+                Series = series.ToDto(),
+                DefSpec = defSpec,
+                NForecasts = nForecasts
+            }
+        );
+
+        context.IfSome(mc => request.ModellingContext = mc.ToDto());
+
         var results = await GetClient()
-            .TramoForecastAsync(
-                new TramoForecastRequestDto()
-                {
-                    Series = series.ToDto(),
-                    DefSpec = defSpec,
-                    NForecasts = nForecasts
-                },
-                cancellationToken: token
-            )
+            .TramoForecastAsync(request, cancellationToken: token)
             .ConfigureAwait(false);
 
         var matrix = results.ToModel();
-
-        List<TramoForecast> tfs = [];
-        for (int i = 0; i < matrix.Values.Length; i += 4)
-        {
-            tfs.Add(
-                new TramoForecast(
-                    matrix.Values[i],
-                    matrix.Values[i + 1],
-                    matrix.Values[i + 2],
-                    matrix.Values[i + 3]
-                )
-            );
-        }
-
-        return new TramoForecasts(series.End, series.MonthlyOccurrencesPerYear, tfs);
+        return new(series, matrix);
     }
 }
