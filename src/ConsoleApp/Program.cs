@@ -72,4 +72,11 @@ var forecasts = await communicationManager.GetTramoForecasts(
 );
 Console.WriteLine(forecasts);
 
+var fullProcess = await communicationManager.GetTramoFullProcess(
+    generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+    "TRfull",
+    Option<ModellingContext>.None
+);
+Console.WriteLine(fullProcess);
+
 Console.ReadLine();

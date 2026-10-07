@@ -26,7 +26,7 @@ namespace JDPlus.Main.WS.V1 {
           string.Concat(
             "CiVqZHBsdXMvbWFpbi93cy92MS90b29sa2l0X2Jhc2ljLnByb3RvEhFqZHBs",
             "dXMubWFpbi53cy52MRooamRwbHVzL21haW4vd3MvdjEvdG9vbGtpdF9tZXNz",
-            "YWdlcy5wcm90bzKHDgoLVHNGdW5jdGlvbnMSTAoKR2V0VmVyc2lvbhIbLmpk",
+            "YWdlcy5wcm90bzLaDgoLVHNGdW5jdGlvbnMSTAoKR2V0VmVyc2lvbhIbLmpk",
             "cGx1cy5tYWluLndzLnYxLkVtcHR5RHRvGiEuamRwbHVzLm1haW4ud3MudjEu",
             "VmVyc2lvbkluZm9EdG8SWgoJTm9ybWFsaXplEiUuamRwbHVzLm1haW4ud3Mu",
             "djEuVHNGdW5jdGlvbklucHV0RHRvGiYuamRwbHVzLm1haW4ud3MudjEuVHNG",
@@ -64,10 +64,12 @@ namespace JDPlus.Main.WS.V1 {
             "cHV0RHRvEokBCh1Qcm9jZXNzVGVtcG9yYWxEaXNhZ2dyZWdhdGlvbhIzLmpk",
             "cGx1cy5tYWluLndzLnYxLlRlbXBvcmFsRGlzYWdncmVnYXRpb25SZXF1ZXN0",
             "RHRvGjMuamRwbHVzLm1haW4ud3MudjEuVGVtcG9yYWxEaXNhZ2dyZWdhdGlv",
-            "blJlc3VsdHNEdG8SWQoNVHJhbW9Gb3JlY2FzdBIqLmpkcGx1cy5tYWluLndz",
-            "LnYxLlRyYW1vRm9yZWNhc3RSZXF1ZXN0RHRvGhwuamRwbHVzLm1haW4ud3Mu",
-            "djEuTWF0cml4RHRvQicKEWpkcGx1cy5tYWluLndzLnYxqgIRSkRQbHVzLk1h",
-            "aW4uV1MuVjFiBnByb3RvMw=="));
+            "blJlc3VsdHNEdG8SUQoNVHJhbW9Gb3JlY2FzdBIiLmpkcGx1cy5tYWluLndz",
+            "LnYxLlRyYW1vUmVxdWVzdER0bxocLmpkcGx1cy5tYWluLndzLnYxLk1hdHJp",
+            "eER0bxJZChBUcmFtb0Z1bGxQcm9jZXNzEiIuamRwbHVzLm1haW4ud3MudjEu",
+            "VHJhbW9SZXF1ZXN0RHRvGiEuamRwbHVzLm1haW4ud3MudjEuVHJhbW9PdXRw",
+            "dXREdG9CJwoRamRwbHVzLm1haW4ud3MudjGqAhFKRFBsdXMuTWFpbi5XUy5W",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));

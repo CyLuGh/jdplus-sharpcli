@@ -160,6 +160,31 @@ public class CommunicationManager
         return res.ToModel();
     }
 
+    private static TramoRequestDto BuildTramoRequest(
+        TsData series,
+        Either<string, TramoSpec> spec,
+        int nForecasts,
+        Option<ModellingContext> context
+    )
+    {
+        var request = spec.Match(
+            fullSpec => new TramoRequestDto
+            {
+                Series = series.ToDto(),
+                FullSpec = fullSpec.ToDto(),
+                NForecasts = nForecasts
+            },
+            defSpec => new TramoRequestDto
+            {
+                Series = series.ToDto(),
+                DefSpec = defSpec,
+                NForecasts = nForecasts
+            }
+        );
+        context.IfSome(mc => request.ModellingContext = mc.ToDto());
+        return request;
+    }
+
     public async Task<TramoForecasts> GetTramoForecasts(
         TsData series,
         Either<string, TramoSpec> spec,
@@ -168,28 +193,25 @@ public class CommunicationManager
         CancellationToken token = default
     )
     {
-        var request = spec.Match(
-            fullSpec => new TramoForecastRequestDto
-            {
-                Series = series.ToDto(),
-                FullSpec = fullSpec.ToDto(),
-                NForecasts = nForecasts
-            },
-            defSpec => new TramoForecastRequestDto
-            {
-                Series = series.ToDto(),
-                DefSpec = defSpec,
-                NForecasts = nForecasts
-            }
-        );
-
-        context.IfSome(mc => request.ModellingContext = mc.ToDto());
-
+        var request = BuildTramoRequest(series, spec, nForecasts, context);
         var results = await GetClient()
             .TramoForecastAsync(request, cancellationToken: token)
             .ConfigureAwait(false);
-
         var matrix = results.ToModel();
         return new(series, matrix);
+    }
+
+    public async Task<TramoOutput> GetTramoFullProcess(
+        TsData series,
+        Either<string, TramoSpec> spec,
+        Option<ModellingContext> context,
+        CancellationToken token = default
+    )
+    {
+        var request = BuildTramoRequest(series, spec, 0, context);
+        var results = await GetClient()
+            .TramoFullProcessAsync(request, cancellationToken: token)
+            .ConfigureAwait(false);
+        return results.ToModel();
     }
 }
