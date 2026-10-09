@@ -1,4 +1,6 @@
-﻿namespace JDPlus.WS.Models;
+﻿using LanguageExt;
+
+namespace JDPlus.WS.Models;
 
 public readonly record struct EasterSpec
 {
@@ -6,5 +8,5 @@ public readonly record struct EasterSpec
     public int Duration { get; init; }
     public bool Julian { get; init; }
     public bool Test { get; init; }
-    public Parameter Coefficient { get; init; }
+    public Option<Parameter> Coefficient { get; init; }
 }

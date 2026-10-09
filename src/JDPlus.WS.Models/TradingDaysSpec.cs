@@ -14,5 +14,5 @@ public readonly record struct TradingDaysSpec
     public double PTest { get; init; }
     public bool AutoAdjust { get; init; }
     public Seq<Parameter> TDCoefficients { get; init; }
-    public Parameter LPCoefficient { get; init; }
+    public Option<Parameter> LPCoefficient { get; init; }
 }

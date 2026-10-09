@@ -4,7 +4,7 @@ namespace JDPlus.WS.Models;
 
 public readonly record struct RegressionSpec
 {
-    public Parameter Mean { get; init; }
+    public Option<Parameter> Mean { get; init; }
     public bool CheckMean { get; init; }
     public TradingDaysSpec TD { get; init; }
     public EasterSpec Easter { get; init; }

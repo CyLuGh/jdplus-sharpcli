@@ -1,32 +1,33 @@
 ﻿using JDPlus.Main.WS.V1;
 using JDPlus.WS.Models;
+using LanguageExt;
 using EasterType = JDPlus.Main.WS.V1.EasterType;
 
 namespace JDPlus.WS.Mapper;
 
 public static class EasterSpecMapper
 {
-    extension(EasterSpec model)
+    public static EasterSpecDto ToDto(this EasterSpec model)
     {
-        public EasterSpecDto ToDto() => new()
+        var dto = new EasterSpecDto
         {
             Type = (EasterType)model.Type,
             Duration = model.Duration,
             Julian = model.Julian,
             Test = model.Test,
-            Coefficient = model.Coefficient.ToDto()
         };
+        model.Coefficient.IfSome(coefficient => dto.Coefficient = coefficient.ToDto());
+
+        return dto;
     }
 
-    extension(EasterSpecDto dto)
-    {
-        public EasterSpec ToModel() => new()
+    public static EasterSpec ToModel(this EasterSpecDto dto) =>
+        new()
         {
             Type = (Models.EasterType)dto.Type,
             Duration = dto.Duration,
             Julian = dto.Julian,
             Test = dto.Test,
-            Coefficient = dto.Coefficient.ToModel()
+            Coefficient = dto.Coefficient?.ToModel() ?? Option<Parameter>.None
         };
-    }
 }

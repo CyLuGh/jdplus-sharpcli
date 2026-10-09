@@ -1,5 +1,6 @@
 ﻿using JDPlus.Main.WS.V1;
 using JDPlus.WS.Models;
+using LanguageExt;
 using InformationType = JDPlus.WS.Models.InformationType;
 using LengthOfPeriod = JDPlus.WS.Models.LengthOfPeriod;
 using VariableType = JDPlus.WS.Models.VariableType;
@@ -8,14 +9,18 @@ namespace JDPlus.WS.Mapper;
 
 public static class TramoOutputMapper
 {
-    public static TramoOutput ToModel(this TramoOutputDto dto) =>
-        new()
+    public static TramoOutput ToModel(this TramoOutputDto dto)
+    {
+        var model = new TramoOutput
         {
             Result = dto.Result.ToModel(),
             EstimationSpec = dto.EstimationSpec.ToModel(),
-            ResultSpec = dto.ResultSpec.ToModel(),
-            Log = dto.Log.ToModel()
+            ResultSpec = dto.ResultSpec?.ToModel() ?? Option<TramoSpec>.None,
+            Log = dto.Log?.ToModel() ?? Option<ProcessingLogs>.None
         };
+
+        return model;
+    }
 }
 
 public static class RegArimaModelMapper
@@ -72,7 +77,12 @@ public static class EstimationMapper
 public static class ParametersEstimationMapper
 {
     public static ParametersEstimation ToModel(this ParametersEstimationDto dto) =>
-        new(dto.Value.ToSeq(), dto.Score.ToSeq(), dto.Covariance.ToModel(), dto.Description);
+        new(
+            dto.Value.ToSeq(),
+            dto.Score.ToSeq(),
+            dto.Covariance.ToModel(),
+            dto.HasDescription ? dto.Description : Option<string>.None
+        );
 }
 
 public static class MissingEstimationMapper

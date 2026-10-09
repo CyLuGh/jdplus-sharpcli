@@ -7,8 +7,8 @@ public readonly record struct TramoOutput
 {
     public RegArimaModel Result { get; init; }
     public TramoSpec EstimationSpec { get; init; }
-    public TramoSpec ResultSpec { get; init; }
-    public ProcessingLogs Log { get; init; }
+    public Option<TramoSpec> ResultSpec { get; init; }
+    public Option<ProcessingLogs> Log { get; init; }
 }
 
 public readonly record struct RegArimaModel(
@@ -40,7 +40,7 @@ public readonly record struct Estimation
     public Seq<double> B { get; init; }
     public Matrix BCovariance { get; init; }
     public ParametersEstimation Parameters { get; init; }
-    public DiffuseLikelihoodStatistics Likelihood { get; init; }
+    public LikelihoodStatistics Likelihood { get; init; }
     public Seq<double> Residuals { get; init; }
     public Seq<MissingEstimation> Missings { get; init; }
 }
@@ -49,7 +49,7 @@ public readonly record struct ParametersEstimation(
     Seq<double> Value,
     Seq<double> Score,
     Matrix Covariance,
-    string Description
+    Option<string> Description
 );
 
 public readonly record struct MissingEstimation(int Position, double Value, double StDev);
