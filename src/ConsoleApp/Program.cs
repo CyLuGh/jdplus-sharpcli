@@ -72,6 +72,28 @@ var forecasts = await communicationManager.GetTramoForecasts(
 );
 Console.WriteLine(forecasts);
 
+var multiForecasts = await communicationManager
+    .GetTramoForecasts(
+        Seq.create(
+            CommunicationManager.BuildTramoRequest(
+                generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+                "TRfull",
+                2,
+                Option<ModellingContext>.None
+            ),
+            CommunicationManager.BuildTramoRequest(
+                generator.GenerateTs(frequency: Frequency.Monthly, count: 240).Data,
+                "TRfull",
+                3,
+                Option<ModellingContext>.None
+            )
+        )
+    )
+    .ToListAsync();
+
+foreach (var forecast in multiForecasts)
+    Console.WriteLine(forecast);
+
 var fullProcess = await communicationManager.GetTramoFullProcess(
     generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
     "TRfull",

@@ -1,4 +1,6 @@
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using Grpc.Core;
 using Grpc.Net.Client;
 using JDPlus.Main.WS.V1;
 using JDPlus.WS.Mapper;
@@ -7,6 +9,7 @@ using LanguageExt;
 using AggregationType = JDPlus.WS.Models.AggregationType;
 using Frequency = JDPlus.WS.Models.Frequency;
 using ResultStatusType = JDPlus.Main.WS.V1.ResultStatusType;
+using VersionInfo = JDPlus.WS.Models.VersionInfo;
 
 namespace JDPlus.WS.Client;
 
@@ -160,7 +163,7 @@ public class CommunicationManager
         return res.ToModel();
     }
 
-    private static TramoRequestDto BuildTramoRequest(
+    public static TramoRequestDto BuildTramoRequest(
         TsData series,
         Either<string, TramoSpec> spec,
         int nForecasts,
@@ -182,6 +185,7 @@ public class CommunicationManager
             }
         );
         context.IfSome(mc => request.ModellingContext = mc.ToDto());
+        request.Id = Guid.CreateVersion7().ToString();
         return request;
     }
 
@@ -197,8 +201,43 @@ public class CommunicationManager
         var results = await GetClient()
             .TramoForecastAsync(request, cancellationToken: token)
             .ConfigureAwait(false);
-        var matrix = results.ToModel();
-        return new(series, matrix);
+        var tsMatrix = results.ToModel();
+        return new(tsMatrix);
+    }
+
+    public async IAsyncEnumerable<(string Id, TramoForecasts Forecasts)> GetTramoForecasts(
+        Seq<TramoRequestDto> requestDtos,
+        [EnumeratorCancellation] CancellationToken token = default
+    )
+    {
+        using var stream = GetClient().TramoForecastStream(cancellationToken: token);
+
+        var writer = WriteTramoRequests(stream.RequestStream, requestDtos, token);
+
+        while (await stream.ResponseStream.MoveNext(token))
+        {
+            yield return (
+                stream.ResponseStream.Current.Id,
+                new TramoForecasts(stream.ResponseStream.Current.ToModel())
+            );
+        }
+
+        await writer;
+    }
+
+    private static async Task WriteTramoRequests(
+        IClientStreamWriter<TramoRequestDto> requestStream,
+        Seq<TramoRequestDto> requests,
+        CancellationToken token
+    )
+    {
+        foreach (var request in requests)
+        {
+            token.ThrowIfCancellationRequested();
+            await requestStream.WriteAsync(request, token);
+        }
+
+        await requestStream.CompleteAsync();
     }
 
     public async Task<TramoOutput> GetTramoFullProcess(
