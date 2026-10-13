@@ -12,13 +12,15 @@ public static class TemporalDisaggregationResultsMapper
             => new()
             {
                 OriginalSeries = dto.OriginalSeries.ToModel(),
+                DisaggregationDomain = dto.DisaggregationDomain.ToModel(),
+                Indicators = dto.Indicators.ToModel(),
                 DisaggregatedSeries = dto.DisaggregatedSeries.ToModel(),
                 StDevDisaggregatedSeries = dto.StDevDisaggregatedSeries.ToModel(),
                 RegressionEffects = dto.RegressionEffects?.ToModel() ?? Option<TsData>.None,
                 HyperParametersCount = dto.HyperParametersCount,
                 Likelihood = dto.Likelihood.ToModel(),
                 Statistics = dto.Stats.ToModel(),
-                // TODO ResidualsDiagnostics = dto.ResidualsDiagnostics.ToModel(),
+                ResidualsDiagnostics = dto.ResidualsDiagnostics.ToModel(),
                 Maximum = dto.Maximum?.ToModel() ?? Option<ObjectiveFunctionPoint>.None
             };
     }

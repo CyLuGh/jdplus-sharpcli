@@ -1,7 +1,3 @@
 ﻿namespace JDPlus.WS.Models;
 
-public readonly record struct TsDomain
-{
-    public TsPeriod StartPeriod { get; init; }
-    public int Length { get; init; }
-}
+public readonly record struct TsDomain(TsPeriod StartPeriod, int Length);
