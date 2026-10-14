@@ -10,95 +10,444 @@ CommunicationManager communicationManager = new();
 var version = await communicationManager.GetVersion();
 Console.WriteLine(version);
 
-TsGenerator generator = new();
-var ts = generator.GenerateTs(frequency: Frequency.Monthly, count: 240);
-var statistics = await communicationManager.GetDescriptiveStatistics(ts.Data);
-Console.WriteLine(statistics);
+//
+// TsGenerator generator = new();
+// var ts = generator.GenerateTs(frequency: Frequency.Monthly, count: 240);
+// var statistics = await communicationManager.GetDescriptiveStatistics(ts.Data);
+// Console.WriteLine(statistics);
+//
+// var data = Seq.create(
+//     (new DateOnly(2022, 1, 1), 1d),
+//     (new DateOnly(2022, 2, 1), 1d),
+//     (new DateOnly(2022, 3, 1), 1d),
+//     (new DateOnly(2023, 1, 1), 1d),
+//     (new DateOnly(2023, 2, 1), 1d),
+//     (new DateOnly(2023, 3, 1), 1d),
+//     (new DateOnly(2023, 4, 1), 1d)
+// );
+// var built = await communicationManager.BuildTsData(data, AggregationType.Sum);
+// Console.WriteLine(built.Values.Length);
+//
+// var ySeq = Seq.create(500d, 510d, 525d, 520d);
+// var y = new TsData()
+// {
+//     Start = new()
+//     {
+//         Frequency = Frequency.Yearly,
+//         Position = 0,
+//         Year = 1977,
+//     },
+//     Values = ySeq,
+// };
+//
+// var disagg = await communicationManager
+//     .ProcessTemporalDisaggregation(
+//         new TemporalDisaggregationRequest()
+//         {
+//             Y = y,
+//             Constant = false,
+//             Trend = false,
+//             Model = "Rw",
+//             Frequency = 12,
+//             Average = false,
+//             Rho = 0,
+//             FixedRho = false,
+//             TruncatedRho = 0,
+//             ZeroInit = false,
+//             Algorithm = "SqrtDiffuse",
+//             DiffuserEgs = false,
+//             NBackcasts = 0,
+//             NForecasts = 6,
+//         }
+//     )
+//     .ConfigureAwait(false);
+//
+// foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
+//     Console.WriteLine(t);
 
-var data = Seq.create(
-    (new DateOnly(2022, 1, 1), 1d),
-    (new DateOnly(2022, 2, 1), 1d),
-    (new DateOnly(2022, 3, 1), 1d),
-    (new DateOnly(2023, 1, 1), 1d),
-    (new DateOnly(2023, 2, 1), 1d),
-    (new DateOnly(2023, 3, 1), 1d),
-    (new DateOnly(2023, 4, 1), 1d)
+var rate = await communicationManager.BuildTsData(
+    CreateData().ToSeq(),
+    frequency: Frequency.Monthly,
+    aggregationType: AggregationType.First
 );
-var built = await communicationManager.BuildTsData(data, AggregationType.Sum);
-Console.WriteLine(built.Values.Length);
-
-var ySeq = Seq.create(500d, 510d, 525d, 520d);
-var y = new TsData()
-{
-    Start = new()
-    {
-        Frequency = Frequency.Yearly,
-        Position = 0,
-        Year = 1977,
-    },
-    Values = ySeq,
-};
-
-var disagg = await communicationManager
-    .ProcessTemporalDisaggregation(
-        new TemporalDisaggregationRequest()
-        {
-            Y = y,
-            Constant = false,
-            Trend = false,
-            Model = "Rw",
-            Frequency = 12,
-            Average = false,
-            Rho = 0,
-            FixedRho = false,
-            TruncatedRho = 0,
-            ZeroInit = false,
-            Algorithm = "SqrtDiffuse",
-            DiffuserEgs = false,
-            NBackcasts = 0,
-            NForecasts = 6,
-        }
-    )
-    .ConfigureAwait(false);
-
-foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
-    Console.WriteLine(t);
 
 var forecasts = await communicationManager.GetTramoForecasts(
-    generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+    rate,
     "TRfull",
     3,
     Option<ModellingContext>.None
 );
 Console.WriteLine(forecasts);
 
-var multiForecasts = await communicationManager
-    .GetTramoForecasts(
-        Seq.create(
-            CommunicationManager.BuildTramoRequest(
-                generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
-                "TRfull",
-                2,
-                Option<ModellingContext>.None
-            ),
-            CommunicationManager.BuildTramoRequest(
-                generator.GenerateTs(frequency: Frequency.Monthly, count: 240).Data,
-                "TRfull",
-                3,
-                Option<ModellingContext>.None
-            )
-        )
-    )
-    .ToListAsync();
-
-foreach (var forecast in multiForecasts)
-    Console.WriteLine(forecast);
-
-var fullProcess = await communicationManager.GetTramoFullProcess(
-    generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
-    "TRfull",
-    Option<ModellingContext>.None
-);
-Console.WriteLine(fullProcess);
+// var multiForecasts = await communicationManager
+//     .GetTramoForecasts(
+//         Seq.create(
+//             CommunicationManager.BuildTramoRequest(
+//                 generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+//                 "TRfull",
+//                 2,
+//                 Option<ModellingContext>.None
+//             ),
+//             CommunicationManager.BuildTramoRequest(
+//                 generator.GenerateTs(frequency: Frequency.Monthly, count: 240).Data,
+//                 "TRfull",
+//                 3,
+//                 Option<ModellingContext>.None
+//             )
+//         )
+//     )
+//     .ToListAsync();
+//
+// foreach (var forecast in multiForecasts)
+//     Console.WriteLine(forecast);
+//
+// var fullProcess = await communicationManager.GetTramoFullProcess(
+//     generator.GenerateTs(frequency: Frequency.Quarterly, count: 24).Data,
+//     "TRfull",
+//     Option<ModellingContext>.None
+// );
+// Console.WriteLine(fullProcess);
 
 Console.ReadLine();
+
+IEnumerable<(DateOnly, double)> CreateData()
+{
+    DateOnly start = new(1999, 1, 1);
+    double[] doubles =
+    {
+        1.6055,
+        1.5978,
+        1.5954,
+        1.6015,
+        1.6025,
+        1.5951,
+        1.604,
+        1.6004,
+        1.6015,
+        1.5943,
+        1.6051,
+        1.6012,
+        1.6103,
+        1.6069,
+        1.6042,
+        1.574,
+        1.5562,
+        1.5608,
+        1.5505,
+        1.5506,
+        1.5307,
+        1.513,
+        1.5216,
+        1.5137,
+        1.5291,
+        1.5358,
+        1.5355,
+        1.5287,
+        1.5334,
+        1.5225,
+        1.5135,
+        1.5144,
+        1.4913,
+        1.4793,
+        1.4663,
+        1.4749,
+        1.4745,
+        1.4775,
+        1.4678,
+        1.4658,
+        1.4572,
+        1.4721,
+        1.4624,
+        1.4636,
+        1.4649,
+        1.465,
+        1.4673,
+        1.4679,
+        1.4621,
+        1.4674,
+        1.4695,
+        1.4964,
+        1.5155,
+        1.5411,
+        1.5476,
+        1.54,
+        1.5474,
+        1.5485,
+        1.559,
+        1.5544,
+        1.5657,
+        1.5734,
+        1.567,
+        1.5547,
+        1.54,
+        1.5192,
+        1.527,
+        1.5387,
+        1.5431,
+        1.5426,
+        1.5216,
+        1.5364,
+        1.5469,
+        1.5501,
+        1.5494,
+        1.5475,
+        1.5449,
+        1.5391,
+        1.5578,
+        1.5528,
+        1.5496,
+        1.549,
+        1.5449,
+        1.5479,
+        1.5494,
+        1.558,
+        1.5691,
+        1.5748,
+        1.5564,
+        1.5601,
+        1.5687,
+        1.5775,
+        1.5841,
+        1.5898,
+        1.5922,
+        1.5969,
+        1.6155,
+        1.6212,
+        1.6124,
+        1.6375,
+        1.6506,
+        1.6543,
+        1.6567,
+        1.6383,
+        1.6475,
+        1.6706,
+        1.6485,
+        1.6592,
+        1.6203,
+        1.608,
+        1.572,
+        1.5964,
+        1.6247,
+        1.6139,
+        1.6193,
+        1.6212,
+        1.5942,
+        1.5194,
+        1.5162,
+        1.5393,
+        1.4935,
+        1.4904,
+        1.5083,
+        1.5147,
+        1.5118,
+        1.5148,
+        1.5202,
+        1.5236,
+        1.5148,
+        1.5138,
+        1.5105,
+        1.5021,
+        1.4765,
+        1.4671,
+        1.4482,
+        1.4337,
+        1.4181,
+        1.3767,
+        1.346,
+        1.3413,
+        1.3089,
+        1.3452,
+        1.3442,
+        1.2811,
+        1.2779,
+        1.2974,
+        1.2867,
+        1.2977,
+        1.2537,
+        1.2092,
+        1.1766,
+        1.1203,
+        1.2005,
+        1.2295,
+        1.2307,
+        1.2276,
+        1.2108,
+        1.2071,
+        1.2061,
+        1.2023,
+        1.2012,
+        1.2011,
+        1.2011,
+        1.2011,
+        1.2089,
+        1.2098,
+        1.2052,
+        1.2091,
+        1.2288,
+        1.2298,
+        1.2266,
+        1.2199,
+        1.2418,
+        1.2322,
+        1.2366,
+        1.2338,
+        1.2338,
+        1.2316,
+        1.2316,
+        1.2245,
+        1.2317,
+        1.2212,
+        1.2177,
+        1.2189,
+        1.2204,
+        1.2181,
+        1.215,
+        1.2118,
+        1.2076,
+        1.2078,
+        1.2027,
+        1.2026,
+        1.094,
+        1.0618,
+        1.0608,
+        1.0379,
+        1.0391,
+        1.0455,
+        1.0492,
+        1.0777,
+        1.0913,
+        1.0882,
+        1.0833,
+        1.0827,
+        1.0941,
+        1.1018,
+        1.092,
+        1.093,
+        1.1059,
+        1.0894,
+        1.0867,
+        1.0881,
+        1.0919,
+        1.0887,
+        1.0757,
+        1.075,
+        1.0714,
+        1.066,
+        1.0706,
+        1.0727,
+        1.0904,
+        1.0874,
+        1.1059,
+        1.1398,
+        1.147,
+        1.1546,
+        1.164,
+        1.1689,
+        1.1723,
+        1.1542,
+        1.1685,
+        1.189,
+        1.178,
+        1.1562,
+        1.1622,
+        1.1413,
+        1.1286,
+        1.1413,
+        1.1377,
+        1.1293,
+        1.1297,
+        1.1368,
+        1.1311,
+        1.1319,
+        1.1304,
+        1.1167,
+        1.1076,
+        1.0892,
+        1.0903,
+        1.0981,
+        1.0978,
+        1.0925,
+        1.0764,
+        1.0648,
+        1.0591,
+        1.0545,
+        1.0574,
+        1.0712,
+        1.0711,
+        1.0767,
+        1.0786,
+        1.0739,
+        1.0785,
+        1.0814,
+        1.0794,
+        1.0858,
+        1.1065,
+        1.1031,
+        1.0968,
+        1.094,
+        1.0856,
+        1.0762,
+        1.0857,
+        1.0708,
+        1.0522,
+        1.0408,
+        1.0401,
+        1.0461,
+        1.0245,
+        1.0211,
+        1.0355,
+        1.0245,
+        0.9876,
+        0.969,
+        0.964,
+        0.9791,
+        0.9842,
+        0.9865,
+        0.9961,
+        0.9905,
+        0.9908,
+        0.9846,
+        0.9751,
+        0.9764,
+        0.9663,
+        0.9588,
+        0.96,
+        0.9547,
+        0.9634,
+        0.9441,
+        0.9368,
+        0.9462,
+        0.9656,
+        0.9761,
+        0.983,
+        0.9616,
+        0.9676,
+        0.945,
+        0.9414,
+        0.9386,
+        0.9355,
+        0.9339,
+        0.9414,
+        0.9413,
+        0.9548,
+        0.937,
+        0.9356,
+        0.938,
+        0.9325,
+        0.9387,
+        0.935,
+        0.9289,
+        0.929,
+        0.9332,
+        0.9272,
+        0.914,
+        0.9094,
+        0.9213,
+        0.9149,
+        0.9205,
+        0.9256
+    };
+
+    for (int i = 0; i < doubles.Length; i++)
+        yield return new(start.AddMonths(i), doubles[i]);
+}

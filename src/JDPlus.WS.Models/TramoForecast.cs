@@ -9,14 +9,15 @@ public readonly record struct TramoForecasts
     public TramoForecasts(TsMatrix matrix)
     {
         List<TramoForecast> tfs = [];
-        for (int i = 0; i < matrix.Matrix.Values.Length; i += 4)
+
+        for (int i = 0; i < matrix.Matrix.NRows; i++)
         {
             tfs.Add(
                 new TramoForecast(
                     matrix.Matrix.Values[i],
-                    matrix.Matrix.Values[i + 1],
-                    matrix.Matrix.Values[i + 2],
-                    matrix.Matrix.Values[i + 3]
+                    matrix.Matrix.Values[i + 1 * matrix.Matrix.NRows],
+                    matrix.Matrix.Values[i + 2 * matrix.Matrix.NRows],
+                    matrix.Matrix.Values[i + 3 * matrix.Matrix.NRows]
                 )
             );
         }
