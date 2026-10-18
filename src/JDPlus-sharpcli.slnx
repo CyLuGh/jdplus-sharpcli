@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Pipelines/">
+    <File Path="../.github/workflows/cd.yml" />
+    <File Path="../.github/workflows/ci.yml" />
+  </Folder>
   <Folder Name="/Demo/">
     <Project Path="ConsoleApp/ConsoleApp.csproj" />
   </Folder>

@@ -1,0 +1,53 @@
+name: Nuget deployment
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  configuration: Release
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      id-token: write # enable GitHub OIDC token issuance for this job
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore
+        working-directory: src
+
+      - name: Build
+        run: dotnet build --configuration ${{ env.configuration }} --no-restore
+        working-directory: src
+        
+      - name: Unit tests
+        run: dotnet test --configuration ${{ env.configuration }} --no-build --no-restore
+        working-directory: src
+
+      - name: Nuget pack
+        run: dotnet pack --configuration ${{ env.configuration }} --no-build --no-restore
+        working-directory: src
+          
+        # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+          
+      - name: Nuget publish
+        run: dotnet nuget push **/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
