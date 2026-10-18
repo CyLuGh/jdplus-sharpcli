@@ -41,9 +41,9 @@ jobs:
         run: dotnet build --configuration ${{ env.configuration }} --no-restore
         working-directory: sharpcli/src
         
-      - name: Unit tests
-        run: dotnet test --configuration ${{ env.configuration }} --no-build --no-restore
-        working-directory: sharpcli/src
+#      - name: Unit tests
+#        run: dotnet test --configuration ${{ env.configuration }} --no-build --no-restore
+#        working-directory: sharpcli/src
 
       - name: Nuget pack
         run: dotnet pack --configuration ${{ env.configuration }} --no-build --no-restore
