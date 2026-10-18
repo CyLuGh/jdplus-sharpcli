@@ -20,6 +20,12 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
+          
+      - name: Checkout JDPlus-WS
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: jdemetra/jdplus-ws
+          path: jdplus-ws
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6.0.0
