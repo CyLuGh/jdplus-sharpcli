@@ -20,11 +20,13 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
+          path: sharpcli
           
       - name: Checkout JDPlus-WS
         uses: actions/checkout@v7.0.1
         with:
           repository: jdemetra/jdplus-ws
+          path: jdplus-ws
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6.0.0
@@ -33,19 +35,19 @@ jobs:
 
       - name: Restore
         run: dotnet restore
-        working-directory: src
+        working-directory: sharpcli/src
 
       - name: Build
         run: dotnet build --configuration ${{ env.configuration }} --no-restore
-        working-directory: src
+        working-directory: sharpcli/src
         
       - name: Unit tests
         run: dotnet test --configuration ${{ env.configuration }} --no-build --no-restore
-        working-directory: src
+        working-directory: sharpcli/src
 
       - name: Nuget pack
         run: dotnet pack --configuration ${{ env.configuration }} --no-build --no-restore
-        working-directory: src
+        working-directory: sharpcli/src
           
         # Get a short-lived NuGet API key
       - name: NuGet login (OIDC → temp API key)
