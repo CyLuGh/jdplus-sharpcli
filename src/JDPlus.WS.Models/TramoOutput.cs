@@ -4,7 +4,21 @@ namespace JDPlus.WS.Models;
 
 public readonly record struct TramoOutput
 {
-    public readonly record struct OutlierReport(DateOnly Period, double Value, string Code);
+    public readonly record struct OutlierReport
+    {
+        public DateOnly Period { get; init; }
+        public double Value { get; init; }
+        public string Code { get; init; }
+        public Parameter Coefficient { get; init; }
+        public HashMap<string, string> Metadata { get; init; }
+
+        public OutlierReport(DateOnly Period, double Value, string Code)
+        {
+            this.Period = Period;
+            this.Value = Value;
+            this.Code = Code;
+        }
+    }
 
     public RegArimaModel Result { get; init; }
     public TramoSpec EstimationSpec { get; init; }
@@ -20,7 +34,11 @@ public readonly record struct TramoOutput
                     {
                         return seriesValues.Find(
                             o.Position,
-                            v => new OutlierReport(o.Position, v, o.Code),
+                            v => new OutlierReport(o.Position, v, o.Code)
+                            {
+                                Coefficient = o.Coefficient,
+                                Metadata = o.MetaData
+                            },
                             () => Option<OutlierReport>.None
                         );
                     })
