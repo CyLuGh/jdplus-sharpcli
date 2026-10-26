@@ -247,10 +247,17 @@ public class CommunicationManager
         CancellationToken token = default
     )
     {
-        var request = BuildTramoRequest(series, spec, 0, context);
-        var results = await GetClient()
-            .TramoFullProcessAsync(request, cancellationToken: token)
-            .ConfigureAwait(false);
-        return results.ToModel();
+        try
+        {
+            var request = BuildTramoRequest(series, spec, 0, context);
+            var results = await GetClient()
+                .TramoFullProcessAsync(request, cancellationToken: token)
+                .ConfigureAwait(false);
+            return results.ToModel();
+        }
+        catch (Exception exc)
+        {
+            return new() { FailureMessage = exc.Message };
+        }
     }
 }

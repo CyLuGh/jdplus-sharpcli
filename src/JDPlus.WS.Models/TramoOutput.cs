@@ -24,6 +24,7 @@ public readonly record struct TramoOutput
     public TramoSpec EstimationSpec { get; init; }
     public Option<TramoSpec> ResultSpec { get; init; }
     public Option<ProcessingLogs> Log { get; init; }
+    public Option<string> FailureMessage { get; init; }
 
     public Seq<OutlierReport> GetOutliers()
     {
