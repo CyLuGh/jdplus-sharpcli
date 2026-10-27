@@ -6,6 +6,7 @@ using JDPlus.Main.WS.V1;
 using JDPlus.WS.Mapper;
 using JDPlus.WS.Models;
 using LanguageExt;
+using LanguageExt.Common;
 using AggregationType = JDPlus.WS.Models.AggregationType;
 using Frequency = JDPlus.WS.Models.Frequency;
 using ResultStatusType = JDPlus.Main.WS.V1.ResultStatusType;
@@ -240,7 +241,7 @@ public class CommunicationManager
         await requestStream.CompleteAsync();
     }
 
-    public async Task<TramoOutput> GetTramoFullProcess(
+    public async Task<Result<TramoOutput>> GetTramoFullProcess(
         TsData series,
         Either<string, TramoSpec> spec,
         Option<ModellingContext> context,
@@ -257,7 +258,7 @@ public class CommunicationManager
         }
         catch (Exception exc)
         {
-            return new() { FailureMessage = exc.Message };
+            return new Result<TramoOutput>(exc);
         }
     }
 }

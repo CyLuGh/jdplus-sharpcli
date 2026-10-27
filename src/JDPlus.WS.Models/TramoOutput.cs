@@ -25,18 +25,10 @@ public readonly record struct TramoOutput
     public Option<TramoSpec> ResultSpec { get; init; }
     public Option<ProcessingLogs> Log { get; init; }
 
-    public Option<string> FailureMessage { get; init; }
-    public bool HasError => FailureMessage.IsSome;
+   
 
     public Seq<OutlierReport> GetOutliers()
     {
-        if (FailureMessage.IsSome)
-            return Seq<OutlierReport>.Empty;
-
-        /* Couldn't find model */
-        if (Result.Description.Series.Values.IsEmpty)
-            return Seq<OutlierReport>.Empty;
-
         var seriesValues = Result.Description.Series.GetDateValues();
         return ResultSpec.Match(
             rs =>
