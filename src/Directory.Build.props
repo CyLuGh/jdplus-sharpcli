@@ -3,7 +3,7 @@
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <Authors>Demortier Jeremy</Authors>
         <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
-        <Version>0.1.8</Version>
+        <Version>0.1.9</Version>
         <RepositoryUrl>https://github.com/CyLuGh/jdplus-sharpcli</RepositoryUrl>
     </PropertyGroup>
 </Project>

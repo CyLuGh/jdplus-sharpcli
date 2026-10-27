@@ -65,11 +65,13 @@ Console.WriteLine(version);
 // foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
 //     Console.WriteLine(t);
 
-var rate = await communicationManager.BuildTsData(
-    CreateData().ToSeq(),
-    frequency: Frequency.Monthly,
-    aggregationType: AggregationType.First
-);
+var rate = (
+    await communicationManager.BuildTsData(
+        CreateData().ToSeq(),
+        frequency: Frequency.Monthly,
+        aggregationType: AggregationType.First
+    )
+).Match(right => right, _ => TsData.Default);
 
 var forecasts = await communicationManager.GetTramoForecasts(
     rate,

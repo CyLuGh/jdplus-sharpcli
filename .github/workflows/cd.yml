@@ -27,6 +27,7 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           repository: jdemetra/jdplus-ws
+          ref: 54-improve-entry-points-message
           path: jdplus-ws
 
       - name: Setup .NET

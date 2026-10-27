@@ -68,6 +68,8 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.BuildTsDataInputDto> __Marshaller_jdplus_main_ws_v1_BuildTsDataInputDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.BuildTsDataInputDto.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.BuildTsDataResultDto> __Marshaller_jdplus_main_ws_v1_BuildTsDataResultDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.BuildTsDataResultDto.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto> __Marshaller_jdplus_main_ws_v1_BuildTsDataTableInputDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto> __Marshaller_jdplus_main_ws_v1_BuildTsDataTableOutputDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto.Parser));
@@ -80,7 +82,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TsMatrixDto> __Marshaller_jdplus_main_ws_v1_TsMatrixDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TsMatrixDto.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TramoOutputDto> __Marshaller_jdplus_main_ws_v1_TramoOutputDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TramoOutputDto.Parser));
+    static readonly grpc::Marshaller<global::JDPlus.Main.WS.V1.TramoFullProcessResultDto> __Marshaller_jdplus_main_ws_v1_TramoFullProcessResultDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::JDPlus.Main.WS.V1.TramoFullProcessResultDto.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::JDPlus.Main.WS.V1.EmptyDto, global::JDPlus.Main.WS.V1.VersionInfoDto> __Method_GetVersion = new grpc::Method<global::JDPlus.Main.WS.V1.EmptyDto, global::JDPlus.Main.WS.V1.VersionInfoDto>(
@@ -187,20 +189,20 @@ namespace JDPlus.Main.WS.V1 {
         __Marshaller_jdplus_main_ws_v1_HodrickPrescottOutputDto);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto> __Method_BuildTsData = new grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(
+    static readonly grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto> __Method_BuildTsData = new grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto>(
         grpc::MethodType.Unary,
         __ServiceName,
         "BuildTsData",
         __Marshaller_jdplus_main_ws_v1_BuildTsDataInputDto,
-        __Marshaller_jdplus_main_ws_v1_TsFunctionOutputDto);
+        __Marshaller_jdplus_main_ws_v1_BuildTsDataResultDto);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto> __Method_BuildTsDataStream = new grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(
+    static readonly grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto> __Method_BuildTsDataStream = new grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "BuildTsDataStream",
         __Marshaller_jdplus_main_ws_v1_BuildTsDataInputDto,
-        __Marshaller_jdplus_main_ws_v1_TsFunctionOutputDto);
+        __Marshaller_jdplus_main_ws_v1_BuildTsDataResultDto);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto, global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto> __Method_BuildTsDataTable = new grpc::Method<global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto, global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto>(
@@ -235,12 +237,12 @@ namespace JDPlus.Main.WS.V1 {
         __Marshaller_jdplus_main_ws_v1_TsMatrixDto);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoOutputDto> __Method_TramoFullProcess = new grpc::Method<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoOutputDto>(
+    static readonly grpc::Method<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoFullProcessResultDto> __Method_TramoFullProcess = new grpc::Method<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoFullProcessResultDto>(
         grpc::MethodType.Unary,
         __ServiceName,
         "TramoFullProcess",
         __Marshaller_jdplus_main_ws_v1_TramoRequestDto,
-        __Marshaller_jdplus_main_ws_v1_TramoOutputDto);
+        __Marshaller_jdplus_main_ws_v1_TramoFullProcessResultDto);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -343,13 +345,13 @@ namespace JDPlus.Main.WS.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.TsFunctionOutputDto> BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.BuildTsDataResultDto> BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task BuildTsDataStream(grpc::IAsyncStreamReader<global::JDPlus.Main.WS.V1.BuildTsDataInputDto> requestStream, grpc::IServerStreamWriter<global::JDPlus.Main.WS.V1.TsFunctionOutputDto> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task BuildTsDataStream(grpc::IAsyncStreamReader<global::JDPlus.Main.WS.V1.BuildTsDataInputDto> requestStream, grpc::IServerStreamWriter<global::JDPlus.Main.WS.V1.BuildTsDataResultDto> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -379,7 +381,7 @@ namespace JDPlus.Main.WS.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.TramoOutputDto> TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::JDPlus.Main.WS.V1.TramoFullProcessResultDto> TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -670,32 +672,32 @@ namespace JDPlus.Main.WS.V1 {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_HodrickPrescottStream, null, options);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::JDPlus.Main.WS.V1.TsFunctionOutputDto BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::JDPlus.Main.WS.V1.BuildTsDataResultDto BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return BuildTsData(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::JDPlus.Main.WS.V1.TsFunctionOutputDto BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::CallOptions options)
+      public virtual global::JDPlus.Main.WS.V1.BuildTsDataResultDto BuildTsData(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_BuildTsData, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TsFunctionOutputDto> BuildTsDataAsync(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.BuildTsDataResultDto> BuildTsDataAsync(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return BuildTsDataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TsFunctionOutputDto> BuildTsDataAsync(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.BuildTsDataResultDto> BuildTsDataAsync(global::JDPlus.Main.WS.V1.BuildTsDataInputDto request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_BuildTsData, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto> BuildTsDataStream(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto> BuildTsDataStream(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return BuildTsDataStream(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto> BuildTsDataStream(grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto> BuildTsDataStream(grpc::CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_BuildTsDataStream, null, options);
       }
@@ -770,22 +772,22 @@ namespace JDPlus.Main.WS.V1 {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_TramoForecastStream, null, options);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::JDPlus.Main.WS.V1.TramoOutputDto TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::JDPlus.Main.WS.V1.TramoFullProcessResultDto TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return TramoFullProcess(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::JDPlus.Main.WS.V1.TramoOutputDto TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::CallOptions options)
+      public virtual global::JDPlus.Main.WS.V1.TramoFullProcessResultDto TramoFullProcess(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_TramoFullProcess, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TramoOutputDto> TramoFullProcessAsync(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TramoFullProcessResultDto> TramoFullProcessAsync(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return TramoFullProcessAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TramoOutputDto> TramoFullProcessAsync(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::JDPlus.Main.WS.V1.TramoFullProcessResultDto> TramoFullProcessAsync(global::JDPlus.Main.WS.V1.TramoRequestDto request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_TramoFullProcess, null, options, request);
       }
@@ -845,13 +847,13 @@ namespace JDPlus.Main.WS.V1 {
       serviceBinder.AddMethod(__Method_AggregateStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.AggregationInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(serviceImpl.AggregateStream));
       serviceBinder.AddMethod(__Method_HodrickPrescott, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.HodrickPrescottInputDto, global::JDPlus.Main.WS.V1.HodrickPrescottOutputDto>(serviceImpl.HodrickPrescott));
       serviceBinder.AddMethod(__Method_HodrickPrescottStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.HodrickPrescottInputDto, global::JDPlus.Main.WS.V1.HodrickPrescottOutputDto>(serviceImpl.HodrickPrescottStream));
-      serviceBinder.AddMethod(__Method_BuildTsData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(serviceImpl.BuildTsData));
-      serviceBinder.AddMethod(__Method_BuildTsDataStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.TsFunctionOutputDto>(serviceImpl.BuildTsDataStream));
+      serviceBinder.AddMethod(__Method_BuildTsData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto>(serviceImpl.BuildTsData));
+      serviceBinder.AddMethod(__Method_BuildTsDataStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataInputDto, global::JDPlus.Main.WS.V1.BuildTsDataResultDto>(serviceImpl.BuildTsDataStream));
       serviceBinder.AddMethod(__Method_BuildTsDataTable, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.BuildTsDataTableInputDto, global::JDPlus.Main.WS.V1.BuildTsDataTableOutputDto>(serviceImpl.BuildTsDataTable));
       serviceBinder.AddMethod(__Method_ProcessTemporalDisaggregation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TemporalDisaggregationRequestDto, global::JDPlus.Main.WS.V1.TemporalDisaggregationResultsDto>(serviceImpl.ProcessTemporalDisaggregation));
       serviceBinder.AddMethod(__Method_TramoForecast, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TsMatrixDto>(serviceImpl.TramoForecast));
       serviceBinder.AddMethod(__Method_TramoForecastStream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TsMatrixDto>(serviceImpl.TramoForecastStream));
-      serviceBinder.AddMethod(__Method_TramoFullProcess, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoOutputDto>(serviceImpl.TramoFullProcess));
+      serviceBinder.AddMethod(__Method_TramoFullProcess, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::JDPlus.Main.WS.V1.TramoRequestDto, global::JDPlus.Main.WS.V1.TramoFullProcessResultDto>(serviceImpl.TramoFullProcess));
     }
 
   }

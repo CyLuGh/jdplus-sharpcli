@@ -79,7 +79,7 @@ public class CommunicationManager
         return dto.ToModel();
     }
 
-    public async Task<TsData> BuildTsData(
+    public async Task<Either<Error, TsData>> BuildTsData(
         Seq<(DateOnly Date, double Value)> data,
         AggregationType aggregationType = AggregationType.None,
         Frequency frequency = Frequency.Yearly,
@@ -88,30 +88,43 @@ public class CommunicationManager
         CancellationToken token = default
     )
     {
-        var input = new BuildTsDataInputDto()
+        try
         {
-            Gathering = new ObsGatheringDto()
+            var input = new BuildTsDataInputDto()
             {
-                AggregationType = (Main.WS.V1.AggregationType)aggregationType,
-                AllowPartialAggregation = allowPartialAggregation,
-                Frequency = (Main.WS.V1.Frequency)frequency,
-                IncludeMissingValues = includeMissingValues,
-            },
-            Id = string.Empty,
-        };
-        input.Observations.AddRange(
-            data.Map(t => new BuildTsDataObsDto() { Date = t.Date.ToDto(), Value = t.Value })
-        );
-
-        var dto = await GetClient()
-            .BuildTsDataAsync(input, cancellationToken: token)
-            .ConfigureAwait(false);
-
-        return dto.Status.Type == ResultStatusType.StatusOk
-            ? dto.Series.ToModel()
-            : throw new InvalidOperationException(
-                $"Error building time series data: {dto.Status.Message}"
+                Gathering = new ObsGatheringDto()
+                {
+                    AggregationType = (Main.WS.V1.AggregationType)aggregationType,
+                    AllowPartialAggregation = allowPartialAggregation,
+                    Frequency = (Main.WS.V1.Frequency)frequency,
+                    IncludeMissingValues = includeMissingValues,
+                },
+                Id = string.Empty,
+            };
+            input.Observations.AddRange(
+                data.Map(t => new BuildTsDataObsDto() { Date = t.Date.ToDto(), Value = t.Value })
             );
+
+            var dto = await GetClient()
+                .BuildTsDataAsync(input, cancellationToken: token)
+                .ConfigureAwait(false);
+
+            return dto.ResultCase switch
+            {
+                BuildTsDataResultDto.ResultOneofCase.Output
+                    => dto.Output.Status.Type == ResultStatusType.StatusOk
+                        ? dto.Output.Series.ToModel()
+                        : Error.New(
+                            $"Error building time series data: {dto.Output.Status.Message}"
+                        ),
+                BuildTsDataResultDto.ResultOneofCase.Error => Error.New(dto.Error.Message),
+                _ => Error.New("Unknown result case")
+            };
+        }
+        catch (Exception exc)
+        {
+            return Error.New(exc);
+        }
     }
 
     public Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
@@ -241,7 +254,7 @@ public class CommunicationManager
         await requestStream.CompleteAsync();
     }
 
-    public async Task<Result<TramoOutput>> GetTramoFullProcess(
+    public async Task<Either<Error, TramoOutput>> GetTramoFullProcess(
         TsData series,
         Either<string, TramoSpec> spec,
         Option<ModellingContext> context,
@@ -254,11 +267,17 @@ public class CommunicationManager
             var results = await GetClient()
                 .TramoFullProcessAsync(request, cancellationToken: token)
                 .ConfigureAwait(false);
-            return results.ToModel();
+
+            return results.ResultCase switch
+            {
+                TramoFullProcessResultDto.ResultOneofCase.Output => results.Output.ToModel(),
+                TramoFullProcessResultDto.ResultOneofCase.Error => Error.New(results.Error.Message),
+                _ => Error.New("Unknown result case")
+            };
         }
         catch (Exception exc)
         {
-            return new Result<TramoOutput>(exc);
+            return Error.New(exc);
         }
     }
 }

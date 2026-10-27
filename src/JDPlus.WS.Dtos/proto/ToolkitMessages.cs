@@ -25,38 +25,42 @@ namespace JDPlus.Main.WS.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZ0b29sa2l0X21lc3NhZ2VzLnByb3RvEhFqZHBsdXMubWFpbi53cy52MSIK",
-            "CghFbXB0eUR0byIzCgdEYXRlRHRvEgwKBHllYXIYASABKAUSDQoFbW9udGgY",
-            "AiABKAUSCwoDZGF5GAMgASgFIlkKC1RzUGVyaW9kRHRvEi8KCWZyZXF1ZW5j",
-            "eRgBIAEoDjIcLmpkcGx1cy5tYWluLndzLnYxLkZyZXF1ZW5jeRIMCgR5ZWFy",
-            "GAIgASgFEgsKA3BvcxgDIAEoBSJKCglUc0RhdGFEdG8SLQoFc3RhcnQYASAB",
-            "KAsyHi5qZHBsdXMubWFpbi53cy52MS5Uc1BlcmlvZER0bxIOCgZ2YWx1ZXMY",
-            "AiADKAEiRQoJTWF0cml4RHRvEg0KBW5yb3dzGAEgASgFEg0KBW5jb2xzGAIg",
-            "ASgFEg4KBnZhbHVlcxgDIAMoARIKCgJpZBgKIAEoCSJ2CgtUc01hdHJpeER0",
-            "bxItCgVzdGFydBgBIAEoCzIeLmpkcGx1cy5tYWluLndzLnYxLlRzUGVyaW9k",
-            "RHRvEiwKBnZhbHVlcxgCIAEoCzIcLmpkcGx1cy5tYWluLndzLnYxLk1hdHJp",
-            "eER0bxIKCgJpZBgKIAEoCSIqCgxUc01vbmlrZXJEdG8SDgoGc291cmNlGAEg",
-            "ASgJEgoKAmlkGAIgASgJIt4BCgVUc0R0bxIMCgRuYW1lGAEgASgJEjAKB21v",
-            "bmlrZXIYAiABKAsyHy5qZHBsdXMubWFpbi53cy52MS5Uc01vbmlrZXJEdG8S",
-            "KgoEZGF0YRgDIAEoCzIcLmpkcGx1cy5tYWluLndzLnYxLlRzRGF0YUR0bxI4",
-            "CghtZXRhZGF0YRgEIAMoCzImLmpkcGx1cy5tYWluLndzLnYxLlRzRHRvLk1l",
-            "dGFkYXRhRW50cnkaLwoNTWV0YWRhdGFFbnRyeRILCgNrZXkYASABKAkSDQoF",
-            "dmFsdWUYAiABKAk6AjgBInUKEFRzT2JzZXJ2YXRpb25EdG8SKQoFc3RhcnQY",
-            "ASABKAsyGi5qZHBsdXMubWFpbi53cy52MS5EYXRlRHRvEicKA2VuZBgCIAEo",
-            "CzIaLmpkcGx1cy5tYWluLndzLnYxLkRhdGVEdG8SDQoFdmFsdWUYAyABKAEi",
-            "/QEKDVRpbWVTZXJpZXNEdG8SDAoEbmFtZRgBIAEoCRIwCgdtb25pa2VyGAIg",
-            "ASgLMh8uamRwbHVzLm1haW4ud3MudjEuVHNNb25pa2VyRHRvEjkKDG9ic2Vy",
-            "dmF0aW9ucxgDIAMoCzIjLmpkcGx1cy5tYWluLndzLnYxLlRzT2JzZXJ2YXRp",
-            "b25EdG8SQAoIbWV0YWRhdGEYBCADKAsyLi5qZHBsdXMubWFpbi53cy52MS5U",
-            "aW1lU2VyaWVzRHRvLk1ldGFkYXRhRW50cnkaLwoNTWV0YWRhdGFFbnRyeRIL",
-            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIsEBCg9UaW1lU2VsZWN0",
-            "b3JEdG8SLgoEdHlwZRgBIAEoDjIgLmpkcGx1cy5tYWluLndzLnYxLlNlbGVj",
-            "dGlvblR5cGUSCgoCbjAYAiABKAUSCgoCbjEYAyABKAUSKwoCZDAYBCABKAsy",
-            "Gi5qZHBsdXMubWFpbi53cy52MS5EYXRlRHRvSACIAQESKwoCZDEYBSABKAsy",
-            "Gi5qZHBsdXMubWFpbi53cy52MS5EYXRlRHRvSAGIAQFCBQoDX2QwQgUKA19k",
-            "MSJVCg9SZXN1bHRTdGF0dXNEdG8SMQoEdHlwZRgBIAEoDjIjLmpkcGx1cy5t",
-            "YWluLndzLnYxLlJlc3VsdFN0YXR1c1R5cGUSDwoHbWVzc2FnZRgCIAEoCSJO",
-            "ChJUc0Z1bmN0aW9uSW5wdXREdG8SCgoCaWQYASABKAkSLAoGc2VyaWVzGAIg",
-            "ASgLMhwuamRwbHVzLm1haW4ud3MudjEuVHNEYXRhRHRvIoMBChNUc0Z1bmN0",
+            "CghFbXB0eUR0byIbCghFcnJvckR0bxIPCgdtZXNzYWdlGAEgASgJIjMKB0Rh",
+            "dGVEdG8SDAoEeWVhchgBIAEoBRINCgVtb250aBgCIAEoBRILCgNkYXkYAyAB",
+            "KAUiWQoLVHNQZXJpb2REdG8SLwoJZnJlcXVlbmN5GAEgASgOMhwuamRwbHVz",
+            "Lm1haW4ud3MudjEuRnJlcXVlbmN5EgwKBHllYXIYAiABKAUSCwoDcG9zGAMg",
+            "ASgFIkoKCVRzRGF0YUR0bxItCgVzdGFydBgBIAEoCzIeLmpkcGx1cy5tYWlu",
+            "LndzLnYxLlRzUGVyaW9kRHRvEg4KBnZhbHVlcxgCIAMoASJFCglNYXRyaXhE",
+            "dG8SDQoFbnJvd3MYASABKAUSDQoFbmNvbHMYAiABKAUSDgoGdmFsdWVzGAMg",
+            "AygBEgoKAmlkGAogASgJInYKC1RzTWF0cml4RHRvEi0KBXN0YXJ0GAEgASgL",
+            "Mh4uamRwbHVzLm1haW4ud3MudjEuVHNQZXJpb2REdG8SLAoGdmFsdWVzGAIg",
+            "ASgLMhwuamRwbHVzLm1haW4ud3MudjEuTWF0cml4RHRvEgoKAmlkGAogASgJ",
+            "IioKDFRzTW9uaWtlckR0bxIOCgZzb3VyY2UYASABKAkSCgoCaWQYAiABKAki",
+            "3gEKBVRzRHRvEgwKBG5hbWUYASABKAkSMAoHbW9uaWtlchgCIAEoCzIfLmpk",
+            "cGx1cy5tYWluLndzLnYxLlRzTW9uaWtlckR0bxIqCgRkYXRhGAMgASgLMhwu",
+            "amRwbHVzLm1haW4ud3MudjEuVHNEYXRhRHRvEjgKCG1ldGFkYXRhGAQgAygL",
+            "MiYuamRwbHVzLm1haW4ud3MudjEuVHNEdG8uTWV0YWRhdGFFbnRyeRovCg1N",
+            "ZXRhZGF0YUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEi",
+            "dQoQVHNPYnNlcnZhdGlvbkR0bxIpCgVzdGFydBgBIAEoCzIaLmpkcGx1cy5t",
+            "YWluLndzLnYxLkRhdGVEdG8SJwoDZW5kGAIgASgLMhouamRwbHVzLm1haW4u",
+            "d3MudjEuRGF0ZUR0bxINCgV2YWx1ZRgDIAEoASL9AQoNVGltZVNlcmllc0R0",
+            "bxIMCgRuYW1lGAEgASgJEjAKB21vbmlrZXIYAiABKAsyHy5qZHBsdXMubWFp",
+            "bi53cy52MS5Uc01vbmlrZXJEdG8SOQoMb2JzZXJ2YXRpb25zGAMgAygLMiMu",
+            "amRwbHVzLm1haW4ud3MudjEuVHNPYnNlcnZhdGlvbkR0bxJACghtZXRhZGF0",
+            "YRgEIAMoCzIuLmpkcGx1cy5tYWluLndzLnYxLlRpbWVTZXJpZXNEdG8uTWV0",
+            "YWRhdGFFbnRyeRovCg1NZXRhZGF0YUVudHJ5EgsKA2tleRgBIAEoCRINCgV2",
+            "YWx1ZRgCIAEoCToCOAEiwQEKD1RpbWVTZWxlY3RvckR0bxIuCgR0eXBlGAEg",
+            "ASgOMiAuamRwbHVzLm1haW4ud3MudjEuU2VsZWN0aW9uVHlwZRIKCgJuMBgC",
+            "IAEoBRIKCgJuMRgDIAEoBRIrCgJkMBgEIAEoCzIaLmpkcGx1cy5tYWluLndz",
+            "LnYxLkRhdGVEdG9IAIgBARIrCgJkMRgFIAEoCzIaLmpkcGx1cy5tYWluLndz",
+            "LnYxLkRhdGVEdG9IAYgBAUIFCgNfZDBCBQoDX2QxIlUKD1Jlc3VsdFN0YXR1",
+            "c0R0bxIxCgR0eXBlGAEgASgOMiMuamRwbHVzLm1haW4ud3MudjEuUmVzdWx0",
+            "U3RhdHVzVHlwZRIPCgdtZXNzYWdlGAIgASgJIk4KElRzRnVuY3Rpb25JbnB1",
+            "dER0bxIKCgJpZBgBIAEoCRIsCgZzZXJpZXMYAiABKAsyHC5qZHBsdXMubWFp",
+            "bi53cy52MS5Uc0RhdGFEdG8ilAEKFEJ1aWxkVHNEYXRhUmVzdWx0RHRvEjgK",
+            "Bm91dHB1dBgBIAEoCzImLmpkcGx1cy5tYWluLndzLnYxLlRzRnVuY3Rpb25P",
+            "dXRwdXREdG9IABIsCgVlcnJvchgCIAEoCzIbLmpkcGx1cy5tYWluLndzLnYx",
+            "LkVycm9yRHRvSAASCgoCaWQYKiABKAlCCAoGcmVzdWx0IoMBChNUc0Z1bmN0",
             "aW9uT3V0cHV0RHRvEgoKAmlkGAEgASgJEjIKBnN0YXR1cxgCIAEoCzIiLmpk",
             "cGx1cy5tYWluLndzLnYxLlJlc3VsdFN0YXR1c0R0bxIsCgZzZXJpZXMYAyAB",
             "KAsyHC5qZHBsdXMubWFpbi53cy52MS5Uc0RhdGFEdG8iVAoLUGN0SW5wdXRE",
@@ -189,7 +193,7 @@ namespace JDPlus.Main.WS.V1 {
             "IAEoCUgAEjMKCGZ1bGxTcGVjGAUgASgLMh8uamRwbHVzLm1haW4ud3MudjEu",
             "VHJhbW9TcGVjRHRvSAASEwoLbl9mb3JlY2FzdHMYAyABKAUSRQoQbW9kZWxs",
             "aW5nQ29udGV4dBgEIAEoCzImLmpkcGx1cy5tYWluLndzLnYxLk1vZGVsbGlu",
-            "Z0NvbnRleHREdG9IAYgBARIKCgJpZBgKIAEoCUIGCgRzcGVjQhMKEV9tb2Rl",
+            "Z0NvbnRleHREdG9IAYgBARIKCgJpZBgqIAEoCUIGCgRzcGVjQhMKEV9tb2Rl",
             "bGxpbmdDb250ZXh0IvwBCgpPdXRsaWVyRHRvEgwKBG5hbWUYASABKAkSDAoE",
             "Y29kZRgCIAEoCRIsCghwb3NpdGlvbhgDIAEoCzIaLmpkcGx1cy5tYWluLndz",
             "LnYxLkRhdGVEdG8SNAoLY29lZmZpY2llbnQYBSABKAsyHy5qZHBsdXMubWFp",
@@ -315,117 +319,121 @@ namespace JDPlus.Main.WS.V1 {
             "aXhlZFdlZWtEYXlEdG8SDQoFbW9udGgYASABKAUSEAoIcG9zaXRpb24YAiAB",
             "KAUSDwoHd2Vla2RheRgDIAEoBRIOCgZ3ZWlnaHQYBCABKAESNgoIdmFsaWRp",
             "dHkYBSABKAsyJC5qZHBsdXMubWFpbi53cy52MS5WYWxpZGl0eVBlcmlvZER0",
-            "byKvAwoOVHJhbW9PdXRwdXREdG8SMwoGcmVzdWx0GAEgASgLMiMuamRwbHVz",
-            "Lm1haW4ud3MudjEuUmVnQXJpbWFNb2RlbER0bxI4Cg9lc3RpbWF0aW9uX3Nw",
-            "ZWMYAiABKAsyHy5qZHBsdXMubWFpbi53cy52MS5UcmFtb1NwZWNEdG8SOQoL",
-            "cmVzdWx0X3NwZWMYAyABKAsyHy5qZHBsdXMubWFpbi53cy52MS5UcmFtb1Nw",
-            "ZWNEdG9IAIgBARI2CgNsb2cYBCABKAsyJC5qZHBsdXMubWFpbi53cy52MS5Q",
-            "cm9jZXNzaW5nTG9nc0R0b0gBiAEBEj8KB2RldGFpbHMYBSADKAsyLi5qZHBs",
-            "dXMubWFpbi53cy52MS5UcmFtb091dHB1dER0by5EZXRhaWxzRW50cnkSCgoC",
-            "aWQYCiABKAkaVgoMRGV0YWlsc0VudHJ5EgsKA2tleRgBIAEoCRI1CgV2YWx1",
-            "ZRgCIAEoCzImLmpkcGx1cy5tYWluLndzLnYxLlByb2Nlc3NpbmdEZXRhaWxE",
-            "dG86AjgBQg4KDF9yZXN1bHRfc3BlY0IGCgRfbG9nIioKCkRvdWJsZXNEdG8S",
-            "DAoEbmFtZRgBIAEoCRIOCgZ2YWx1ZXMYAiADKAEilwIKE1Byb2Nlc3NpbmdE",
-            "ZXRhaWxEdG8SKgoCdHMYASABKAsyHC5qZHBsdXMubWFpbi53cy52MS5Uc0Rh",
-            "dGFEdG9IABIuCgVhcnJheRgCIAEoCzIdLmpkcGx1cy5tYWluLndzLnYxLkRv",
-            "dWJsZXNEdG9IABIuCgZtYXRyaXgYAyABKAsyHC5qZHBsdXMubWFpbi53cy52",
-            "MS5NYXRyaXhEdG9IABI1CgR0ZXN0GAQgASgLMiUuamRwbHVzLm1haW4ud3Mu",
-            "djEuU3RhdGlzdGljYWxUZXN0RHRvSAASEQoHbWVzc2FnZRgFIAEoCUgAEhAK",
-            "Bml2YWx1ZRgGIAEoBUgAEhAKBmR2YWx1ZRgHIAEoAUgAQgYKBGRhdGEisAEK",
-            "GFByb2Nlc3NpbmdJbmZvcm1hdGlvbkR0bxIMCgRuYW1lGAEgASgJEg4KBm9y",
-            "aWdpbhgCIAEoCRILCgNtc2cYAyABKAkSMAoEdHlwZRgEIAEoDjIiLmpkcGx1",
-            "cy5tYWluLndzLnYxLkluZm9ybWF0aW9uVHlwZRI3CgdkZXRhaWxzGAUgASgL",
-            "MiYuamRwbHVzLm1haW4ud3MudjEuUHJvY2Vzc2luZ0RldGFpbER0byJNChFQ",
-            "cm9jZXNzaW5nTG9nc0R0bxI4CgNsb2cYASADKAsyKy5qZHBsdXMubWFpbi53",
-            "cy52MS5Qcm9jZXNzaW5nSW5mb3JtYXRpb25EdG8i+gYKEFJlZ0FyaW1hTW9k",
-            "ZWxEdG8SRwoLZGVzY3JpcHRpb24YASABKAsyMi5qZHBsdXMubWFpbi53cy52",
-            "MS5SZWdBcmltYU1vZGVsRHRvLkRlc2NyaXB0aW9uRHRvEkUKCmVzdGltYXRp",
-            "b24YAiABKAsyMS5qZHBsdXMubWFpbi53cy52MS5SZWdBcmltYU1vZGVsRHRv",
-            "LkVzdGltYXRpb25EdG8SNgoLZGlhZ25vc3RpY3MYBSABKAsyIS5qZHBsdXMu",
-            "bWFpbi53cy52MS5EaWFnbm9zdGljc0R0bxrzAQoORGVzY3JpcHRpb25EdG8S",
-            "LAoGc2VyaWVzGAEgASgLMhwuamRwbHVzLm1haW4ud3MudjEuVHNEYXRhRHRv",
-            "EgsKA2xvZxgCIAEoCBI4Cg1wcmVhZGp1c3RtZW50GAMgASgOMiEuamRwbHVz",
-            "Lm1haW4ud3MudjEuTGVuZ3RoT2ZQZXJpb2QSOwoJdmFyaWFibGVzGAQgAygL",
-            "MiguamRwbHVzLm1haW4ud3MudjEuUmVncmVzc2lvblZhcmlhYmxlRHRvEi8K",
-            "BWFyaW1hGAUgASgLMiAuamRwbHVzLm1haW4ud3MudjEuU2FyaW1hU3BlY0R0",
-            "bxrgAgoNRXN0aW1hdGlvbkR0bxIJCgF5GAEgAygBEicKAXgYAiABKAsyHC5q",
-            "ZHBsdXMubWFpbi53cy52MS5NYXRyaXhEdG8SCQoBYhgDIAMoARIxCgtiY292",
-            "YXJpYW5jZRgEIAEoCzIcLmpkcGx1cy5tYWluLndzLnYxLk1hdHJpeER0bxI+",
-            "CgpwYXJhbWV0ZXJzGAUgASgLMiouamRwbHVzLm1haW4ud3MudjEuUGFyYW1l",
-            "dGVyc0VzdGltYXRpb25EdG8SPgoKbGlrZWxpaG9vZBgGIAEoCzIqLmpkcGx1",
-            "cy5tYWluLndzLnYxLkxpa2VsaWhvb2RTdGF0aXN0aWNzRHRvEhEKCXJlc2lk",
-            "dWFscxgHIAMoARJKCghtaXNzaW5ncxgIIAMoCzI4LmpkcGx1cy5tYWluLndz",
-            "LnYxLlJlZ0FyaW1hTW9kZWxEdG8uTWlzc2luZ0VzdGltYXRpb25EdG8aRQoU",
-            "TWlzc2luZ0VzdGltYXRpb25EdG8SEAoIcG9zaXRpb24YASABKAUSDQoFdmFs",
-            "dWUYCiABKAESDAoEc3RkZRgLIAEoASKKAgoVUmVncmVzc2lvblZhcmlhYmxl",
-            "RHRvEgwKBG5hbWUYASABKAkSMQoIdmFyX3R5cGUYAiABKA4yHy5qZHBsdXMu",
-            "bWFpbi53cy52MS5WYXJpYWJsZVR5cGUSSAoIbWV0YWRhdGEYAyADKAsyNi5q",
-            "ZHBsdXMubWFpbi53cy52MS5SZWdyZXNzaW9uVmFyaWFibGVEdG8uTWV0YWRh",
-            "dGFFbnRyeRI1Cgxjb2VmZmljaWVudHMYBCADKAsyHy5qZHBsdXMubWFpbi53",
-            "cy52MS5QYXJhbWV0ZXJEdG8aLwoNTWV0YWRhdGFFbnRyeRILCgNrZXkYASAB",
-            "KAkSDQoFdmFsdWUYAiABKAk6AjgBIpMBChdQYXJhbWV0ZXJzRXN0aW1hdGlv",
-            "bkR0bxINCgV2YWx1ZRgBIAMoARINCgVzY29yZRgCIAMoARIwCgpjb3Zhcmlh",
-            "bmNlGAMgASgLMhwuamRwbHVzLm1haW4ud3MudjEuTWF0cml4RHRvEhgKC2Rl",
-            "c2NyaXB0aW9uGAQgASgJSACIAQFCDgoMX2Rlc2NyaXB0aW9uIr4BCg5EaWFn",
-            "bm9zdGljc0R0bxJOCg9yZXNpZHVhbHNfdGVzdHMYASADKAsyNS5qZHBsdXMu",
-            "bWFpbi53cy52MS5EaWFnbm9zdGljc0R0by5SZXNpZHVhbHNUZXN0c0VudHJ5",
-            "GlwKE1Jlc2lkdWFsc1Rlc3RzRW50cnkSCwoDa2V5GAEgASgJEjQKBXZhbHVl",
-            "GAIgASgLMiUuamRwbHVzLm1haW4ud3MudjEuU3RhdGlzdGljYWxUZXN0RHRv",
-            "OgI4ASqrAQoJRnJlcXVlbmN5EhIKDkZSRVFfVU5ERUZJTkVEEAASDwoLRlJF",
-            "UV9ZRUFSTFkQARIUChBGUkVRX0hBTEZfWUVBUkxZEAISFwoTRlJFUV9RVUFE",
-            "UklfTU9OVEhMWRADEhIKDkZSRVFfUVVBUlRFUkxZEAQSEwoPRlJFUV9CSV9N",
-            "T05USExZEAYSEAoMRlJFUV9NT05USExZEAwSDwoKRlJFUV9EQUlMWRDtAiqN",
-            "AQoNU2VsZWN0aW9uVHlwZRIMCghTUEFOX0FMTBAAEg0KCVNQQU5fRlJPTRAB",
-            "EgsKB1NQQU5fVE8QAhIQCgxTUEFOX0JFVFdFRU4QAxINCglTUEFOX0xBU1QQ",
-            "BBIOCgpTUEFOX0ZJUlNUEAUSEgoOU1BBTl9FWENMVURJTkcQBhINCglTUEFO",
-            "X05PTkUQBypHChBSZXN1bHRTdGF0dXNUeXBlEg0KCVNUQVRVU19PSxAAEhAK",
-            "DFNUQVRVU19FUlJPUhABEhIKDlNUQVRVU19XQVJOSU5HEAIqrAEKD0FnZ3Jl",
-            "Z2F0aW9uVHlwZRIUChBBR0dSRUdBVElPTl9OT05FEAASEwoPQUdHUkVHQVRJ",
-            "T05fU1VNEAESFwoTQUdHUkVHQVRJT05fQVZFUkFHRRACEhUKEUFHR1JFR0FU",
-            "SU9OX0ZJUlNUEAMSFAoQQUdHUkVHQVRJT05fTEFTVBAEEhMKD0FHR1JFR0FU",
-            "SU9OX01BWBAFEhMKD0FHR1JFR0FUSU9OX01JThAGKkIKEERpc3RyaWJ1dGlv",
-            "blR5cGUSDgoKRElTVF9GSVJTVBAAEg0KCURJU1RfTEFTVBABEg8KC0RJU1Rf",
-            "TUlERExFEAIqVwoLVmFsdWVTdGF0dXMSDgoKVlNfUFJFU0VOVBAAEg0KCVZT",
-            "X1VOVVNFRBABEg0KCVZTX0JFRk9SRRACEgwKCFZTX0FGVEVSEAMSDAoIVlNf",
-            "RU1QVFkQBCqDAQoNUGFyYW1ldGVyVHlwZRIUChBQQVJBTUVURVJfVU5VU0VE",
-            "EAASFwoTUEFSQU1FVEVSX1VOREVGSU5FRBABEhMKD1BBUkFNRVRFUl9GSVhF",
-            "RBACEhUKEVBBUkFNRVRFUl9JTklUSUFMEAMSFwoTUEFSQU1FVEVSX0VTVElN",
-            "QVRFRBAEKjcKDlRyYW5zZm9ybWF0aW9uEgwKCEZOX0xFVkVMEAASCgoGRk5f",
-            "TE9HEAESCwoHRk5fQVVUTxAKKkUKDkxlbmd0aE9mUGVyaW9kEgsKB0xQX05P",
-            "TkUQABIPCgtMUF9MRUFQWUVBUhABEhUKEUxQX0xFTkdUSE9GUEVSSU9EEAIq",
-            "bgoKRWFzdGVyVHlwZRIRCg1FQVNURVJfVU5VU0VEEAASEwoPRUFTVEVSX1NU",
-            "QU5EQVJEEAESGAoURUFTVEVSX0lOQ0xVREVFQVNURVIQAhIeChpFQVNURVJf",
-            "SU5DTFVERUVBU1RFUk1PTkRBWRADKlIKC1RyYWRpbmdEYXlzEgsKB1REX05P",
-            "TkUQABIHCgNURDIQARIICgRURDJDEAISBwoDVEQzEAMSCAoEVEQzQxAEEgcK",
-            "A1RENBAFEgcKA1RENxAGKk4KD1RyYWRpbmdEYXlzVGVzdBIOCgpURF9URVNU",
-            "X05PEAASFgoSVERfVEVTVF9TRVBBUkFURV9UEAESEwoPVERfVEVTVF9KT0lO",
-            "VF9GEAIqbQoUQXV0b21hdGljVHJhZGluZ0RheXMSDgoKVERfQVVUT19OTxAA",
-            "EhEKDVREX0FVVE9fRlRFU1QQARIQCgxURF9BVVRPX1dBTEQQAhIPCgtURF9B",
-            "VVRPX0FJQxADEg8KC1REX0FVVE9fQklDEAQqpAQKDUNhbGVuZGFyRXZlbnQS",
-            "FwoTSE9MSURBWV9VTlNQRUNJRklFRBAAEhMKD0hPTElEQVlfTkVXWUVBUhAB",
-            "EhgKFEhPTElEQVlfU0hST1ZFTU9OREFZEAISGQoVSE9MSURBWV9TSFJPVkVU",
-            "VUVTREFZEAMSGAoUSE9MSURBWV9BU0hXRURORVNEQVkQBBISCg5IT0xJREFZ",
-            "X0VBU1RFUhAFEhgKFEhPTElEQVlfSlVMSUFORUFTVEVSEAYSGgoWSE9MSURB",
-            "WV9NQVVORFlUSFVSU0RBWRAHEhYKEkhPTElEQVlfR09PREZSSURBWRAIEhgK",
-            "FEhPTElEQVlfRUFTVEVSTU9OREFZEAkSFQoRSE9MSURBWV9BU0NFTlNJT04Q",
-            "ChIVChFIT0xJREFZX1BFTlRFQ09TVBALEhkKFUhPTElEQVlfQ09SUFVTQ0hS",
-            "SVNUSRAMEhYKEkhPTElEQVlfV0hJVE1PTkRBWRANEhIKDkhPTElEQVlfTUFZ",
-            "REFZEA4SFgoSSE9MSURBWV9BU1NVTVBUSU9OEA8SFAoQSE9MSURBWV9MQUJP",
-            "UkRBWRAQEhUKEUhPTElEQVlfSEFMTE9XRUVOEBESGAoUSE9MSURBWV9BTExT",
-            "QUlOVFNEQVkQEhIVChFIT0xJREFZX0FSTUlTVElDRRATEhgKFEhPTElEQVlf",
-            "VEhBTktTR0lWSU5HEBQSFQoRSE9MSURBWV9DSFJJU1RNQVMQFSpmCg9JbmZv",
-            "cm1hdGlvblR5cGUSGQoVSU5GT1JNQVRJT05fVFlQRV9JTkZPEAASHAoYSU5G",
-            "T1JNQVRJT05fVFlQRV9XQVJOSU5HEAESGgoWSU5GT1JNQVRJT05fVFlQRV9F",
-            "UlJPUhACKrQBCgxWYXJpYWJsZVR5cGUSEwoPVkFSX1VOU1BFQ0lGSUVEEAAS",
-            "DAoIVkFSX01FQU4QARIKCgZWQVJfVEQQChIKCgZWQVJfTFAQCxIOCgpWQVJf",
-            "RUFTVEVSEAwSCgoGVkFSX0FPEBQSCgoGVkFSX0xTEBUSCgoGVkFSX1RDEBYS",
-            "CgoGVkFSX1NPEBcSDwoLVkFSX09VVExJRVIQHRIKCgZWQVJfSVYQHhIMCghW",
-            "QVJfUkFNUBAoQikKEWpkcGx1cy5tYWluLndzLnYxUAGqAhFKRFBsdXMuTWFp",
-            "bi5XUy5WMWIGcHJvdG8z"));
+            "byKUAQoZVHJhbW9GdWxsUHJvY2Vzc1Jlc3VsdER0bxIzCgZvdXRwdXQYASAB",
+            "KAsyIS5qZHBsdXMubWFpbi53cy52MS5UcmFtb091dHB1dER0b0gAEiwKBWVy",
+            "cm9yGAIgASgLMhsuamRwbHVzLm1haW4ud3MudjEuRXJyb3JEdG9IABIKCgJp",
+            "ZBgqIAEoCUIICgZyZXN1bHQiowMKDlRyYW1vT3V0cHV0RHRvEjMKBnJlc3Vs",
+            "dBgBIAEoCzIjLmpkcGx1cy5tYWluLndzLnYxLlJlZ0FyaW1hTW9kZWxEdG8S",
+            "OAoPZXN0aW1hdGlvbl9zcGVjGAIgASgLMh8uamRwbHVzLm1haW4ud3MudjEu",
+            "VHJhbW9TcGVjRHRvEjkKC3Jlc3VsdF9zcGVjGAMgASgLMh8uamRwbHVzLm1h",
+            "aW4ud3MudjEuVHJhbW9TcGVjRHRvSACIAQESNgoDbG9nGAQgASgLMiQuamRw",
+            "bHVzLm1haW4ud3MudjEuUHJvY2Vzc2luZ0xvZ3NEdG9IAYgBARI/CgdkZXRh",
+            "aWxzGAUgAygLMi4uamRwbHVzLm1haW4ud3MudjEuVHJhbW9PdXRwdXREdG8u",
+            "RGV0YWlsc0VudHJ5GlYKDERldGFpbHNFbnRyeRILCgNrZXkYASABKAkSNQoF",
+            "dmFsdWUYAiABKAsyJi5qZHBsdXMubWFpbi53cy52MS5Qcm9jZXNzaW5nRGV0",
+            "YWlsRHRvOgI4AUIOCgxfcmVzdWx0X3NwZWNCBgoEX2xvZyIqCgpEb3VibGVz",
+            "RHRvEgwKBG5hbWUYASABKAkSDgoGdmFsdWVzGAIgAygBIpcCChNQcm9jZXNz",
+            "aW5nRGV0YWlsRHRvEioKAnRzGAEgASgLMhwuamRwbHVzLm1haW4ud3MudjEu",
+            "VHNEYXRhRHRvSAASLgoFYXJyYXkYAiABKAsyHS5qZHBsdXMubWFpbi53cy52",
+            "MS5Eb3VibGVzRHRvSAASLgoGbWF0cml4GAMgASgLMhwuamRwbHVzLm1haW4u",
+            "d3MudjEuTWF0cml4RHRvSAASNQoEdGVzdBgEIAEoCzIlLmpkcGx1cy5tYWlu",
+            "LndzLnYxLlN0YXRpc3RpY2FsVGVzdER0b0gAEhEKB21lc3NhZ2UYBSABKAlI",
+            "ABIQCgZpdmFsdWUYBiABKAVIABIQCgZkdmFsdWUYByABKAFIAEIGCgRkYXRh",
+            "IrABChhQcm9jZXNzaW5nSW5mb3JtYXRpb25EdG8SDAoEbmFtZRgBIAEoCRIO",
+            "CgZvcmlnaW4YAiABKAkSCwoDbXNnGAMgASgJEjAKBHR5cGUYBCABKA4yIi5q",
+            "ZHBsdXMubWFpbi53cy52MS5JbmZvcm1hdGlvblR5cGUSNwoHZGV0YWlscxgF",
+            "IAEoCzImLmpkcGx1cy5tYWluLndzLnYxLlByb2Nlc3NpbmdEZXRhaWxEdG8i",
+            "TQoRUHJvY2Vzc2luZ0xvZ3NEdG8SOAoDbG9nGAEgAygLMisuamRwbHVzLm1h",
+            "aW4ud3MudjEuUHJvY2Vzc2luZ0luZm9ybWF0aW9uRHRvIvoGChBSZWdBcmlt",
+            "YU1vZGVsRHRvEkcKC2Rlc2NyaXB0aW9uGAEgASgLMjIuamRwbHVzLm1haW4u",
+            "d3MudjEuUmVnQXJpbWFNb2RlbER0by5EZXNjcmlwdGlvbkR0bxJFCgplc3Rp",
+            "bWF0aW9uGAIgASgLMjEuamRwbHVzLm1haW4ud3MudjEuUmVnQXJpbWFNb2Rl",
+            "bER0by5Fc3RpbWF0aW9uRHRvEjYKC2RpYWdub3N0aWNzGAUgASgLMiEuamRw",
+            "bHVzLm1haW4ud3MudjEuRGlhZ25vc3RpY3NEdG8a8wEKDkRlc2NyaXB0aW9u",
+            "RHRvEiwKBnNlcmllcxgBIAEoCzIcLmpkcGx1cy5tYWluLndzLnYxLlRzRGF0",
+            "YUR0bxILCgNsb2cYAiABKAgSOAoNcHJlYWRqdXN0bWVudBgDIAEoDjIhLmpk",
+            "cGx1cy5tYWluLndzLnYxLkxlbmd0aE9mUGVyaW9kEjsKCXZhcmlhYmxlcxgE",
+            "IAMoCzIoLmpkcGx1cy5tYWluLndzLnYxLlJlZ3Jlc3Npb25WYXJpYWJsZUR0",
+            "bxIvCgVhcmltYRgFIAEoCzIgLmpkcGx1cy5tYWluLndzLnYxLlNhcmltYVNw",
+            "ZWNEdG8a4AIKDUVzdGltYXRpb25EdG8SCQoBeRgBIAMoARInCgF4GAIgASgL",
+            "MhwuamRwbHVzLm1haW4ud3MudjEuTWF0cml4RHRvEgkKAWIYAyADKAESMQoL",
+            "YmNvdmFyaWFuY2UYBCABKAsyHC5qZHBsdXMubWFpbi53cy52MS5NYXRyaXhE",
+            "dG8SPgoKcGFyYW1ldGVycxgFIAEoCzIqLmpkcGx1cy5tYWluLndzLnYxLlBh",
+            "cmFtZXRlcnNFc3RpbWF0aW9uRHRvEj4KCmxpa2VsaWhvb2QYBiABKAsyKi5q",
+            "ZHBsdXMubWFpbi53cy52MS5MaWtlbGlob29kU3RhdGlzdGljc0R0bxIRCgly",
+            "ZXNpZHVhbHMYByADKAESSgoIbWlzc2luZ3MYCCADKAsyOC5qZHBsdXMubWFp",
+            "bi53cy52MS5SZWdBcmltYU1vZGVsRHRvLk1pc3NpbmdFc3RpbWF0aW9uRHRv",
+            "GkUKFE1pc3NpbmdFc3RpbWF0aW9uRHRvEhAKCHBvc2l0aW9uGAEgASgFEg0K",
+            "BXZhbHVlGAogASgBEgwKBHN0ZGUYCyABKAEiigIKFVJlZ3Jlc3Npb25WYXJp",
+            "YWJsZUR0bxIMCgRuYW1lGAEgASgJEjEKCHZhcl90eXBlGAIgASgOMh8uamRw",
+            "bHVzLm1haW4ud3MudjEuVmFyaWFibGVUeXBlEkgKCG1ldGFkYXRhGAMgAygL",
+            "MjYuamRwbHVzLm1haW4ud3MudjEuUmVncmVzc2lvblZhcmlhYmxlRHRvLk1l",
+            "dGFkYXRhRW50cnkSNQoMY29lZmZpY2llbnRzGAQgAygLMh8uamRwbHVzLm1h",
+            "aW4ud3MudjEuUGFyYW1ldGVyRHRvGi8KDU1ldGFkYXRhRW50cnkSCwoDa2V5",
+            "GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASKTAQoXUGFyYW1ldGVyc0VzdGlt",
+            "YXRpb25EdG8SDQoFdmFsdWUYASADKAESDQoFc2NvcmUYAiADKAESMAoKY292",
+            "YXJpYW5jZRgDIAEoCzIcLmpkcGx1cy5tYWluLndzLnYxLk1hdHJpeER0bxIY",
+            "CgtkZXNjcmlwdGlvbhgEIAEoCUgAiAEBQg4KDF9kZXNjcmlwdGlvbiK+AQoO",
+            "RGlhZ25vc3RpY3NEdG8STgoPcmVzaWR1YWxzX3Rlc3RzGAEgAygLMjUuamRw",
+            "bHVzLm1haW4ud3MudjEuRGlhZ25vc3RpY3NEdG8uUmVzaWR1YWxzVGVzdHNF",
+            "bnRyeRpcChNSZXNpZHVhbHNUZXN0c0VudHJ5EgsKA2tleRgBIAEoCRI0CgV2",
+            "YWx1ZRgCIAEoCzIlLmpkcGx1cy5tYWluLndzLnYxLlN0YXRpc3RpY2FsVGVz",
+            "dER0bzoCOAEqqwEKCUZyZXF1ZW5jeRISCg5GUkVRX1VOREVGSU5FRBAAEg8K",
+            "C0ZSRVFfWUVBUkxZEAESFAoQRlJFUV9IQUxGX1lFQVJMWRACEhcKE0ZSRVFf",
+            "UVVBRFJJX01PTlRITFkQAxISCg5GUkVRX1FVQVJURVJMWRAEEhMKD0ZSRVFf",
+            "QklfTU9OVEhMWRAGEhAKDEZSRVFfTU9OVEhMWRAMEg8KCkZSRVFfREFJTFkQ",
+            "7QIqjQEKDVNlbGVjdGlvblR5cGUSDAoIU1BBTl9BTEwQABINCglTUEFOX0ZS",
+            "T00QARILCgdTUEFOX1RPEAISEAoMU1BBTl9CRVRXRUVOEAMSDQoJU1BBTl9M",
+            "QVNUEAQSDgoKU1BBTl9GSVJTVBAFEhIKDlNQQU5fRVhDTFVESU5HEAYSDQoJ",
+            "U1BBTl9OT05FEAcqRwoQUmVzdWx0U3RhdHVzVHlwZRINCglTVEFUVVNfT0sQ",
+            "ABIQCgxTVEFUVVNfRVJST1IQARISCg5TVEFUVVNfV0FSTklORxACKqwBCg9B",
+            "Z2dyZWdhdGlvblR5cGUSFAoQQUdHUkVHQVRJT05fTk9ORRAAEhMKD0FHR1JF",
+            "R0FUSU9OX1NVTRABEhcKE0FHR1JFR0FUSU9OX0FWRVJBR0UQAhIVChFBR0dS",
+            "RUdBVElPTl9GSVJTVBADEhQKEEFHR1JFR0FUSU9OX0xBU1QQBBITCg9BR0dS",
+            "RUdBVElPTl9NQVgQBRITCg9BR0dSRUdBVElPTl9NSU4QBipCChBEaXN0cmli",
+            "dXRpb25UeXBlEg4KCkRJU1RfRklSU1QQABINCglESVNUX0xBU1QQARIPCgtE",
+            "SVNUX01JRERMRRACKlcKC1ZhbHVlU3RhdHVzEg4KClZTX1BSRVNFTlQQABIN",
+            "CglWU19VTlVTRUQQARINCglWU19CRUZPUkUQAhIMCghWU19BRlRFUhADEgwK",
+            "CFZTX0VNUFRZEAQqgwEKDVBhcmFtZXRlclR5cGUSFAoQUEFSQU1FVEVSX1VO",
+            "VVNFRBAAEhcKE1BBUkFNRVRFUl9VTkRFRklORUQQARITCg9QQVJBTUVURVJf",
+            "RklYRUQQAhIVChFQQVJBTUVURVJfSU5JVElBTBADEhcKE1BBUkFNRVRFUl9F",
+            "U1RJTUFURUQQBCo3Cg5UcmFuc2Zvcm1hdGlvbhIMCghGTl9MRVZFTBAAEgoK",
+            "BkZOX0xPRxABEgsKB0ZOX0FVVE8QCipFCg5MZW5ndGhPZlBlcmlvZBILCgdM",
+            "UF9OT05FEAASDwoLTFBfTEVBUFlFQVIQARIVChFMUF9MRU5HVEhPRlBFUklP",
+            "RBACKm4KCkVhc3RlclR5cGUSEQoNRUFTVEVSX1VOVVNFRBAAEhMKD0VBU1RF",
+            "Ul9TVEFOREFSRBABEhgKFEVBU1RFUl9JTkNMVURFRUFTVEVSEAISHgoaRUFT",
+            "VEVSX0lOQ0xVREVFQVNURVJNT05EQVkQAypSCgtUcmFkaW5nRGF5cxILCgdU",
+            "RF9OT05FEAASBwoDVEQyEAESCAoEVEQyQxACEgcKA1REMxADEggKBFREM0MQ",
+            "BBIHCgNURDQQBRIHCgNURDcQBipOCg9UcmFkaW5nRGF5c1Rlc3QSDgoKVERf",
+            "VEVTVF9OTxAAEhYKElREX1RFU1RfU0VQQVJBVEVfVBABEhMKD1REX1RFU1Rf",
+            "Sk9JTlRfRhACKm0KFEF1dG9tYXRpY1RyYWRpbmdEYXlzEg4KClREX0FVVE9f",
+            "Tk8QABIRCg1URF9BVVRPX0ZURVNUEAESEAoMVERfQVVUT19XQUxEEAISDwoL",
+            "VERfQVVUT19BSUMQAxIPCgtURF9BVVRPX0JJQxAEKqQECg1DYWxlbmRhckV2",
+            "ZW50EhcKE0hPTElEQVlfVU5TUEVDSUZJRUQQABITCg9IT0xJREFZX05FV1lF",
+            "QVIQARIYChRIT0xJREFZX1NIUk9WRU1PTkRBWRACEhkKFUhPTElEQVlfU0hS",
+            "T1ZFVFVFU0RBWRADEhgKFEhPTElEQVlfQVNIV0VETkVTREFZEAQSEgoOSE9M",
+            "SURBWV9FQVNURVIQBRIYChRIT0xJREFZX0pVTElBTkVBU1RFUhAGEhoKFkhP",
+            "TElEQVlfTUFVTkRZVEhVUlNEQVkQBxIWChJIT0xJREFZX0dPT0RGUklEQVkQ",
+            "CBIYChRIT0xJREFZX0VBU1RFUk1PTkRBWRAJEhUKEUhPTElEQVlfQVNDRU5T",
+            "SU9OEAoSFQoRSE9MSURBWV9QRU5URUNPU1QQCxIZChVIT0xJREFZX0NPUlBV",
+            "U0NIUklTVEkQDBIWChJIT0xJREFZX1dISVRNT05EQVkQDRISCg5IT0xJREFZ",
+            "X01BWURBWRAOEhYKEkhPTElEQVlfQVNTVU1QVElPThAPEhQKEEhPTElEQVlf",
+            "TEFCT1JEQVkQEBIVChFIT0xJREFZX0hBTExPV0VFThAREhgKFEhPTElEQVlf",
+            "QUxMU0FJTlRTREFZEBISFQoRSE9MSURBWV9BUk1JU1RJQ0UQExIYChRIT0xJ",
+            "REFZX1RIQU5LU0dJVklORxAUEhUKEUhPTElEQVlfQ0hSSVNUTUFTEBUqZgoP",
+            "SW5mb3JtYXRpb25UeXBlEhkKFUlORk9STUFUSU9OX1RZUEVfSU5GTxAAEhwK",
+            "GElORk9STUFUSU9OX1RZUEVfV0FSTklORxABEhoKFklORk9STUFUSU9OX1RZ",
+            "UEVfRVJST1IQAiq0AQoMVmFyaWFibGVUeXBlEhMKD1ZBUl9VTlNQRUNJRklF",
+            "RBAAEgwKCFZBUl9NRUFOEAESCgoGVkFSX1REEAoSCgoGVkFSX0xQEAsSDgoK",
+            "VkFSX0VBU1RFUhAMEgoKBlZBUl9BTxAUEgoKBlZBUl9MUxAVEgoKBlZBUl9U",
+            "QxAWEgoKBlZBUl9TTxAXEg8KC1ZBUl9PVVRMSUVSEB0SCgoGVkFSX0lWEB4S",
+            "DAoIVkFSX1JBTVAQKEIpChFqZHBsdXMubWFpbi53cy52MVABqgIRSkRQbHVz",
+            "Lk1haW4uV1MuVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::JDPlus.Main.WS.V1.Frequency), typeof(global::JDPlus.Main.WS.V1.SelectionType), typeof(global::JDPlus.Main.WS.V1.ResultStatusType), typeof(global::JDPlus.Main.WS.V1.AggregationType), typeof(global::JDPlus.Main.WS.V1.DistributionType), typeof(global::JDPlus.Main.WS.V1.ValueStatus), typeof(global::JDPlus.Main.WS.V1.ParameterType), typeof(global::JDPlus.Main.WS.V1.Transformation), typeof(global::JDPlus.Main.WS.V1.LengthOfPeriod), typeof(global::JDPlus.Main.WS.V1.EasterType), typeof(global::JDPlus.Main.WS.V1.TradingDays), typeof(global::JDPlus.Main.WS.V1.TradingDaysTest), typeof(global::JDPlus.Main.WS.V1.AutomaticTradingDays), typeof(global::JDPlus.Main.WS.V1.CalendarEvent), typeof(global::JDPlus.Main.WS.V1.InformationType), typeof(global::JDPlus.Main.WS.V1.VariableType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.EmptyDto), global::JDPlus.Main.WS.V1.EmptyDto.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ErrorDto), global::JDPlus.Main.WS.V1.ErrorDto.Parser, new[]{ "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DateDto), global::JDPlus.Main.WS.V1.DateDto.Parser, new[]{ "Year", "Month", "Day" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsPeriodDto), global::JDPlus.Main.WS.V1.TsPeriodDto.Parser, new[]{ "Frequency", "Year", "Pos" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsDataDto), global::JDPlus.Main.WS.V1.TsDataDto.Parser, new[]{ "Start", "Values" }, null, null, null, null),
@@ -438,6 +446,7 @@ namespace JDPlus.Main.WS.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TimeSelectorDto), global::JDPlus.Main.WS.V1.TimeSelectorDto.Parser, new[]{ "Type", "N0", "N1", "D0", "D1" }, new[]{ "D0", "D1" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ResultStatusDto), global::JDPlus.Main.WS.V1.ResultStatusDto.Parser, new[]{ "Type", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsFunctionInputDto), global::JDPlus.Main.WS.V1.TsFunctionInputDto.Parser, new[]{ "Id", "Series" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.BuildTsDataResultDto), global::JDPlus.Main.WS.V1.BuildTsDataResultDto.Parser, new[]{ "Output", "Error", "Id" }, new[]{ "Result" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TsFunctionOutputDto), global::JDPlus.Main.WS.V1.TsFunctionOutputDto.Parser, new[]{ "Id", "Status", "Series" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.PctInputDto), global::JDPlus.Main.WS.V1.PctInputDto.Parser, new[]{ "Id", "Series", "Lag" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DeltaInputDto), global::JDPlus.Main.WS.V1.DeltaInputDto.Parser, new[]{ "Id", "Series", "Lag", "Power" }, null, null, null, null),
@@ -491,7 +500,8 @@ namespace JDPlus.Main.WS.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.EasterRelatedDayDto), global::JDPlus.Main.WS.V1.EasterRelatedDayDto.Parser, new[]{ "Offset", "Julian", "Weight", "Validity" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.PrespecifiedHolidayDto), global::JDPlus.Main.WS.V1.PrespecifiedHolidayDto.Parser, new[]{ "Event", "Offset", "Weight", "Validity" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.FixedWeekDayDto), global::JDPlus.Main.WS.V1.FixedWeekDayDto.Parser, new[]{ "Month", "Position", "Weekday", "Weight", "Validity" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TramoOutputDto), global::JDPlus.Main.WS.V1.TramoOutputDto.Parser, new[]{ "Result", "EstimationSpec", "ResultSpec", "Log", "Details", "Id" }, new[]{ "ResultSpec", "Log" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TramoFullProcessResultDto), global::JDPlus.Main.WS.V1.TramoFullProcessResultDto.Parser, new[]{ "Output", "Error", "Id" }, new[]{ "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.TramoOutputDto), global::JDPlus.Main.WS.V1.TramoOutputDto.Parser, new[]{ "Result", "EstimationSpec", "ResultSpec", "Log", "Details" }, new[]{ "ResultSpec", "Log" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.DoublesDto), global::JDPlus.Main.WS.V1.DoublesDto.Parser, new[]{ "Name", "Values" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ProcessingDetailDto), global::JDPlus.Main.WS.V1.ProcessingDetailDto.Parser, new[]{ "Ts", "Array", "Matrix", "Test", "Message", "Ivalue", "Dvalue" }, new[]{ "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::JDPlus.Main.WS.V1.ProcessingInformationDto), global::JDPlus.Main.WS.V1.ProcessingInformationDto.Parser, new[]{ "Name", "Origin", "Msg", "Type", "Details" }, null, null, null, null),
@@ -959,6 +969,204 @@ namespace JDPlus.Main.WS.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ErrorDto : pb::IMessage<ErrorDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ErrorDto> _parser = new pb::MessageParser<ErrorDto>(() => new ErrorDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ErrorDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrorDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrorDto(ErrorDto other) : this() {
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ErrorDto Clone() {
+      return new ErrorDto(this);
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 1;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ErrorDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ErrorDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ErrorDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DateDto : pb::IMessage<DateDto>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -973,7 +1181,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[1]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1257,7 +1465,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[2]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1532,7 +1740,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1767,7 +1975,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[4]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2070,7 +2278,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[5]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2360,7 +2568,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[6]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2595,7 +2803,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[7]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2914,7 +3122,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[8]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3208,7 +3416,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[9]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3504,7 +3712,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[10]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3868,7 +4076,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[11]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4106,7 +4314,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[12]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4335,6 +4543,337 @@ namespace JDPlus.Main.WS.V1 {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class BuildTsDataResultDto : pb::IMessage<BuildTsDataResultDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BuildTsDataResultDto> _parser = new pb::MessageParser<BuildTsDataResultDto>(() => new BuildTsDataResultDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BuildTsDataResultDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BuildTsDataResultDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BuildTsDataResultDto(BuildTsDataResultDto other) : this() {
+      id_ = other.id_;
+      switch (other.ResultCase) {
+        case ResultOneofCase.Output:
+          Output = other.Output.Clone();
+          break;
+        case ResultOneofCase.Error:
+          Error = other.Error.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BuildTsDataResultDto Clone() {
+      return new BuildTsDataResultDto(this);
+    }
+
+    /// <summary>Field number for the "output" field.</summary>
+    public const int OutputFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::JDPlus.Main.WS.V1.TsFunctionOutputDto Output {
+      get { return resultCase_ == ResultOneofCase.Output ? (global::JDPlus.Main.WS.V1.TsFunctionOutputDto) result_ : null; }
+      set {
+        result_ = value;
+        resultCase_ = value == null ? ResultOneofCase.None : ResultOneofCase.Output;
+      }
+    }
+
+    /// <summary>Field number for the "error" field.</summary>
+    public const int ErrorFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::JDPlus.Main.WS.V1.ErrorDto Error {
+      get { return resultCase_ == ResultOneofCase.Error ? (global::JDPlus.Main.WS.V1.ErrorDto) result_ : null; }
+      set {
+        result_ = value;
+        resultCase_ = value == null ? ResultOneofCase.None : ResultOneofCase.Error;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 42;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private object result_;
+    /// <summary>Enum of possible cases for the "result" oneof.</summary>
+    public enum ResultOneofCase {
+      None = 0,
+      Output = 1,
+      Error = 2,
+    }
+    private ResultOneofCase resultCase_ = ResultOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ResultOneofCase ResultCase {
+      get { return resultCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearResult() {
+      resultCase_ = ResultOneofCase.None;
+      result_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BuildTsDataResultDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BuildTsDataResultDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Output, other.Output)) return false;
+      if (!object.Equals(Error, other.Error)) return false;
+      if (Id != other.Id) return false;
+      if (ResultCase != other.ResultCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (resultCase_ == ResultOneofCase.Output) hash ^= Output.GetHashCode();
+      if (resultCase_ == ResultOneofCase.Error) hash ^= Error.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      hash ^= (int) resultCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (resultCase_ == ResultOneofCase.Output) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Error);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(210, 2);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (resultCase_ == ResultOneofCase.Output) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Error);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(210, 2);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (resultCase_ == ResultOneofCase.Output) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Error);
+      }
+      if (Id.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BuildTsDataResultDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      switch (other.ResultCase) {
+        case ResultOneofCase.Output:
+          if (Output == null) {
+            Output = new global::JDPlus.Main.WS.V1.TsFunctionOutputDto();
+          }
+          Output.MergeFrom(other.Output);
+          break;
+        case ResultOneofCase.Error:
+          if (Error == null) {
+            Error = new global::JDPlus.Main.WS.V1.ErrorDto();
+          }
+          Error.MergeFrom(other.Error);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::JDPlus.Main.WS.V1.TsFunctionOutputDto subBuilder = new global::JDPlus.Main.WS.V1.TsFunctionOutputDto();
+            if (resultCase_ == ResultOneofCase.Output) {
+              subBuilder.MergeFrom(Output);
+            }
+            input.ReadMessage(subBuilder);
+            Output = subBuilder;
+            break;
+          }
+          case 18: {
+            global::JDPlus.Main.WS.V1.ErrorDto subBuilder = new global::JDPlus.Main.WS.V1.ErrorDto();
+            if (resultCase_ == ResultOneofCase.Error) {
+              subBuilder.MergeFrom(Error);
+            }
+            input.ReadMessage(subBuilder);
+            Error = subBuilder;
+            break;
+          }
+          case 338: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::JDPlus.Main.WS.V1.TsFunctionOutputDto subBuilder = new global::JDPlus.Main.WS.V1.TsFunctionOutputDto();
+            if (resultCase_ == ResultOneofCase.Output) {
+              subBuilder.MergeFrom(Output);
+            }
+            input.ReadMessage(subBuilder);
+            Output = subBuilder;
+            break;
+          }
+          case 18: {
+            global::JDPlus.Main.WS.V1.ErrorDto subBuilder = new global::JDPlus.Main.WS.V1.ErrorDto();
+            if (resultCase_ == ResultOneofCase.Error) {
+              subBuilder.MergeFrom(Error);
+            }
+            input.ReadMessage(subBuilder);
+            Error = subBuilder;
+            break;
+          }
+          case 338: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// Default output of TsFunctions (no additional output) 
   /// </summary>
@@ -4353,7 +4892,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[13]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4646,7 +5185,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[14]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4930,7 +5469,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[15]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5248,7 +5787,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[16]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5606,7 +6145,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[17]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5887,7 +6426,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[18]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6223,7 +6762,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[19]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6803,7 +7342,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[20]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7112,7 +7651,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[21]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7356,7 +7895,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[22]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7626,7 +8165,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[23]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7887,7 +8426,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[24]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8159,7 +8698,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[25]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8803,7 +9342,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[26]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9399,7 +9938,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[27]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9743,7 +10282,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[28]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10015,7 +10554,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[29]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10657,7 +11196,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[30]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11265,7 +11804,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[31]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11509,7 +12048,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[32]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11809,7 +12348,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[33]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12062,7 +12601,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[34]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12879,7 +13418,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[35]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13152,7 +13691,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[36]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13912,7 +14451,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[37]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14184,7 +14723,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[38]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14301,7 +14840,7 @@ namespace JDPlus.Main.WS.V1 {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 10;
+    public const int IdFieldNumber = 42;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14408,7 +14947,7 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteMessage(FullSpec);
       }
       if (Id.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(210, 2);
         output.WriteString(Id);
       }
       if (_unknownFields != null) {
@@ -14442,7 +14981,7 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteMessage(FullSpec);
       }
       if (Id.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(210, 2);
         output.WriteString(Id);
       }
       if (_unknownFields != null) {
@@ -14471,7 +15010,7 @@ namespace JDPlus.Main.WS.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ModellingContext);
       }
       if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14565,7 +15104,7 @@ namespace JDPlus.Main.WS.V1 {
             FullSpec = subBuilder;
             break;
           }
-          case 82: {
+          case 338: {
             Id = input.ReadString();
             break;
           }
@@ -14619,7 +15158,7 @@ namespace JDPlus.Main.WS.V1 {
             FullSpec = subBuilder;
             break;
           }
-          case 82: {
+          case 338: {
             Id = input.ReadString();
             break;
           }
@@ -14645,7 +15184,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[39]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14998,7 +15537,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[40]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15629,7 +16168,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[41]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15991,7 +16530,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[42]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16474,7 +17013,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[43]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16850,7 +17389,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[44]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17131,7 +17670,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[45]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17440,7 +17979,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[46]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17943,7 +18482,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[47]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18437,7 +18976,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[48]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18792,7 +19331,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[49]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19347,7 +19886,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[50]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19787,7 +20326,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[51]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20105,7 +20644,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[52]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[54]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20318,7 +20857,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[53]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[55]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20844,7 +21383,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[54]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[56]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21097,7 +21636,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[55]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[57]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21444,7 +21983,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[56]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[58]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21772,7 +22311,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[57]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[59]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22208,7 +22747,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[58]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[60]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22489,7 +23028,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[59]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[61]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22742,7 +23281,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[60]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[62]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22986,7 +23525,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[61]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[63]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23304,7 +23843,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[62]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[64]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23622,7 +24161,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[63]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23940,7 +24479,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[64]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[66]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24287,6 +24826,337 @@ namespace JDPlus.Main.WS.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TramoFullProcessResultDto : pb::IMessage<TramoFullProcessResultDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TramoFullProcessResultDto> _parser = new pb::MessageParser<TramoFullProcessResultDto>(() => new TramoFullProcessResultDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TramoFullProcessResultDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[67]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TramoFullProcessResultDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TramoFullProcessResultDto(TramoFullProcessResultDto other) : this() {
+      id_ = other.id_;
+      switch (other.ResultCase) {
+        case ResultOneofCase.Output:
+          Output = other.Output.Clone();
+          break;
+        case ResultOneofCase.Error:
+          Error = other.Error.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TramoFullProcessResultDto Clone() {
+      return new TramoFullProcessResultDto(this);
+    }
+
+    /// <summary>Field number for the "output" field.</summary>
+    public const int OutputFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::JDPlus.Main.WS.V1.TramoOutputDto Output {
+      get { return resultCase_ == ResultOneofCase.Output ? (global::JDPlus.Main.WS.V1.TramoOutputDto) result_ : null; }
+      set {
+        result_ = value;
+        resultCase_ = value == null ? ResultOneofCase.None : ResultOneofCase.Output;
+      }
+    }
+
+    /// <summary>Field number for the "error" field.</summary>
+    public const int ErrorFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::JDPlus.Main.WS.V1.ErrorDto Error {
+      get { return resultCase_ == ResultOneofCase.Error ? (global::JDPlus.Main.WS.V1.ErrorDto) result_ : null; }
+      set {
+        result_ = value;
+        resultCase_ = value == null ? ResultOneofCase.None : ResultOneofCase.Error;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 42;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private object result_;
+    /// <summary>Enum of possible cases for the "result" oneof.</summary>
+    public enum ResultOneofCase {
+      None = 0,
+      Output = 1,
+      Error = 2,
+    }
+    private ResultOneofCase resultCase_ = ResultOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ResultOneofCase ResultCase {
+      get { return resultCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearResult() {
+      resultCase_ = ResultOneofCase.None;
+      result_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TramoFullProcessResultDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TramoFullProcessResultDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Output, other.Output)) return false;
+      if (!object.Equals(Error, other.Error)) return false;
+      if (Id != other.Id) return false;
+      if (ResultCase != other.ResultCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (resultCase_ == ResultOneofCase.Output) hash ^= Output.GetHashCode();
+      if (resultCase_ == ResultOneofCase.Error) hash ^= Error.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      hash ^= (int) resultCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (resultCase_ == ResultOneofCase.Output) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Error);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(210, 2);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (resultCase_ == ResultOneofCase.Output) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Error);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(210, 2);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (resultCase_ == ResultOneofCase.Output) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Output);
+      }
+      if (resultCase_ == ResultOneofCase.Error) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Error);
+      }
+      if (Id.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TramoFullProcessResultDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      switch (other.ResultCase) {
+        case ResultOneofCase.Output:
+          if (Output == null) {
+            Output = new global::JDPlus.Main.WS.V1.TramoOutputDto();
+          }
+          Output.MergeFrom(other.Output);
+          break;
+        case ResultOneofCase.Error:
+          if (Error == null) {
+            Error = new global::JDPlus.Main.WS.V1.ErrorDto();
+          }
+          Error.MergeFrom(other.Error);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::JDPlus.Main.WS.V1.TramoOutputDto subBuilder = new global::JDPlus.Main.WS.V1.TramoOutputDto();
+            if (resultCase_ == ResultOneofCase.Output) {
+              subBuilder.MergeFrom(Output);
+            }
+            input.ReadMessage(subBuilder);
+            Output = subBuilder;
+            break;
+          }
+          case 18: {
+            global::JDPlus.Main.WS.V1.ErrorDto subBuilder = new global::JDPlus.Main.WS.V1.ErrorDto();
+            if (resultCase_ == ResultOneofCase.Error) {
+              subBuilder.MergeFrom(Error);
+            }
+            input.ReadMessage(subBuilder);
+            Error = subBuilder;
+            break;
+          }
+          case 338: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::JDPlus.Main.WS.V1.TramoOutputDto subBuilder = new global::JDPlus.Main.WS.V1.TramoOutputDto();
+            if (resultCase_ == ResultOneofCase.Output) {
+              subBuilder.MergeFrom(Output);
+            }
+            input.ReadMessage(subBuilder);
+            Output = subBuilder;
+            break;
+          }
+          case 18: {
+            global::JDPlus.Main.WS.V1.ErrorDto subBuilder = new global::JDPlus.Main.WS.V1.ErrorDto();
+            if (resultCase_ == ResultOneofCase.Error) {
+              subBuilder.MergeFrom(Error);
+            }
+            input.ReadMessage(subBuilder);
+            Error = subBuilder;
+            break;
+          }
+          case 338: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TramoOutputDto : pb::IMessage<TramoOutputDto>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -24301,7 +25171,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[65]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[68]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24326,7 +25196,6 @@ namespace JDPlus.Main.WS.V1 {
       resultSpec_ = other.resultSpec_ != null ? other.resultSpec_.Clone() : null;
       log_ = other.log_ != null ? other.log_.Clone() : null;
       details_ = other.details_.Clone();
-      id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -24395,18 +25264,6 @@ namespace JDPlus.Main.WS.V1 {
       get { return details_; }
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 10;
-    private string id_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Id {
-      get { return id_; }
-      set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -24427,7 +25284,6 @@ namespace JDPlus.Main.WS.V1 {
       if (!object.Equals(ResultSpec, other.ResultSpec)) return false;
       if (!object.Equals(Log, other.Log)) return false;
       if (!Details.Equals(other.Details)) return false;
-      if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -24440,7 +25296,6 @@ namespace JDPlus.Main.WS.V1 {
       if (resultSpec_ != null) hash ^= ResultSpec.GetHashCode();
       if (log_ != null) hash ^= Log.GetHashCode();
       hash ^= Details.GetHashCode();
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -24476,10 +25331,6 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteMessage(Log);
       }
       details_.WriteTo(output, _map_details_codec);
-      if (Id.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(Id);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -24507,10 +25358,6 @@ namespace JDPlus.Main.WS.V1 {
         output.WriteMessage(Log);
       }
       details_.WriteTo(ref output, _map_details_codec);
-      if (Id.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(Id);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -24534,9 +25381,6 @@ namespace JDPlus.Main.WS.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Log);
       }
       size += details_.CalculateSize(_map_details_codec);
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -24574,9 +25418,6 @@ namespace JDPlus.Main.WS.V1 {
         Log.MergeFrom(other.Log);
       }
       details_.MergeFrom(other.details_);
-      if (other.Id.Length != 0) {
-        Id = other.Id;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -24626,10 +25467,6 @@ namespace JDPlus.Main.WS.V1 {
           }
           case 42: {
             details_.AddEntriesFrom(input, _map_details_codec);
-            break;
-          }
-          case 82: {
-            Id = input.ReadString();
             break;
           }
         }
@@ -24683,10 +25520,6 @@ namespace JDPlus.Main.WS.V1 {
             details_.AddEntriesFrom(ref input, _map_details_codec);
             break;
           }
-          case 82: {
-            Id = input.ReadString();
-            break;
-          }
         }
       }
     }
@@ -24709,7 +25542,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[66]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[69]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24935,7 +25768,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[67]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[70]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25497,7 +26330,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[68]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[71]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25852,7 +26685,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[69]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[72]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26039,7 +26872,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[70]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[73]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27429,7 +28262,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[71]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[74]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27716,7 +28549,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[72]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[75]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -28030,7 +28863,7 @@ namespace JDPlus.Main.WS.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[73]; }
+      get { return global::JDPlus.Main.WS.V1.ToolkitMessagesReflection.Descriptor.MessageTypes[76]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
