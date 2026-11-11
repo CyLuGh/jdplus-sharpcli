@@ -24,7 +24,7 @@ public class DescriptiveStatisticsTests
             Q25 = 1.75,
             Q50 = 2.5,
             Q75 = 3.25,
-            Status = new ResultStatus { Type = ResultStatusType.StatusOk, Message = "Success" }
+            Status = new ResultStatus { Type = ResultStatusType.StatusOk, Message = "Success" },
         };
 
         var dto = ds.ToDto();
@@ -38,7 +38,6 @@ public class DescriptiveStatisticsTests
     {
         var ds = new DescriptiveStatisticsDto
         {
-            Id = "Test",
             N = 4,
             Average = 2.5,
             Stdev = 1.118033988749895,
@@ -51,8 +50,8 @@ public class DescriptiveStatisticsTests
             Status = new ResultStatusDto()
             {
                 Type = JDPlus.Main.WS.V1.ResultStatusType.StatusOk,
-                Message = "Success"
-            }
+                Message = "Success",
+            },
         };
 
         var model = ds.ToModel();

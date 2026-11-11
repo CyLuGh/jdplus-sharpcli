@@ -1,5 +1,7 @@
 ﻿using JDPlus.Main.WS.V1;
 using JDPlus.WS.Models;
+using LanguageExt;
+using LanguageExt.Common;
 
 namespace JDPlus.WS.Mapper;
 
@@ -10,7 +12,7 @@ public static class MatrixMapper
         {
             NColumns = dto.Ncols,
             NRows = dto.Nrows,
-            Values = dto.Values.ToSeq()
+            Values = dto.Values.ToSeq(),
         };
 
     public static MatrixDto ToDto(this Matrix model)
@@ -22,4 +24,12 @@ public static class MatrixMapper
 
     public static TsMatrix ToModel(this TsMatrixDto dto) =>
         new(dto.Start.ToModel(), dto.Values.ToModel());
+
+    public static Either<Error, TsMatrix> ToResult(this TramoForecastResponseDto dto) =>
+        dto.ResultCase switch
+        {
+            TramoForecastResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
+            TramoForecastResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
+            _ => throw new ArgumentOutOfRangeException(),
+        };
 }

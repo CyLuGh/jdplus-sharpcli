@@ -5,7 +5,7 @@ public readonly record struct FixedWeekDay
     public int Month { get; init; }
 
     /// <summary>
-    /// Corresponds to the first, second...)
+    /// Corresponds to the first, second...
     /// </summary>
     public int Position { get; init; }
 

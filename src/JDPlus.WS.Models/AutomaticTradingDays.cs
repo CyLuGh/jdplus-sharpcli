@@ -6,5 +6,5 @@ public enum AutomaticTradingDays
     FTest = 1,
     Wald = 2,
     Aic = 3,
-    Bic = 4
+    Bic = 4,
 }

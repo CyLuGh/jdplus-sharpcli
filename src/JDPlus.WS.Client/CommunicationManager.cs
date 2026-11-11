@@ -67,16 +67,16 @@ public class CommunicationManager
         return dto.ToModel();
     }
 
-    public async Task<DescriptiveStatistics> GetDescriptiveStatistics(
+    public async Task<Either<Error, DescriptiveStatistics>> GetDescriptiveStatistics(
         TsData data,
         CancellationToken token = default
     )
     {
-        var input = new TsFunctionInputDto { Id = string.Empty, Series = data.ToDto() };
+        var input = new TsFunctionRequestDto { Id = string.Empty, Series = data.ToDto() };
         var dto = await GetClient()
             .StatisticsAsync(input, cancellationToken: token)
             .ConfigureAwait(false);
-        return dto.ToModel();
+        return dto.ToResult();
     }
 
     public async Task<Either<Error, TsData>> BuildTsData(
@@ -90,7 +90,7 @@ public class CommunicationManager
     {
         try
         {
-            var input = new BuildTsDataInputDto()
+            var input = new BuildTsDataRequestDto()
             {
                 Gathering = new ObsGatheringDto()
                 {
@@ -111,14 +111,12 @@ public class CommunicationManager
 
             return dto.ResultCase switch
             {
-                BuildTsDataResultDto.ResultOneofCase.Output
-                    => dto.Output.Status.Type == ResultStatusType.StatusOk
-                        ? dto.Output.Series.ToModel()
-                        : Error.New(
-                            $"Error building time series data: {dto.Output.Status.Message}"
-                        ),
-                BuildTsDataResultDto.ResultOneofCase.Error => Error.New(dto.Error.Message),
-                _ => Error.New("Unknown result case")
+                BuildTsDataResponseDto.ResultOneofCase.Ok => dto.Ok.Status.Type
+                == ResultStatusType.StatusOk
+                    ? dto.Ok.Series.ToModel()
+                    : Error.New($"Error building time series data: {dto.Ok.Status.Message}"),
+                BuildTsDataResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
+                _ => Error.New("Unknown result case"),
             };
         }
         catch (Exception exc)
@@ -127,7 +125,7 @@ public class CommunicationManager
         }
     }
 
-    public Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
+    public Task<Either<Error, TemporalDisaggregationResults>> ProcessTemporalDisaggregation(
         TsData y,
         bool constant = false,
         bool trend = false,
@@ -160,12 +158,12 @@ public class CommunicationManager
                 DiffuserEgs = diffuserEgs,
                 Frequency = freq ?? Option<int>.None,
                 NBackcasts = nBackcasts ?? Option<int>.None,
-                NForecasts = nForecasts ?? Option<int>.None
+                NForecasts = nForecasts ?? Option<int>.None,
             },
             token
         );
 
-    public async Task<TemporalDisaggregationResults> ProcessTemporalDisaggregation(
+    public async Task<Either<Error, TemporalDisaggregationResults>> ProcessTemporalDisaggregation(
         TemporalDisaggregationRequest request,
         CancellationToken token = default
     )
@@ -174,7 +172,7 @@ public class CommunicationManager
         var res = await GetClient()
             .ProcessTemporalDisaggregationAsync(req, cancellationToken: token)
             .ConfigureAwait(false);
-        return res.ToModel();
+        return res.ToResult();
     }
 
     public static TramoRequestDto BuildTramoRequest(
@@ -189,13 +187,13 @@ public class CommunicationManager
             {
                 Series = series.ToDto(),
                 FullSpec = fullSpec.ToDto(),
-                NForecasts = nForecasts
+                NForecasts = nForecasts,
             },
             defSpec => new TramoRequestDto
             {
                 Series = series.ToDto(),
                 DefSpec = defSpec,
-                NForecasts = nForecasts
+                NForecasts = nForecasts,
             }
         );
         context.IfSome(mc => request.ModellingContext = mc.ToDto());
@@ -203,7 +201,7 @@ public class CommunicationManager
         return request;
     }
 
-    public async Task<TramoForecasts> GetTramoForecasts(
+    public async Task<Either<Error, TramoForecasts>> GetTramoForecasts(
         TsData series,
         Either<string, TramoSpec> spec,
         int nForecasts,
@@ -212,14 +210,18 @@ public class CommunicationManager
     )
     {
         var request = BuildTramoRequest(series, spec, nForecasts, context);
-        var results = await GetClient()
+        var response = await GetClient()
             .TramoForecastAsync(request, cancellationToken: token)
             .ConfigureAwait(false);
-        var tsMatrix = results.ToModel();
-        return new(tsMatrix);
+
+        var result = response.ToResult();
+        return result.Map(r => new TramoForecasts(r));
     }
 
-    public async IAsyncEnumerable<(string Id, TramoForecasts Forecasts)> GetTramoForecasts(
+    public async IAsyncEnumerable<(
+        string Id,
+        Either<Error, TramoForecasts> Forecasts
+    )> GetTramoForecasts(
         Seq<TramoRequestDto> requestDtos,
         [EnumeratorCancellation] CancellationToken token = default
     )
@@ -232,7 +234,7 @@ public class CommunicationManager
         {
             yield return (
                 stream.ResponseStream.Current.Id,
-                new TramoForecasts(stream.ResponseStream.Current.ToModel())
+                stream.ResponseStream.Current.ToResult().Map(r => new TramoForecasts(r))
             );
         }
 
@@ -270,9 +272,9 @@ public class CommunicationManager
 
             return results.ResultCase switch
             {
-                TramoFullProcessResultDto.ResultOneofCase.Output => results.Output.ToModel(),
-                TramoFullProcessResultDto.ResultOneofCase.Error => Error.New(results.Error.Message),
-                _ => Error.New("Unknown result case")
+                TramoFullProcessResponseDto.ResultOneofCase.Ok => results.Ok.ToModel(),
+                TramoFullProcessResponseDto.ResultOneofCase.Err => Error.New(results.Err.Message),
+                _ => Error.New("Unknown result case"),
             };
         }
         catch (Exception exc)

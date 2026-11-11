@@ -1,15 +1,15 @@
 using JDPlus.Main.WS.V1;
 using JDPlus.WS.Models;
+using LanguageExt;
+using LanguageExt.Common;
 
 namespace JDPlus.WS.Mapper;
 
 public static class DescriptiveStatisticsMapper
 {
-    extension(DescriptiveStatistics model)
-    {
-        public DescriptiveStatisticsDto ToDto() => new()
+    public static DescriptiveStatisticsDto ToDto(this DescriptiveStatistics model) =>
+        new()
         {
-            Id = model.Id,
             N = model.N,
             Nmissing = model.NMissing,
             Average = model.Average,
@@ -19,15 +19,12 @@ public static class DescriptiveStatisticsMapper
             Min = model.Min,
             Max = model.Max,
             Stdev = model.StDev,
-            Status = model.Status.ToDto()
+            Status = model.Status.ToDto(),
         };
-    }
 
-    extension(DescriptiveStatisticsDto dto)
-    {
-        public DescriptiveStatistics ToModel() => new()
+    public static DescriptiveStatistics ToModel(this DescriptiveStatisticsDto dto) =>
+        new()
         {
-            Id = dto.Id,
             N = dto.N,
             NMissing = dto.Nmissing,
             Average = dto.Average,
@@ -37,7 +34,29 @@ public static class DescriptiveStatisticsMapper
             Min = dto.Min,
             Max = dto.Max,
             StDev = dto.Stdev,
-            Status = dto.Status.ToModel()
+            Status = dto.Status.ToModel(),
         };
-    }
+
+    public static Option<DescriptiveStatistics> ToModel(
+        this DescriptiveStatisticsResponseDto dto
+    ) =>
+        dto.ResultCase switch
+        {
+            DescriptiveStatisticsResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
+            _ => Option<DescriptiveStatistics>.None,
+        };
+
+    public static Either<Error, DescriptiveStatistics> ToResult(
+        this DescriptiveStatisticsResponseDto dto
+    ) =>
+        dto.ResultCase switch
+        {
+            DescriptiveStatisticsResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
+            DescriptiveStatisticsResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
+            _ => throw new ArgumentOutOfRangeException(
+                nameof(dto.ResultCase),
+                dto.ResultCase,
+                null
+            ),
+        };
 }
