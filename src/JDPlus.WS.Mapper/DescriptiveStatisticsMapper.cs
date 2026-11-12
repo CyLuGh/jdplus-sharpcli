@@ -19,7 +19,6 @@ public static class DescriptiveStatisticsMapper
             Min = model.Min,
             Max = model.Max,
             Stdev = model.StDev,
-            Status = model.Status.ToDto(),
         };
 
     public static DescriptiveStatistics ToModel(this DescriptiveStatisticsDto dto) =>
@@ -34,7 +33,6 @@ public static class DescriptiveStatisticsMapper
             Min = dto.Min,
             Max = dto.Max,
             StDev = dto.Stdev,
-            Status = dto.Status.ToModel(),
         };
 
     public static Option<DescriptiveStatistics> ToModel(
@@ -53,10 +51,11 @@ public static class DescriptiveStatisticsMapper
         {
             DescriptiveStatisticsResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
             DescriptiveStatisticsResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
-            _ => throw new ArgumentOutOfRangeException(
-                nameof(dto.ResultCase),
-                dto.ResultCase,
-                null
-            ),
+            _
+                => throw new ArgumentOutOfRangeException(
+                    nameof(dto.ResultCase),
+                    dto.ResultCase,
+                    null
+                ),
         };
 }

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="LanguageExt.Core" />
-    <PackageReference Include="OneOf" />
   </ItemGroup>
 
 </Project>

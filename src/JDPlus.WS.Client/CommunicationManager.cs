@@ -9,7 +9,6 @@ using LanguageExt;
 using LanguageExt.Common;
 using AggregationType = JDPlus.WS.Models.AggregationType;
 using Frequency = JDPlus.WS.Models.Frequency;
-using ResultStatusType = JDPlus.Main.WS.V1.ResultStatusType;
 using VersionInfo = JDPlus.WS.Models.VersionInfo;
 
 namespace JDPlus.WS.Client;
@@ -111,10 +110,7 @@ public class CommunicationManager
 
             return dto.ResultCase switch
             {
-                BuildTsDataResponseDto.ResultOneofCase.Ok => dto.Ok.Status.Type
-                == ResultStatusType.StatusOk
-                    ? dto.Ok.Series.ToModel()
-                    : Error.New($"Error building time series data: {dto.Ok.Status.Message}"),
+                BuildTsDataResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
                 BuildTsDataResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
                 _ => Error.New("Unknown result case"),
             };

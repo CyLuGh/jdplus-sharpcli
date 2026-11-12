@@ -1,7 +1,3 @@
-﻿using OneOf;
+﻿namespace JDPlus.WS.Models;
 
-namespace JDPlus.WS.Models;
-
-public readonly record struct CalendarDefinition(
-    OneOf<Calendar, WeightedCalendar, ChainedCalendar> Definition
-);
+public union CalendarDefinition(Calendar, WeightedCalendar, ChainedCalendar);

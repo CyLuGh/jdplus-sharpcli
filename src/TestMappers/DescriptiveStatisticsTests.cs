@@ -3,7 +3,6 @@ using JDPlus.Main.WS.V1;
 using JDPlus.WS.Mapper;
 using JDPlus.WS.Models;
 using Xunit;
-using ResultStatusType = JDPlus.WS.Models.ResultStatusType;
 
 namespace TestMappers;
 
@@ -24,7 +23,6 @@ public class DescriptiveStatisticsTests
             Q25 = 1.75,
             Q50 = 2.5,
             Q75 = 3.25,
-            Status = new ResultStatus { Type = ResultStatusType.StatusOk, Message = "Success" },
         };
 
         var dto = ds.ToDto();
@@ -47,11 +45,6 @@ public class DescriptiveStatisticsTests
             Q25 = 1.75,
             Q50 = 2.5,
             Q75 = 3.25,
-            Status = new ResultStatusDto()
-            {
-                Type = JDPlus.Main.WS.V1.ResultStatusType.StatusOk,
-                Message = "Success",
-            },
         };
 
         var model = ds.ToModel();

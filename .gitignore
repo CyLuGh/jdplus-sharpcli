@@ -428,3 +428,6 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /src/.idea
+/src/JDPlus.WS.Client/proto
+/src/JDPlus.WS.Dtos/proto
+

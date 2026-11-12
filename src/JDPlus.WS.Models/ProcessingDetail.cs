@@ -1,5 +1,3 @@
-﻿using OneOf;
-
-namespace JDPlus.WS.Models;
+﻿namespace JDPlus.WS.Models;
 
 public union ProcessingDetail(TsData, Doubles, Matrix, StatisticalTest, string, int, double);

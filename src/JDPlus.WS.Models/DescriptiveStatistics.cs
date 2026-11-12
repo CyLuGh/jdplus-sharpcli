@@ -3,7 +3,6 @@ namespace JDPlus.WS.Models;
 public readonly record struct DescriptiveStatistics
 {
     public string Id { get; init; }
-    public ResultStatus Status { get; init; }
     public int N { get; init; }
     public int NMissing { get; init; }
     public double Max { get; init; }
@@ -16,7 +15,6 @@ public readonly record struct DescriptiveStatistics
 
     public override string ToString() =>
         $"""
-            Status: {Status.Type}
             N: {N}
             NMissing: {NMissing}
             Max: {Max}
