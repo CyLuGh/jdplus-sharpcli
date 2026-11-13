@@ -65,21 +65,21 @@ Console.WriteLine(version);
 // foreach (var t in disagg.DisaggregatedSeries.GetDateValues().OrderBy(x => x.Key))
 //     Console.WriteLine(t);
 
-var rate = (
-    await communicationManager.BuildTsData(
-        CreateData().ToSeq(),
-        frequency: Frequency.Monthly,
-        aggregationType: AggregationType.First
-    )
-).Match(right => right, _ => TsData.Default);
-
-var forecasts = await communicationManager.GetTramoForecasts(
-    rate,
-    "TRfull",
-    3,
-    Option<ModellingContext>.None
-);
-Console.WriteLine(forecasts);
+// var rate = (
+//     await communicationManager.BuildTsData(
+//         CreateData().ToSeq(),
+//         frequency: Frequency.Monthly,
+//         aggregationType: AggregationType.First
+//     )
+// ).Match(right => right, _ => TsData.Default);
+//
+// var forecasts = await communicationManager.GetTramoForecasts(
+//     rate,
+//     "TRfull",
+//     3,
+//     Option<ModellingContext>.None
+// );
+// Console.WriteLine(forecasts);
 
 // var multiForecasts = await communicationManager
 //     .GetTramoForecasts(
@@ -109,6 +109,30 @@ Console.WriteLine(forecasts);
 //     Option<ModellingContext>.None
 // );
 // Console.WriteLine(fullProcess);
+
+var data = CreateData().ToSeq();
+var dates = data.Map(x => x.Item1);
+var values = data.Map(x => x.Item2);
+
+var tests = Enumerable
+    .Range(0, 200)
+    .Map(i => ($"{i}", dates.AsEnumerable(), values.AsEnumerable()))
+    .Prepend(("Faulty", dates.Skip(1), values.AsEnumerable()));
+
+var forecasts = await communicationManager
+    .GetManyTramoForecasts(
+        tests,
+        Frequency.Quarterly,
+        AggregationType.Sum,
+        "TRfull",
+        2,
+        Option<ModellingContext>.None
+    )
+    .ToListAsync();
+
+Console.WriteLine(forecasts.Count);
+Console.WriteLine(forecasts[0]);
+Console.WriteLine(forecasts[1]);
 
 Console.ReadLine();
 

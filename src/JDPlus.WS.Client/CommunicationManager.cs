@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Channels;
 using Grpc.Core;
 using Grpc.Net.Client;
 using JDPlus.Main.WS.V1;
@@ -108,17 +109,142 @@ public class CommunicationManager
                 .BuildTsDataAsync(input, cancellationToken: token)
                 .ConfigureAwait(false);
 
-            return dto.ResultCase switch
-            {
-                BuildTsDataResponseDto.ResultOneofCase.Ok => dto.Ok.ToModel(),
-                BuildTsDataResponseDto.ResultOneofCase.Err => Error.New(dto.Err.Message),
-                _ => Error.New("Unknown result case"),
-            };
+            return dto.ToResult();
         }
         catch (Exception exc)
         {
             return Error.New(exc);
         }
+    }
+
+    private static BuildTsDataRequestDto CreateBuildTsDataRequest(
+        string id,
+        Seq<DateOnly> dates,
+        Seq<double> values,
+        AggregationType aggregationType,
+        Frequency frequency
+    )
+    {
+        var request = new BuildTsDataRequestDto
+        {
+            Id = id,
+            Gathering = new ObsGatheringDto()
+            {
+                Frequency = (Main.WS.V1.Frequency)frequency,
+                AggregationType = (Main.WS.V1.AggregationType)aggregationType,
+                AllowPartialAggregation = true,
+                IncludeMissingValues = true
+            }
+        };
+        request.Observations.AddRange(
+            dates
+                .Zip(values)
+                .Map(t => new BuildTsDataObsDto() { Date = t.Left.ToDto(), Value = t.Right })
+        );
+
+        return request;
+    }
+
+    public async IAsyncEnumerable<(string, Either<Error, TsData>)> BuildManyTsData(
+        IEnumerable<(string, IEnumerable<DateOnly>, IEnumerable<double>)> data,
+        Frequency frequency,
+        AggregationType aggregationType,
+        [EnumeratorCancellation] CancellationToken token = default
+    )
+    {
+        using var tsStream = GetClient().BuildTsDataStream(cancellationToken: token);
+        var output = Channel.CreateBounded<(string, Either<Error, TsData>)>(
+            new BoundedChannelOptions(100) { SingleWriter = false, SingleReader = true }
+        );
+
+        Exception? originalException = null;
+
+        async Task WriteTaskAsync()
+        {
+            try
+            {
+                foreach (var (id, dates, values) in data)
+                {
+                    var datesSeq = dates.ToSeq();
+                    var valuesSeq = values.ToSeq();
+
+                    if (datesSeq.Count != valuesSeq.Count)
+                    {
+                        await output.Writer.WriteAsync(
+                            (
+                                id,
+                                Error.New(
+                                    $"Dates count ({datesSeq.Count}) does not match values count({valuesSeq.Count})."
+                                )
+                            ),
+                            token
+                        );
+
+                        continue;
+                    }
+
+                    var request = CreateBuildTsDataRequest(
+                        id,
+                        datesSeq,
+                        valuesSeq,
+                        aggregationType,
+                        frequency
+                    );
+
+                    await tsStream.RequestStream.WriteAsync(request, token);
+                }
+            }
+            catch (Exception ex)
+            {
+                originalException = ex;
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    await tsStream.RequestStream.CompleteAsync();
+                }
+                catch when (originalException != null)
+                {
+                    throw originalException;
+                }
+            }
+        }
+
+        async Task ReaderTaskAsync()
+        {
+            await foreach (var response in tsStream.ResponseStream.ReadAllAsync(token))
+            {
+                await output.Writer.WriteAsync((response.Id, response.ToResult()), token);
+            }
+        }
+
+        var writer = WriteTaskAsync();
+        var reader = ReaderTaskAsync();
+
+        async Task CompleteOutputAsync()
+        {
+            try
+            {
+                await Task.WhenAll(writer, reader);
+                output.Writer.TryComplete();
+            }
+            catch (Exception ex)
+            {
+                output.Writer.TryComplete(ex);
+                throw;
+            }
+        }
+
+        var completionTask = CompleteOutputAsync();
+
+        await foreach (var ei in output.Reader.ReadAllAsync(token))
+        {
+            yield return ei;
+        }
+
+        await completionTask;
     }
 
     public Task<Either<Error, TemporalDisaggregationResults>> ProcessTemporalDisaggregation(
@@ -172,6 +298,7 @@ public class CommunicationManager
     }
 
     public static TramoRequestDto BuildTramoRequest(
+        string id,
         TsData series,
         Either<string, TramoSpec> spec,
         int nForecasts,
@@ -193,7 +320,7 @@ public class CommunicationManager
             }
         );
         context.IfSome(mc => request.ModellingContext = mc.ToDto());
-        request.Id = Guid.CreateVersion7().ToString();
+        request.Id = id;
         return request;
     }
 
@@ -205,13 +332,131 @@ public class CommunicationManager
         CancellationToken token = default
     )
     {
-        var request = BuildTramoRequest(series, spec, nForecasts, context);
+        var request = BuildTramoRequest(
+            Guid.CreateVersion7().ToString(),
+            series,
+            spec,
+            nForecasts,
+            context
+        );
         var response = await GetClient()
             .TramoForecastAsync(request, cancellationToken: token)
             .ConfigureAwait(false);
 
         var result = response.ToResult();
         return result.Map(r => new TramoForecasts(r));
+    }
+
+    public async IAsyncEnumerable<(string, Either<Error, TramoForecasts>)> GetManyTramoForecasts(
+        IEnumerable<(string, IEnumerable<DateOnly>, IEnumerable<double>)> data,
+        Frequency frequency,
+        AggregationType aggregationType,
+        Either<string, TramoSpec> spec,
+        int nForecasts,
+        Option<ModellingContext> context,
+        [EnumeratorCancellation] CancellationToken token = default
+    )
+    {
+        var tsStream = BuildManyTsData(data, frequency, aggregationType, token);
+        var output = Channel.CreateBounded<(string, Either<Error, TramoForecasts>)>(
+            new BoundedChannelOptions(100) { SingleWriter = false, SingleReader = true }
+        );
+
+        using var forecastStream = GetClient().TramoForecastStream(cancellationToken: token);
+
+        Exception? originalException = null;
+
+        async Task WriteTaskAsync()
+        {
+            try
+            {
+                await foreach (var tsResult in tsStream)
+                {
+                    if (tsResult.Item2.IsLeft)
+                    {
+                        var err = tsResult.Item2.LeftToSeq().Head();
+
+                        await output.Writer.WriteAsync((tsResult.Item1, err), token);
+                    }
+                    else
+                    {
+                        var tsData = tsResult.Item2.RightToSeq().Head();
+
+                        await forecastStream.RequestStream.WriteAsync(
+                            BuildTramoRequest(tsResult.Item1, tsData, spec, nForecasts, context),
+                            token
+                        );
+                    }
+                }
+
+                // await foreach (var tsResult in tsStream)
+                // {
+                //     await tsResult.Item2.Match(
+                //         ok =>
+                //             forecastStream
+                //                 .RequestStream.WriteAsync(
+                //                     BuildTramoRequest(ok, spec, nForecasts, context),
+                //                     token
+                //                 )
+                //                 .AsTask(),
+                //         err => output.Writer.WriteAsync((tsResult.Item1, err), token).AsTask()
+                //     );
+                // }
+            }
+            catch (Exception ex)
+            {
+                originalException = ex;
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    await forecastStream.RequestStream.CompleteAsync();
+                }
+                catch when (originalException != null)
+                {
+                    throw originalException;
+                }
+            }
+        }
+
+        async Task ReaderTaskAsync()
+        {
+            await foreach (var response in forecastStream.ResponseStream.ReadAllAsync(token))
+            {
+                await output.Writer.WriteAsync(
+                    (response.Id, response.ToResult().Map(r => new TramoForecasts(r))),
+                    token
+                );
+            }
+        }
+
+        var writer = WriteTaskAsync();
+        var reader = ReaderTaskAsync();
+
+        async Task CompleteOutputAsync()
+        {
+            try
+            {
+                await Task.WhenAll(writer, reader);
+                output.Writer.TryComplete();
+            }
+            catch (Exception ex)
+            {
+                output.Writer.TryComplete(ex);
+                throw;
+            }
+        }
+
+        var completionTask = CompleteOutputAsync();
+
+        await foreach (var ei in output.Reader.ReadAllAsync(token))
+        {
+            yield return ei;
+        }
+
+        await completionTask;
     }
 
     public async IAsyncEnumerable<(
@@ -235,6 +480,21 @@ public class CommunicationManager
         }
 
         await writer;
+    }
+
+    private static async Task WriteTsBuildRequest(
+        IClientStreamWriter<BuildTsDataRequestDto> requestStream,
+        IEnumerable<BuildTsDataRequestDto> requests,
+        CancellationToken token
+    )
+    {
+        foreach (var request in requests)
+        {
+            token.ThrowIfCancellationRequested();
+            await requestStream.WriteAsync(request, token);
+        }
+
+        await requestStream.CompleteAsync();
     }
 
     private static async Task WriteTramoRequests(
@@ -261,7 +521,13 @@ public class CommunicationManager
     {
         try
         {
-            var request = BuildTramoRequest(series, spec, 0, context);
+            var request = BuildTramoRequest(
+                Guid.CreateVersion7().ToString(),
+                series,
+                spec,
+                0,
+                context
+            );
             var results = await GetClient()
                 .TramoFullProcessAsync(request, cancellationToken: token)
                 .ConfigureAwait(false);
