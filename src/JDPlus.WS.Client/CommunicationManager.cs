@@ -19,6 +19,8 @@ public class CommunicationManager
     private readonly Option<X509Certificate2> _certificate;
     private readonly Option<string> _url;
 
+    public string RemoteServerAddress => _url.Match(u => u, () => "None");
+
     public CommunicationManager() { }
 
     public CommunicationManager(string url)
@@ -133,8 +135,8 @@ public class CommunicationManager
                 Frequency = (Main.WS.V1.Frequency)frequency,
                 AggregationType = (Main.WS.V1.AggregationType)aggregationType,
                 AllowPartialAggregation = true,
-                IncludeMissingValues = true
-            }
+                IncludeMissingValues = true,
+            },
         };
         request.Observations.AddRange(
             dates
@@ -388,20 +390,6 @@ public class CommunicationManager
                         );
                     }
                 }
-
-                // await foreach (var tsResult in tsStream)
-                // {
-                //     await tsResult.Item2.Match(
-                //         ok =>
-                //             forecastStream
-                //                 .RequestStream.WriteAsync(
-                //                     BuildTramoRequest(ok, spec, nForecasts, context),
-                //                     token
-                //                 )
-                //                 .AsTask(),
-                //         err => output.Writer.WriteAsync((tsResult.Item1, err), token).AsTask()
-                //     );
-                // }
             }
             catch (Exception ex)
             {
